@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net46</TargetFramework>
-    <Version>15.0</Version>
+    <VersionPrefix>15.0</VersionPrefix>
     <Authors>Mads Kristensen</Authors>
     <Owners>Mads Kristensen</Owners>
     <Copyright>© Mads Kristensen. All rights reserved.</Copyright>
