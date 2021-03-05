@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Version>16.0</Version>
+    <Authors>Mads Kristensen</Authors>
+    <Owners>Mads Kristensen</Owners>
+    <Copyright>© Mads Kristensen. All rights reserved.</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>    
+    
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    
+    <PackageId>Madskristensen.VisualStudio.SDK.Helpers</PackageId>
+    <PackageDescription>Helpers for Visual Studio extension development</PackageDescription>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageTags>VisualStudio, VSSDK, SDK</PackageTags>
+    <RootNamespace>VS</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Icon.png" Link="Icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <Import Project="..\VSSDK.Helpers.Shared\VSSDK.Helpers.Shared.projitems" Label="Shared" />
+
+</Project>

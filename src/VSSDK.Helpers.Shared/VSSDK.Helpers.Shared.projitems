@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>5ec463ac-24cb-443e-9ff9-91b7ecb1f822</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>VSSDK.Helpers.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\IVsSolutionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ProjectExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ProjectItemExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Options\BaseOptionsModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Options\BaseOptionsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Debugger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Editor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Notifications.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Shell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Solution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Windows.cs" />
+  </ItemGroup>
+</Project>
