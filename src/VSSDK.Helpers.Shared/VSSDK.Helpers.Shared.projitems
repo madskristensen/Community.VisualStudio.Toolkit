@@ -21,5 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\Shell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Solution.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Windows.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wrappers\ServiceWrapperBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wrappers\Statusbar.cs" />
   </ItemGroup>
 </Project>

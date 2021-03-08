@@ -5,10 +5,6 @@ namespace VS
 {
     public static partial class Notifications
     {
-        // StatusBar
-        public static IVsStatusbar GetStatusBar() => Helpers.GetService<SVsStatusbar, IVsStatusbar>();
-        public static async Task<IVsStatusbar> GetDTEAsync() => await Helpers.GetServiceAsync<SVsStatusbar, IVsStatusbar>();
-
         // Threaded Wait Dialog
         public static IVsThreadedWaitDialogFactory GetThreadedWaitDialog() => Helpers.GetService<SVsThreadedWaitDialogFactory, IVsThreadedWaitDialogFactory>();
         public static async Task<IVsThreadedWaitDialogFactory> GetThreadedWaitDialogAsync() => await Helpers.GetServiceAsync<SVsThreadedWaitDialogFactory, IVsThreadedWaitDialogFactory>();

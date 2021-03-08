@@ -1,11 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio.Shell;
 
 namespace VS
 {
-    internal static class Helpers
+    public static class Helpers
     {
         // DTE
         public static DTE2 GetDTE() => GetService<DTE, DTE2>();
@@ -20,6 +21,11 @@ namespace VS
         {
             ThreadHelper.ThrowIfNotOnUIThread();
             return ServiceProvider.GlobalProvider.GetService(typeof(TService)) as TInterface;
+        }
+
+        public static T RunSync<T>(Func<Task<T>> asyncMethod)
+        {
+            return ThreadHelper.JoinableTaskFactory.Run(asyncMethod);
         }
     }
 }
