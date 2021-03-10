@@ -12,7 +12,7 @@ namespace Microsoft.VisualStudio.Shell.Interop
 
             foreach (IVsHierarchy hier in GetProjectsInSolution(solution))
             {
-                Project project = ToProject(hier);
+                Project? project = ToProject(hier);
 
                 if (project != null)
                 {
@@ -53,7 +53,7 @@ namespace Microsoft.VisualStudio.Shell.Interop
             }
         }
 
-        public static Project ToProject(this IVsHierarchy hierarchy)
+        public static Project? ToProject(this IVsHierarchy hierarchy)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 

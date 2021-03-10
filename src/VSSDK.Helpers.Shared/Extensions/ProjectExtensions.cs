@@ -7,7 +7,7 @@ namespace EnvDTE
 {
     public static class ProjectExtensions
     {
-        public static ProjectItem AddFileToProject(this Project project, string file)
+        public static ProjectItem? AddFileToProject(this Project project, string file)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
@@ -26,7 +26,7 @@ namespace EnvDTE
         }
 
         /// <summary>Gets the root folder of any Visual Studio project.</summary>
-        public static string GetRootFolder(this Project project)
+        public static string? GetRootFolder(this Project project)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
@@ -35,7 +35,7 @@ namespace EnvDTE
                 return null;
             }
 
-            string fullPath;
+            string? fullPath;
 
             try
             {

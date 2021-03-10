@@ -13,10 +13,10 @@ namespace VS
         /// <summary>
         /// Returns either a Project or ProjectItem. Returns null if Solution is Selected.
         /// </summary>
-        public static object GetSelectedItem()
+        public static object? GetSelectedItem()
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            object selectedObject = null;
+            object? selectedObject = null;
 
             IVsMonitorSelection monitorSelection = Helpers.GetService<SVsShellMonitorSelection, IVsMonitorSelection>();
 
@@ -59,7 +59,7 @@ namespace VS
             }
         }
 
-        public static Project GetActiveProject()
+        public static Project? GetActiveProject()
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 

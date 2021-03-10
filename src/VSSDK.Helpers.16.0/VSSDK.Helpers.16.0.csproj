@@ -17,6 +17,13 @@
     <PackageIcon>Icon.png</PackageIcon>
     <PackageTags>VisualStudio, VSSDK, SDK</PackageTags>
     <RootNamespace>VS</RootNamespace>
+
+    <LangVersion>9</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DefineConstants>VS16</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

@@ -6,10 +6,14 @@ using Task = System.Threading.Tasks.Task;
 
 namespace VS
 {
-    public class Statusbar : ServiceWrapperBase<SVsStatusbar, IVsStatusbar>
+    public class Statusbar
     {
-        public static string GetText() => Helpers.RunSync(GetTextAsync);
-        public static async Task<string> GetTextAsync()
+        private static Task<IVsStatusbar> GetServiceAsync()
+        {
+            return Helpers.GetServiceAsync<SVsStatusbar, IVsStatusbar>();
+        }
+
+        public static async Task<string?> GetTextAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
@@ -27,7 +31,6 @@ namespace VS
             }
         }
 
-        public static void SetText(string text) => SetTextAsync(text).ConfigureAwait(false);
         public static async Task SetTextAsync(string text)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
@@ -46,7 +49,6 @@ namespace VS
             }
         }
 
-        public static void Clear() => ClearAsync().ConfigureAwait(false);
         public static async Task ClearAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
@@ -65,7 +67,6 @@ namespace VS
             }
         }
 
-        public static void StartAnimation(StatusAnimation animation) => StartAnimationAsync(animation).ConfigureAwait(false);
         public static async Task StartAnimationAsync(StatusAnimation animation)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
@@ -84,7 +85,6 @@ namespace VS
             }
         }
 
-        public static void EndAnimation(StatusAnimation animation) => EndAnimationAsync(animation).ConfigureAwait(false);
         public static async Task EndAnimationAsync(StatusAnimation animation)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
@@ -101,6 +101,7 @@ namespace VS
             {
                 System.Diagnostics.Debug.WriteLine(ex);
             }
+
         }
 
         public enum StatusAnimation

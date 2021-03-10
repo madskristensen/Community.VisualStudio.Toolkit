@@ -20,15 +20,6 @@ namespace VSSDK.TestExtension
             await VS.Statusbar.SetTextAsync("Test");
             var text = await VS.Statusbar.GetTextAsync();
             await VS.Statusbar.SetTextAsync(text + " OK");
-
-            await Task.Delay(2000);
-
-            // sync
-#pragma warning disable VSTHRD103 // Call async methods when in an async method
-            VS.Statusbar.SetText("test 2");
-            text = VS.Statusbar.GetText();
-            VS.Statusbar.SetText(text + " OK");
-#pragma warning restore VSTHRD103 // Call async methods when in an async method
         }
     }
 }

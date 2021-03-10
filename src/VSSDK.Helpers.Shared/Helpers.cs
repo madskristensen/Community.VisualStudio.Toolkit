@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using EnvDTE;
 using EnvDTE80;
+using Microsoft;
+using Microsoft.VisualStudio.PlatformUI.OleComponentSupport;
 using Microsoft.VisualStudio.Shell;
 
 namespace VS
@@ -14,18 +16,26 @@ namespace VS
 
         public static async Task<TInterface> GetServiceAsync<TService, TInterface>() where TService : class where TInterface : class
         {
-            return await ServiceProvider.GetGlobalServiceAsync<TService, TInterface>();
+#if VS15
+            TInterface? service = await ServiceProvider.GetGlobalServiceAsync<TService, TInterface>();
+#else
+            TInterface? service = await ServiceProvider.GetGlobalServiceAsync<TService, TInterface>(swallowExceptions: false);
+#endif
+            Assumes.Present(service);
+            return service;
         }
 
         public static TInterface GetService<TService, TInterface>() where TService : class where TInterface : class
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            return ServiceProvider.GlobalProvider.GetService(typeof(TService)) as TInterface;
-        }
+#if VS15
+            TInterface? service = ServiceProvider.GlobalProvider.GetService(typeof(TService)) as TInterface;
+#else
+            TInterface? service = ServiceProvider.GlobalProvider.GetService<TService, TInterface>(throwOnFailure : true);
+#endif
 
-        public static T RunSync<T>(Func<Task<T>> asyncMethod)
-        {
-            return ThreadHelper.JoinableTaskFactory.Run(asyncMethod);
+            Assumes.Present(service);
+            return service;
         }
     }
 }
