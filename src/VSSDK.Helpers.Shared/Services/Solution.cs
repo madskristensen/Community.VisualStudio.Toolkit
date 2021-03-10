@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using EnvDTE;
+using EnvDTE80;
+using Microsoft;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
@@ -13,12 +16,13 @@ namespace VS
         /// <summary>
         /// Returns either a Project or ProjectItem. Returns null if Solution is Selected.
         /// </summary>
-        public static object? GetSelectedItem()
+        public static async Task<object?> GetSelectedItemAsync()
         {
-            ThreadHelper.ThrowIfNotOnUIThread();
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
             object? selectedObject = null;
 
-            IVsMonitorSelection monitorSelection = Helpers.GetService<SVsShellMonitorSelection, IVsMonitorSelection>();
+            IVsMonitorSelection? monitorSelection = await Helpers.GetServiceAsync<SVsShellMonitorSelection, IVsMonitorSelection>();
+            Assumes.Present(monitorSelection);
 
             try
             {
@@ -44,28 +48,37 @@ namespace VS
         }
 
         ///<summary>Gets the full paths to the currently selected item(s) in the Solution Explorer.</summary>
-        public static IEnumerable<string> GetSelectedItemFilePaths()
+        public static async Task<IEnumerable<string>?> GetSelectedItemFilePathsAsync()
         {
-            ThreadHelper.ThrowIfNotOnUIThread();
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
+            
+            DTE2? dte = await Helpers.GetServiceAsync<SDTE, DTE2>();
+            Assumes.Present(dte);
 
-            var items = (Array)Helpers.GetDTE().ToolWindows.SolutionExplorer.SelectedItems;
+            var items = (Array)dte.ToolWindows.SolutionExplorer.SelectedItems;
+            List<string> list = new();
 
             foreach (UIHierarchyItem selItem in items)
             {
                 if (selItem.Object is ProjectItem item && item.Properties != null)
                 {
-                    yield return item.Properties.Item("FullPath").Value.ToString();
+                    list.Add(item.Properties.Item("FullPath").Value.ToString());
                 }
             }
+
+            return list;
         }
 
-        public static Project? GetActiveProject()
+        public static async Task<Project?> GetActiveProjectAsync()
         {
-            ThreadHelper.ThrowIfNotOnUIThread();
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
+
+            DTE2? dte = await Helpers.GetServiceAsync<SDTE, DTE2>();
+            Assumes.Present(dte);
 
             try
             {
-                if (Helpers.GetDTE().ActiveSolutionProjects is Array projects && projects.Length > 0)
+                if (dte.ActiveSolutionProjects is Array projects && projects.Length > 0)
                 {
                     return projects.GetValue(0) as Project;
                 }

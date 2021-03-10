@@ -6,31 +6,13 @@ namespace VS
 {
     public static class Windows
     {
-        // Output Window
-        public static IVsOutputWindow GetOutputWindow() => Helpers.GetService<SVsOutputWindow, IVsOutputWindow>();
-        public static async Task<IVsOutputWindow> GetOutputWindowAsync() => await Helpers.GetServiceAsync<SVsOutputWindow, IVsOutputWindow>();
-
-        // Command Window
-        public static IVsCommandWindow GetCommandWindow() => Helpers.GetService<SVsCommandWindow, IVsCommandWindow>();
-        public static async Task<IVsCommandWindow> GetCommandWindowAsync() => await Helpers.GetServiceAsync<SVsCommandWindow, IVsCommandWindow>();
-
-        // Command Window
-        public static IVsCodeWindow GetCodeWindow() => Helpers.GetService<SVsCodeWindow, IVsCodeWindow>();
-        public static async Task<IVsCodeWindow> GetCodeWindowAsync() => await Helpers.GetServiceAsync<SVsCodeWindow, IVsCodeWindow>();
-
-        // Call browser
-        public static IVsCallBrowser GetCallBrowser() => Helpers.GetService<SVsCodeWindow, IVsCallBrowser>();
-        public static async Task<IVsCallBrowser> GetCallBrowserAsync() => await Helpers.GetServiceAsync<SVsCodeWindow, IVsCallBrowser>();
-
-        // Class view
-        public static IVsClassView GetClassView() => Helpers.GetService<SVsClassView, IVsClassView>();
-        public static async Task<IVsClassView> GetClassViewAsync() => await Helpers.GetServiceAsync<SVsClassView, IVsClassView>();
-
-        // Object browser
-        public static IVsObjBrowser GetObjectBrowser() => Helpers.GetService<SVsObjBrowser, IVsObjBrowser>();
-        public static async Task<IVsObjBrowser> GetObjectBrowserAsync() => await Helpers.GetServiceAsync<SVsObjBrowser, IVsObjBrowser>();
-
-        //svstasklist
-        //svstoolbox
+        public static Task<IVsCallBrowser> GetCallBrowserAsync() => Helpers.GetServiceAsync<SVsCodeWindow, IVsCallBrowser>();
+        public static Task<IVsClassView> GetClassViewAsync() => Helpers.GetServiceAsync<SVsClassView, IVsClassView>();
+        public static Task<IVsCodeWindow> GetCodeWindowAsync() => Helpers.GetServiceAsync<SVsCodeWindow, IVsCodeWindow>();
+        public static Task<IVsCommandWindow> GetCommandWindowAsync() => Helpers.GetServiceAsync<SVsCommandWindow, IVsCommandWindow>();
+        public static Task<IVsObjBrowser> GetObjectBrowserAsync() => Helpers.GetServiceAsync<SVsObjBrowser, IVsObjBrowser>();
+        public static Task<IVsOutputWindow> GetOutputWindowAsync() => Helpers.GetServiceAsync<SVsOutputWindow, IVsOutputWindow>();
+        public static Task<IVsTaskList> GetTaskListAsync() => Helpers.GetServiceAsync<SVsTaskList, IVsTaskList>();
+        public static Task<IVsToolbox2> GetToolboxAsync() => Helpers.GetServiceAsync<SVsToolbox, IVsToolbox2>();
     }
 }

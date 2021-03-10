@@ -20,8 +20,8 @@ namespace VS.Options
     /// </summary>
     public abstract class BaseModel<T> where T : BaseModel<T>, new()
     {
-        private static readonly AsyncLazy<T> _liveModel = new AsyncLazy<T>(CreateAsync, ThreadHelper.JoinableTaskFactory);
-        private static readonly AsyncLazy<ShellSettingsManager> _settingsManager = new AsyncLazy<ShellSettingsManager>(GetSettingsManagerAsync, ThreadHelper.JoinableTaskFactory);
+        private static readonly AsyncLazy<T> _liveModel = new(CreateAsync, ThreadHelper.JoinableTaskFactory);
+        private static readonly AsyncLazy<ShellSettingsManager> _settingsManager = new(GetSettingsManagerAsync, ThreadHelper.JoinableTaskFactory);
 
         protected BaseModel()
         { }
@@ -73,9 +73,7 @@ namespace VS.Options
         /// </summary>
         public virtual void Load()
         {
-#pragma warning disable VSTHRD102 // Implement internal logic asynchronously
             ThreadHelper.JoinableTaskFactory.Run(LoadAsync);
-#pragma warning restore VSTHRD102 // Implement internal logic asynchronously
         }
 
         /// <summary>
@@ -111,9 +109,7 @@ namespace VS.Options
         /// </summary>
         public virtual void Save()
         {
-#pragma warning disable VSTHRD102 // Implement internal logic asynchronously
             ThreadHelper.JoinableTaskFactory.Run(SaveAsync);
-#pragma warning restore VSTHRD102 // Implement internal logic asynchronously
         }
 
         /// <summary>
@@ -173,11 +169,7 @@ namespace VS.Options
 
         private static async Task<ShellSettingsManager> GetSettingsManagerAsync()
         {
-#pragma warning disable VSTHRD010 
-            // False-positive in Threading Analyzers. Bug tracked here https://github.com/Microsoft/vs-threading/issues/230
-            var svc = await AsyncServiceProvider.GlobalProvider.GetServiceAsync(typeof(SVsSettingsManager)) as IVsSettingsManager;
-#pragma warning restore VSTHRD010 
-
+            IVsSettingsManager? svc = await Helpers.GetServiceAsync<SVsSettingsManager, IVsSettingsManager>();
             Assumes.Present(svc);
 
             return new ShellSettingsManager(svc);

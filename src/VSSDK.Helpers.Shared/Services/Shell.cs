@@ -7,32 +7,13 @@ namespace VS
 {
     public static class Shell
     {
-        // Shell
-        public static IVsShell GetShell() => Helpers.GetService<SVsShell, IVsShell>();
-        public static async Task<IVsShell> GetShellAsync() => await Helpers.GetServiceAsync<SVsShell, IVsShell>();
-
-        // UI Shell
-        public static IVsUIShell GetUIShell() => Helpers.GetService<SVsUIShell, IVsUIShell>();
-        public static async Task<IVsUIShell> GetUIShellAsync() => await Helpers.GetServiceAsync<SVsUIShell, IVsUIShell>();
-
-        // App command line
-        public static IVsAppCommandLine GetAppCommandLine() => Helpers.GetService<SVsAppCommandLine, IVsAppCommandLine>();
-        public static async Task<IVsAppCommandLine> GetAppCommandLineAsync() => await Helpers.GetServiceAsync<SVsAppCommandLine, IVsAppCommandLine>();
-
-        // Image service
-        public static IVsImageService2 GetImageService() => Helpers.GetService<SVsImageService, IVsImageService2>();
-        public static async Task<IVsImageService2> GetImageServiceAsync() => await Helpers.GetServiceAsync<SVsImageService, IVsImageService2>();
-
-        // Theming
-        public static IVsFontAndColorCacheManager GetFontAndColorCacheManager() => Helpers.GetService<SVsFontAndColorCacheManager, IVsFontAndColorCacheManager>();
-        public static async Task<IVsFontAndColorCacheManager> GetFontAndColorCacheManagerAsync() => await Helpers.GetServiceAsync<SVsFontAndColorCacheManager, IVsFontAndColorCacheManager>();
-
-        public static IVsFontAndColorStorage GetFontAndColorStorage() => Helpers.GetService<SVsFontAndColorStorage, IVsFontAndColorStorage>();
-        public static async Task<IVsFontAndColorStorage> GetFontAndColorStorageAsync() => await Helpers.GetServiceAsync<SVsFontAndColorStorage, IVsFontAndColorStorage>();
-
-        // Tools Options
-        public static IVsToolsOptions GetToolsOptions() => Helpers.GetService<SVsToolsOptions, IVsToolsOptions>();
-        public static async Task<IVsToolsOptions> GetToolsOptionsAsync() => await Helpers.GetServiceAsync<SVsToolsOptions, IVsToolsOptions>();
+        public static Task<IVsShell> GetShellAsync() => Helpers.GetServiceAsync<SVsShell, IVsShell>();
+        public static Task<IVsUIShell> GetUIShellAsync() => Helpers.GetServiceAsync<SVsUIShell, IVsUIShell>();
+        public static Task<IVsAppCommandLine> GetAppCommandLineAsync() => Helpers.GetServiceAsync<SVsAppCommandLine, IVsAppCommandLine>();
+        public static Task<IVsImageService2> GetImageServiceAsync() => Helpers.GetServiceAsync<SVsImageService, IVsImageService2>();
+        public static Task<IVsFontAndColorCacheManager> GetFontAndColorCacheManagerAsync() => Helpers.GetServiceAsync<SVsFontAndColorCacheManager, IVsFontAndColorCacheManager>();
+        public static Task<IVsFontAndColorStorage> GetFontAndColorStorageAsync() => Helpers.GetServiceAsync<SVsFontAndColorStorage, IVsFontAndColorStorage>();
+        public static Task<IVsToolsOptions> GetToolsOptionsAsync() => Helpers.GetServiceAsync<SVsToolsOptions, IVsToolsOptions>();
 
         public static async Task<bool> OpenDocumentViaProjectAsync(string fileName)
         {
