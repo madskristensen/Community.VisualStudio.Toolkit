@@ -6,6 +6,5 @@ namespace VS
     public static partial class Notifications
     {
         public static Task<IVsTaskStatusCenterService> GetTaskStatusCenterAsync() => Helpers.GetServiceAsync<SVsTaskStatusCenterService, IVsTaskStatusCenterService>();
-
     }
 }

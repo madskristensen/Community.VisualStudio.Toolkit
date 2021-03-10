@@ -22,26 +22,29 @@ namespace VS
             object? selectedObject = null;
 
             IVsMonitorSelection? monitorSelection = await Helpers.GetServiceAsync<SVsShellMonitorSelection, IVsMonitorSelection>();
-            Assumes.Present(monitorSelection);
+            IntPtr hierarchyPointer = IntPtr.Zero;
+            IntPtr selectionContainerPointer = IntPtr.Zero;
 
             try
             {
-                monitorSelection.GetCurrentSelection(out IntPtr hierarchyPointer,
+                monitorSelection.GetCurrentSelection(out hierarchyPointer,
                                                  out var itemId,
                                                  out IVsMultiItemSelect multiItemSelect,
-                                                 out IntPtr selectionContainerPointer);
+                                                 out selectionContainerPointer);
 
                 if (Marshal.GetTypedObjectForIUnknown(hierarchyPointer, typeof(IVsHierarchy)) is IVsHierarchy selectedHierarchy)
                 {
                     ErrorHandler.ThrowOnFailure(selectedHierarchy.GetProperty(itemId, (int)__VSHPROPID.VSHPROPID_ExtObject, out selectedObject));
                 }
-
-                Marshal.Release(hierarchyPointer);
-                Marshal.Release(selectionContainerPointer);
-            }
+}
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.Fail(ex.ToString());
+            }
+            finally
+            {
+                Marshal.Release(hierarchyPointer);
+                Marshal.Release(selectionContainerPointer);
             }
 
             return selectedObject;
@@ -53,7 +56,6 @@ namespace VS
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
             
             DTE2? dte = await Helpers.GetServiceAsync<SDTE, DTE2>();
-            Assumes.Present(dte);
 
             var items = (Array)dte.ToolWindows.SolutionExplorer.SelectedItems;
             List<string> list = new();
@@ -74,7 +76,6 @@ namespace VS
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
             DTE2? dte = await Helpers.GetServiceAsync<SDTE, DTE2>();
-            Assumes.Present(dte);
 
             try
             {
