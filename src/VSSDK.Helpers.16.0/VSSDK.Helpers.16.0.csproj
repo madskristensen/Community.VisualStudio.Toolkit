@@ -16,7 +16,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageTags>VisualStudio, VSSDK, SDK</PackageTags>
-    <RootNamespace>VS</RootNamespace>
+    <RootNamespace>Microsoft.VisualStudio.Helpers</RootNamespace>
 
     <LangVersion>9</LangVersion>
     <Nullable>enable</Nullable>

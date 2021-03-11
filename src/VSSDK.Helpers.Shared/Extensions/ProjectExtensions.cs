@@ -31,51 +31,33 @@ namespace EnvDTE
         }
 
         /// <summary>Gets the root folder of any Visual Studio project.</summary>
-        public static string? GetRootFolder(this Project project)
+        public static string? GetDirectory(this Project project)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            if (string.IsNullOrEmpty(project.FullName))
-            {
-                return null;
-            }
+            string? path = null;
+            var properties = new[] { "FullPath", "ProjectPath", "ProjectDirectory" };
 
-            string? fullPath;
-
-            try
-            {
-                fullPath = project.Properties.Item("FullPath").Value as string;
-            }
-            catch (ArgumentException)
+            foreach (var name in properties)
             {
                 try
                 {
-                    // MFC projects don't have FullPath, and there seems to be no way to query existence
-                    fullPath = project.Properties.Item("ProjectDirectory").Value as string;
+                    if (project?.Properties.Item(name)?.Value is string fullPath)
+                    {
+                        path = fullPath;
+                        break;
+                    }
                 }
-                catch (ArgumentException)
-                {
-                    // Installer projects have a ProjectPath.
-                    fullPath = project.Properties.Item("ProjectPath").Value as string;
-                }
+                catch (Exception)
+                { }
             }
 
-            if (string.IsNullOrEmpty(fullPath))
+            if (File.Exists(path))
             {
-                return File.Exists(project.FullName) ? Path.GetDirectoryName(project.FullName) : null;
+                path = Path.GetDirectoryName(path);
             }
 
-            if (Directory.Exists(fullPath))
-            {
-                return fullPath;
-            }
-
-            if (File.Exists(fullPath))
-            {
-                return Path.GetDirectoryName(fullPath);
-            }
-
-            return null;
+            return path;
         }
 
         public static async Task AddFilesToProjectAsync(this Project project, params string[] files)

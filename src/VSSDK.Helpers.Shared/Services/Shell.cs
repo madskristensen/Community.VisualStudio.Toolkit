@@ -16,6 +16,8 @@ namespace Microsoft.VisualStudio.Helpers
         public Task<IVsFontAndColorCacheManager> GetFontAndColorCacheManagerAsync() => VS.GetServiceAsync<SVsFontAndColorCacheManager, IVsFontAndColorCacheManager>();
         public Task<IVsFontAndColorStorage> GetFontAndColorStorageAsync() => VS.GetServiceAsync<SVsFontAndColorStorage, IVsFontAndColorStorage>();
         public Task<IVsToolsOptions> GetToolsOptionsAsync() => VS.GetServiceAsync<SVsToolsOptions, IVsToolsOptions>();
+        public Task<IVsMRUItemsStore> GetMRUItemsStoreAsync() => VS.GetServiceAsync<SVsMRUItemsStore, IVsMRUItemsStore>();
+
 
         public async Task<bool> OpenDocumentViaProjectAsync(string fileName)
         {

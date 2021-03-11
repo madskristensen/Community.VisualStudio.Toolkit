@@ -1,6 +1,6 @@
 ﻿using System;
+using Microsoft.VisualStudio.Helpers;
 using Microsoft.VisualStudio.Shell;
-using VSSDK.Helpers.Shared;
 using Task = System.Threading.Tasks.Task;
 
 namespace TestExtension

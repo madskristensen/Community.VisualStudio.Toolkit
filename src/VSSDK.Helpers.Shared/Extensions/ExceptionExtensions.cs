@@ -9,7 +9,7 @@ namespace System
 {
     public static class ExceptionExtensions
     {
-        private const string _paneTitle = "Exceptions";
+        private const string _paneTitle = "Extensions";
 
         private static IVsOutputWindowPane? _pane;
 

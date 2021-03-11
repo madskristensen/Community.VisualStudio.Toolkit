@@ -1,11 +1,9 @@
 ﻿using System;
 using System.ComponentModel.Design;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.Helpers;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 
-namespace VSSDK.Helpers.Shared
+namespace Microsoft.VisualStudio.Helpers
 {
     public abstract class BaseCommand<T> where T : BaseCommand<T>, new()
     {
@@ -19,8 +17,6 @@ namespace VSSDK.Helpers.Shared
         public OleMenuCommand? Command { get; private set; }
         public AsyncPackage? Package { get; private set; }
 
-        public static Task<IMenuCommandService> GetCommandServiceAsync() => VS.GetServiceAsync<IMenuCommandService, IMenuCommandService>();
-
         public static async Task InitializeAsync(AsyncPackage package)
         {
             var instance = new T();
@@ -31,7 +27,7 @@ namespace VSSDK.Helpers.Shared
             instance.Command.BeforeQueryStatus += (s, e) => { instance.BeforeQueryStatus(e); };
             instance.Command.Supported = false;
 
-            IMenuCommandService commandService = await GetCommandServiceAsync();
+            IMenuCommandService commandService = await VS.Commanding.GetCommandServiceAsync();
             commandService.AddCommand(instance.Command);
 
             await instance.InitializeCompletedAsync();

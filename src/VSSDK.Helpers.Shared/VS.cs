@@ -10,6 +10,7 @@ namespace Microsoft.VisualStudio.Helpers
     /// </summary>
     public static class VS
     {
+        public static Commanding Commanding => new();
         public static Debugger Debugger => new();
         public static Editor Editor => new();
         public static Notifications Notifications => new();
