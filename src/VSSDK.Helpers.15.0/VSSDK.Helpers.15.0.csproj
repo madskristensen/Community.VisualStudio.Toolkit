@@ -34,6 +34,11 @@
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="15.0.1" ExcludeAssets="runtime" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Windows" />
+  </ItemGroup>
+
   <Import Project="..\VSSDK.Helpers.Shared\VSSDK.Helpers.Shared.projitems" Label="Shared" />
 
 </Project>

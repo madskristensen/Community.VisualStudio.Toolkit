@@ -82,7 +82,7 @@ namespace EnvDTE
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
-            if (project == null || project.IsKind(ProjectTypes.ASPNET_5, ProjectTypes.DOTNET_Core, ProjectTypes.SSDT))
+            if (project == null || project.IsKind(ProjectTypes.ASPNET_Core, ProjectTypes.DOTNET_Core, ProjectTypes.SSDT))
             {
                 return;
             }
@@ -139,7 +139,7 @@ namespace EnvDTE
 
     public static class ProjectTypes
     {
-        public const string ASPNET_5 = "{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}";
+        public const string ASPNET_Core = "{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}";
         public const string DOTNET_Core = "{9A19103F-16F7-4668-BE54-9A1E7A4F7556}";
         public const string MISC = "{66A2671D-8FB5-11D2-AA7E-00C04F688DDE}";
         public const string NODE_JS = "{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}";
