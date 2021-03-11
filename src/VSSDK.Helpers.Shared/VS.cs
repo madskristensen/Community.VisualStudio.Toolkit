@@ -15,7 +15,6 @@ namespace Microsoft.VisualStudio.Helpers
         public static Notifications Notifications => new();
         public static Shell Shell => new();
         public static Solution Solution => new();
-        public static Statusbar Statusbar => new();
         public static Windows Windows => new();
 
 

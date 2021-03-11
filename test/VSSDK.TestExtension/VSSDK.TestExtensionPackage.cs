@@ -17,10 +17,12 @@ namespace VSSDK.TestExtension
         {
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
 
-            // async
-            await VS.Statusbar.SetTextAsync("Test");
-            var text = await VS.Statusbar.GetTextAsync();
-            await VS.Statusbar.SetTextAsync(text + " OK");
+            await VS.Notifications.Statusbar.SetTextAsync("Test");
+            var text = await VS.Notifications.Statusbar.GetTextAsync();
+            await VS.Notifications.Statusbar.SetTextAsync(text + " OK");
+
+            var ex = new Exception(nameof(TestExtension));
+            await ex.LogAsync();
         }
     }
 }

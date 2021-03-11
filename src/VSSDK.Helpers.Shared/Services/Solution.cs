@@ -40,7 +40,7 @@ namespace Microsoft.VisualStudio.Helpers
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.Fail(ex.ToString());
+                await ex.LogAsync();
             }
             finally
             {
@@ -87,7 +87,7 @@ namespace Microsoft.VisualStudio.Helpers
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.Fail(ex.ToString());
+                await ex.LogAsync();
             }
 
             return null;

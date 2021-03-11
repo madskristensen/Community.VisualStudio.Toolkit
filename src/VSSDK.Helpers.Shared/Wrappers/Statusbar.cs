@@ -48,7 +48,7 @@ namespace Microsoft.VisualStudio.Helpers
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex);
+                await ex.LogAsync();
             }
         }
 
@@ -66,7 +66,7 @@ namespace Microsoft.VisualStudio.Helpers
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex);
+                await ex.LogAsync();
             }
         }
 
@@ -84,7 +84,7 @@ namespace Microsoft.VisualStudio.Helpers
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex);
+                await ex.LogAsync();
             }
         }
 
@@ -102,7 +102,7 @@ namespace Microsoft.VisualStudio.Helpers
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex);
+                await ex.LogAsync();
             }
 
         }

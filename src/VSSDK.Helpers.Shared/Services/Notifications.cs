@@ -10,5 +10,6 @@ namespace Microsoft.VisualStudio.Helpers
 
         public Task<IVsThreadedWaitDialogFactory> GetThreadedWaitDialogAsync() => VS.GetServiceAsync<SVsThreadedWaitDialogFactory, IVsThreadedWaitDialogFactory>();
         public Task<IVsActivityLog> GetActivityLogAsync() => VS.GetServiceAsync<SVsActivityLog, IVsActivityLog>();
+        public Statusbar Statusbar => new();
     }
 }

@@ -49,7 +49,7 @@ namespace EnvDTE
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.Write(ex);
+                ex.LogAsync().ConfigureAwait(false);
             }
         }
     }
