@@ -2,17 +2,20 @@
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TextManager.Interop;
 
-namespace VS
+namespace Microsoft.VisualStudio.Helpers
 {
-    public static class Windows
+    public class Windows
     {
-        public static Task<IVsCallBrowser> GetCallBrowserAsync() => Helpers.GetServiceAsync<SVsCodeWindow, IVsCallBrowser>();
-        public static Task<IVsClassView> GetClassViewAsync() => Helpers.GetServiceAsync<SVsClassView, IVsClassView>();
-        public static Task<IVsCodeWindow> GetCodeWindowAsync() => Helpers.GetServiceAsync<SVsCodeWindow, IVsCodeWindow>();
-        public static Task<IVsCommandWindow> GetCommandWindowAsync() => Helpers.GetServiceAsync<SVsCommandWindow, IVsCommandWindow>();
-        public static Task<IVsObjBrowser> GetObjectBrowserAsync() => Helpers.GetServiceAsync<SVsObjBrowser, IVsObjBrowser>();
-        public static Task<IVsOutputWindow> GetOutputWindowAsync() => Helpers.GetServiceAsync<SVsOutputWindow, IVsOutputWindow>();
-        public static Task<IVsTaskList> GetTaskListAsync() => Helpers.GetServiceAsync<SVsTaskList, IVsTaskList>();
-        public static Task<IVsToolbox2> GetToolboxAsync() => Helpers.GetServiceAsync<SVsToolbox, IVsToolbox2>();
+        internal Windows()
+        { }
+
+        public Task<IVsCallBrowser> GetCallBrowserAsync() => VS.GetServiceAsync<SVsCodeWindow, IVsCallBrowser>();
+        public Task<IVsClassView> GetClassViewAsync() => VS.GetServiceAsync<SVsClassView, IVsClassView>();
+        public Task<IVsCodeWindow> GetCodeWindowAsync() => VS.GetServiceAsync<SVsCodeWindow, IVsCodeWindow>();
+        public Task<IVsCommandWindow> GetCommandWindowAsync() => VS.GetServiceAsync<SVsCommandWindow, IVsCommandWindow>();
+        public Task<IVsObjBrowser> GetObjectBrowserAsync() => VS.GetServiceAsync<SVsObjBrowser, IVsObjBrowser>();
+        public Task<IVsOutputWindow> GetOutputWindowAsync() => VS.GetServiceAsync<SVsOutputWindow, IVsOutputWindow>();
+        public Task<IVsTaskList> GetTaskListAsync() => VS.GetServiceAsync<SVsTaskList, IVsTaskList>();
+        public Task<IVsToolbox2> GetToolboxAsync() => VS.GetServiceAsync<SVsToolbox, IVsToolbox2>();
     }
 }

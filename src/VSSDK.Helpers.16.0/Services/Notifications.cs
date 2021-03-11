@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.VisualStudio.TaskStatusCenter;
 
-namespace VS
+namespace Microsoft.VisualStudio.Helpers
 {
-    public static partial class Notifications
+    public partial class Notifications
     {
-        public static Task<IVsTaskStatusCenterService> GetTaskStatusCenterAsync() => Helpers.GetServiceAsync<SVsTaskStatusCenterService, IVsTaskStatusCenterService>();
+        public Task<IVsTaskStatusCenterService> GetTaskStatusCenterAsync() => VS.GetServiceAsync<SVsTaskStatusCenterService, IVsTaskStatusCenterService>();
     }
 }

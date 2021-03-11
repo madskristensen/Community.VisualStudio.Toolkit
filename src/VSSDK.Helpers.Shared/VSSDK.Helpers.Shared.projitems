@@ -12,7 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\IVsSolutionExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ProjectExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ProjectItemExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VS.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Options\BaseOptionsModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Options\BaseOptionsPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Debugger.cs" />

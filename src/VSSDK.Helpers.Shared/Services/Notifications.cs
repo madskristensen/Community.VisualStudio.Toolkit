@@ -1,11 +1,14 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.VisualStudio.Shell.Interop;
 
-namespace VS
+namespace Microsoft.VisualStudio.Helpers
 {
-    public static partial class Notifications
+    public partial class Notifications
     {
-        public static Task<IVsThreadedWaitDialogFactory> GetThreadedWaitDialogAsync() => Helpers.GetServiceAsync<SVsThreadedWaitDialogFactory, IVsThreadedWaitDialogFactory>();
-        public static Task<IVsActivityLog> GetActivityLogAsync() => Helpers.GetServiceAsync<SVsActivityLog, IVsActivityLog>();
+        internal Notifications()
+        { }
+
+        public Task<IVsThreadedWaitDialogFactory> GetThreadedWaitDialogAsync() => VS.GetServiceAsync<SVsThreadedWaitDialogFactory, IVsThreadedWaitDialogFactory>();
+        public Task<IVsActivityLog> GetActivityLogAsync() => VS.GetServiceAsync<SVsActivityLog, IVsActivityLog>();
     }
 }

@@ -1,35 +1,31 @@
-﻿using Microsoft;
-using Microsoft.VisualStudio;
+﻿using System.Threading.Tasks;
 using Microsoft.VisualStudio.ComponentModelHost;
 using Microsoft.VisualStudio.Editor;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.TextManager.Interop;
-using System.Threading.Tasks;
 
-namespace VS
+namespace Microsoft.VisualStudio.Helpers
 {
-    public static class Editor
+    public class Editor
     {
-        public static async Task<IWpfTextView?> GetCurrentWpfTextViewAsync()
+        internal Editor()
+        { }
+
+        public async Task<IWpfTextView?> GetCurrentWpfTextViewAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
-            IComponentModel? compService = await Helpers.GetServiceAsync<SComponentModel, IComponentModel>();
-            Assumes.Present(compService);
-
+            IComponentModel compService = await VS.GetServiceAsync<SComponentModel, IComponentModel>();
             IVsEditorAdaptersFactoryService? editorAdapter = compService.GetService<IVsEditorAdaptersFactoryService>();
-            Assumes.Present(editorAdapter);
-
-            IVsTextView? viewAdapter = await GetCurrentNativeTextViewAsync();
-            Assumes.Present(viewAdapter);
+            IVsTextView viewAdapter = await GetCurrentNativeTextViewAsync();
 
             return editorAdapter.GetWpfTextView(viewAdapter);
         }
 
-        public static async Task<IVsTextView?> GetCurrentNativeTextViewAsync()
+        public async Task<IVsTextView> GetCurrentNativeTextViewAsync()
         {
-            IVsTextManager textManager = await Helpers.GetServiceAsync<SVsTextManager, IVsTextManager>();
+            IVsTextManager textManager = await VS.GetServiceAsync<SVsTextManager, IVsTextManager>();
             ErrorHandler.ThrowOnFailure(textManager.GetActiveView(1, null, out IVsTextView activeView));
 
             return activeView;

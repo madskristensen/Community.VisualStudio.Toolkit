@@ -4,16 +4,19 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
-namespace VS
+namespace Microsoft.VisualStudio.Helpers
 {
     public class Statusbar
     {
-        private static Task<IVsStatusbar> GetServiceAsync()
+        internal Statusbar()
+        { }
+
+        private Task<IVsStatusbar> GetServiceAsync()
         {
-            return Helpers.GetServiceAsync<SVsStatusbar, IVsStatusbar>();
+            return VS.GetServiceAsync<SVsStatusbar, IVsStatusbar>();
         }
 
-        public static async Task<string?> GetTextAsync()
+        public async Task<string?> GetTextAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
@@ -31,7 +34,7 @@ namespace VS
             }
         }
 
-        public static async Task SetTextAsync(string text)
+        public async Task SetTextAsync(string text)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
@@ -49,7 +52,7 @@ namespace VS
             }
         }
 
-        public static async Task ClearAsync()
+        public async Task ClearAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
@@ -67,7 +70,7 @@ namespace VS
             }
         }
 
-        public static async Task StartAnimationAsync(StatusAnimation animation)
+        public async Task StartAnimationAsync(StatusAnimation animation)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
@@ -85,7 +88,7 @@ namespace VS
             }
         }
 
-        public static async Task EndAnimationAsync(StatusAnimation animation)
+        public async Task EndAnimationAsync(StatusAnimation animation)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 

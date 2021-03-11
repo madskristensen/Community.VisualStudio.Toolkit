@@ -4,24 +4,25 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using EnvDTE;
 using EnvDTE80;
-using Microsoft;
-using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 
-namespace VS
+namespace Microsoft.VisualStudio.Helpers
 {
-    public static class Solution
+    public class Solution
     {
+        internal Solution()
+        { }
+
         /// <summary>
         /// Returns either a Project or ProjectItem. Returns null if Solution is Selected.
         /// </summary>
-        public static async Task<object?> GetSelectedItemAsync()
+        public async Task<object?> GetSelectedItemAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
             object? selectedObject = null;
 
-            IVsMonitorSelection? monitorSelection = await Helpers.GetServiceAsync<SVsShellMonitorSelection, IVsMonitorSelection>();
+            IVsMonitorSelection? monitorSelection = await VS.GetServiceAsync<SVsShellMonitorSelection, IVsMonitorSelection>();
             IntPtr hierarchyPointer = IntPtr.Zero;
             IntPtr selectionContainerPointer = IntPtr.Zero;
 
@@ -36,7 +37,7 @@ namespace VS
                 {
                     ErrorHandler.ThrowOnFailure(selectedHierarchy.GetProperty(itemId, (int)__VSHPROPID.VSHPROPID_ExtObject, out selectedObject));
                 }
-}
+            }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.Fail(ex.ToString());
@@ -51,11 +52,11 @@ namespace VS
         }
 
         ///<summary>Gets the full paths to the currently selected item(s) in the Solution Explorer.</summary>
-        public static async Task<IEnumerable<string>?> GetSelectedItemFilePathsAsync()
+        public async Task<IEnumerable<string>?> GetSelectedItemFilePathsAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-            
-            DTE2? dte = await Helpers.GetServiceAsync<SDTE, DTE2>();
+
+            DTE2? dte = await VS.GetServiceAsync<SDTE, DTE2>();
 
             var items = (Array)dte.ToolWindows.SolutionExplorer.SelectedItems;
             List<string> list = new();
@@ -71,11 +72,11 @@ namespace VS
             return list;
         }
 
-        public static async Task<Project?> GetActiveProjectAsync()
+        public async Task<Project?> GetActiveProjectAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
-            DTE2? dte = await Helpers.GetServiceAsync<SDTE, DTE2>();
+            DTE2? dte = await VS.GetServiceAsync<SDTE, DTE2>();
 
             try
             {

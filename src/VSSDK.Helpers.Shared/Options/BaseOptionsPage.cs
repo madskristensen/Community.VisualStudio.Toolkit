@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.Shell;
 
-namespace VS.Options
+namespace Microsoft.VisualStudio.Helpers
 {
     /// <summary>
     /// A base class for a DialogPage to show in Tools -> Options.

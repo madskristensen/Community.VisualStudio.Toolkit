@@ -1,12 +1,15 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.VisualStudio.Shell.Interop;
 
-namespace VS
+namespace Microsoft.VisualStudio.Helpers
 {
-    public static class Debugger
+    public class Debugger
     {
-        public static Task<IVsDebugger> GetDebuggerAsync() => Helpers.GetServiceAsync<SVsShell, IVsDebugger>();
-        public static Task<IVsDebugLaunch> GetDebugLaunchAsync() => Helpers.GetServiceAsync<SVsDebugLaunch, IVsDebugLaunch>();
-        public static Task<IVsDebuggableProtocol> GetDebuggableProtocolAsync() => Helpers.GetServiceAsync<SVsDebuggableProtocol, IVsDebuggableProtocol>();
+        internal Debugger()
+        { }
+
+        public Task<IVsDebugger> GetDebuggerAsync() => VS.GetServiceAsync<SVsShell, IVsDebugger>();
+        public Task<IVsDebugLaunch> GetDebugLaunchAsync() => VS.GetServiceAsync<SVsDebugLaunch, IVsDebugLaunch>();
+        public Task<IVsDebuggableProtocol> GetDebuggableProtocolAsync() => VS.GetServiceAsync<SVsDebuggableProtocol, IVsDebuggableProtocol>();
     }
 }

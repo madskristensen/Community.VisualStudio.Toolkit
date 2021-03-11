@@ -5,7 +5,6 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
-using Microsoft;
 using Microsoft.VisualStudio.Settings;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
@@ -13,7 +12,7 @@ using Microsoft.VisualStudio.Shell.Settings;
 using Microsoft.VisualStudio.Threading;
 using Task = System.Threading.Tasks.Task;
 
-namespace VS.Options
+namespace Microsoft.VisualStudio.Helpers
 {
     /// <summary>
     /// A base class for specifying options
@@ -169,8 +168,7 @@ namespace VS.Options
 
         private static async Task<ShellSettingsManager> GetSettingsManagerAsync()
         {
-            IVsSettingsManager? svc = await Helpers.GetServiceAsync<SVsSettingsManager, IVsSettingsManager>();
-            Assumes.Present(svc);
+            IVsSettingsManager? svc = await VS.GetServiceAsync<SVsSettingsManager, IVsSettingsManager>();
 
             return new ShellSettingsManager(svc);
         }

@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Threading;
 using Microsoft.VisualStudio;
+using Microsoft.VisualStudio.Helpers;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 
