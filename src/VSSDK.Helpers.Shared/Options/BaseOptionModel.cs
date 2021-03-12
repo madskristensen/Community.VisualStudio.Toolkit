@@ -12,17 +12,17 @@ using Microsoft.VisualStudio.Shell.Settings;
 using Microsoft.VisualStudio.Threading;
 using Task = System.Threading.Tasks.Task;
 
-namespace Microsoft.VisualStudio.Helpers.Options
+namespace Microsoft.VisualStudio.Helpers
 {
     /// <summary>
     /// A base class for specifying options
     /// </summary>
-    public abstract class BaseModel<T> where T : BaseModel<T>, new()
+    public abstract class BaseOptionModel<T> where T : BaseOptionModel<T>, new()
     {
         private static readonly AsyncLazy<T> _liveModel = new(CreateAsync, ThreadHelper.JoinableTaskFactory);
         private static readonly AsyncLazy<ShellSettingsManager> _settingsManager = new(GetSettingsManagerAsync, ThreadHelper.JoinableTaskFactory);
 
-        protected BaseModel()
+        protected BaseOptionModel()
         { }
 
         /// <summary>

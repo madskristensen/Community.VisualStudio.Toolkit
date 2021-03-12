@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-using Microsoft.VisualStudio.Helpers.Options;
+using Microsoft.VisualStudio.Helpers;
 
 namespace TestExtension
 {
@@ -8,10 +8,10 @@ namespace TestExtension
         // Register the options with these attributes in your package class:
         // [ProvideOptionPage(typeof(OptionsProvider.GeneralOptions), "My options", "General", 0, 0, true)]
         // [ProvideProfile(typeof(OptionsProvider.GeneralOptions), "My options", "General", 0, 0, true)]
-        public class GeneralOptions : BasePage<General> { }
+        public class GeneralOptions : BaseOptionPage<General> { }
     }
 
-    public class General : BaseModel<General>
+    public class General : BaseOptionModel<General>
     {
         [Category("My category")]
         [DisplayName("My Options")]

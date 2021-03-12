@@ -18,8 +18,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\Commanding.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Events.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)VS.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Options\BaseOptionsModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Options\BaseOptionsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Options\BaseOptionModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Options\BaseOptionPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Debugger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Editor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Notifications.cs" />

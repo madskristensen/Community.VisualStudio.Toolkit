@@ -1,18 +1,18 @@
 ﻿using Microsoft.VisualStudio.Shell;
 
-namespace Microsoft.VisualStudio.Helpers.Options
+namespace Microsoft.VisualStudio.Helpers
 {
     /// <summary>
     /// A base class for a DialogPage to show in Tools -> Options.
     /// </summary>
-    public class BasePage<T> : DialogPage where T : BaseModel<T>, new()
+    public class BaseOptionPage<T> : DialogPage where T : BaseOptionModel<T>, new()
     {
-        private readonly BaseModel<T> _model;
+        private readonly BaseOptionModel<T> _model;
 
-        public BasePage()
+        public BaseOptionPage()
         {
 #pragma warning disable VSTHRD104 // Offer async methods
-            _model = ThreadHelper.JoinableTaskFactory.Run(BaseModel<T>.CreateAsync);
+            _model = ThreadHelper.JoinableTaskFactory.Run(BaseOptionModel<T>.CreateAsync);
 #pragma warning restore VSTHRD104 // Offer async methods
         }
 
