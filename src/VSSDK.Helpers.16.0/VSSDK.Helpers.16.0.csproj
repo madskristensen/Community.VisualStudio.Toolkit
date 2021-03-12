@@ -8,6 +8,8 @@
     <Copyright>© Mads Kristensen. All rights reserved.</Copyright>
     <RepositoryUrl>https://github.com/madskristensen/VSSDK.Helpers</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DebugType>embedded</DebugType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     
     <IncludeSymbols>true</IncludeSymbols>
@@ -38,6 +40,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>

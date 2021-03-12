@@ -2,12 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net46</TargetFramework>
-    <VersionPrefix>15.0</VersionPrefix>
+    <Version>15.0</Version>
     <Authors>Mads Kristensen</Authors>
     <Owners>Mads Kristensen</Owners>
     <Copyright>© Mads Kristensen. All rights reserved.</Copyright>
     <RepositoryUrl>https://github.com/madskristensen/VSSDK.Helpers</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DebugType>embedded</DebugType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
     <IncludeSymbols>true</IncludeSymbols>

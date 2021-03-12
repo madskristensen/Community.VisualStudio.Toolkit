@@ -1,8 +1,8 @@
 image: Visual Studio 2019
 
 build_script:
-  - ps: dotnet build src/VSSDK.Helpers.15.0/VSSDK.Helpers.15.0.csproj /p:configuration=Release /p:Version=15.0.$($env:appveyor_build_number)
-  - ps: dotnet build src/VSSDK.Helpers.16.0/VSSDK.Helpers.16.0.csproj /p:configuration=Release /p:Version=16.0.$($env:appveyor_build_number)
+  - ps: dotnet build src/VSSDK.Helpers.15.0/VSSDK.Helpers.15.0.csproj /p:configuration=Release /p:ContinuousIntegrationBuild=true /p:Version=15.0.$($env:appveyor_build_number)
+  - ps: dotnet build src/VSSDK.Helpers.16.0/VSSDK.Helpers.16.0.csproj /p:configuration=Release /p:ContinuousIntegrationBuild=true /p:Version=16.0.$($env:appveyor_build_number)
 
 artifacts:
   - path: src\**\*.nupkg
