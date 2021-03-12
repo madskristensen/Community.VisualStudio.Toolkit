@@ -38,6 +38,7 @@
 
   <ItemGroup>
     <Reference Include="PresentationCore" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Windows" />
   </ItemGroup>
 

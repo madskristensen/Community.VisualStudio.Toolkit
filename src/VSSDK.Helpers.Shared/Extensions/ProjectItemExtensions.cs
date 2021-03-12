@@ -10,7 +10,7 @@ namespace EnvDTE
         /// <summary>
         /// Opens a file in the Preview Tab (provisional tab) if supported by the editor factory.
         /// </summary>
-        public static void PreviewDocument(this ProjectItem item)
+        public static void OpenInPreviewTab(this ProjectItem item)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
             PreviewDocument(item.FileNames[1]);
