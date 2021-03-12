@@ -22,6 +22,7 @@ namespace Microsoft.VisualStudio.Helpers
         private static readonly AsyncLazy<T> _liveModel = new(CreateAsync, ThreadHelper.JoinableTaskFactory);
         private static readonly AsyncLazy<ShellSettingsManager> _settingsManager = new(GetSettingsManagerAsync, ThreadHelper.JoinableTaskFactory);
 
+        /// <summary>Creates a new instance of the option model.</summary>
         protected BaseOptionModel()
         { }
 

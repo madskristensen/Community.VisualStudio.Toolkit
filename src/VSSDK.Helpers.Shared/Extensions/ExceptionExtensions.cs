@@ -7,12 +7,14 @@ using Task = System.Threading.Tasks.Task;
 
 namespace System
 {
+    /// <summary>Extension methods for the Exception class.</summary>
     public static class ExceptionExtensions
     {
         private const string _paneTitle = "Extensions";
 
         private static IVsOutputWindowPane? _pane;
 
+        /// <summary>Log the error to the Output Window.</summary>
         public static async Task LogAsync(this Exception exception)
         {
             try

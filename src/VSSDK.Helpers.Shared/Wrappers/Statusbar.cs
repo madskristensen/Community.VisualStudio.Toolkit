@@ -108,8 +108,10 @@ namespace Microsoft.VisualStudio.Helpers
         }
     }
 
+    /// <summary>A list of built-in animation visuals for the status bar.</summary>
     public enum StatusAnimation
     {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         General = 0,
         Print = 1,
         Save = 2,
@@ -117,5 +119,6 @@ namespace Microsoft.VisualStudio.Helpers
         Sync = 4,
         Build = 5,
         Find = 6
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }
 }

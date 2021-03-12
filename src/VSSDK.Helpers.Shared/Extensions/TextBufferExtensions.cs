@@ -7,8 +7,10 @@ using Microsoft.VisualStudio.TextManager.Interop;
 
 namespace VSSDK.Helpers.Shared.Extensions
 {
+    /// <summary>Extension methods for the ITextBuffer interface.</summary>
     public static class TextBufferExtensions
     {
+        /// <summary>Gets the file name on disk associated with the buffer.</summary>
         public static string? GetFileName(this ITextBuffer buffer)
         {
             ThreadHelper.ThrowIfNotOnUIThread();

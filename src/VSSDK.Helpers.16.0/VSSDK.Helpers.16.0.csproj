@@ -28,6 +28,10 @@
     <DefineConstants>VS16</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\madsk\GitHub\MadsKristensen.VisualStudio.SDK.Helpers\src\VSSDK.Helpers.16.0\VSSDK.Helpers.16.0.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="..\Icon.png" Link="Icon.png" Pack="true" PackagePath="" />
   </ItemGroup>

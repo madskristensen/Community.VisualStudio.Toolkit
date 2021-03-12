@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.Shell;
 
 namespace Microsoft.VisualStudio.Helpers
 {
+    /// <summary>A collection of events.</summary>
     public class Events
     {
         private readonly Events2? _events;

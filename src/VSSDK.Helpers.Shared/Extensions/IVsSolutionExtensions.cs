@@ -4,8 +4,10 @@ using EnvDTE;
 
 namespace Microsoft.VisualStudio.Shell.Interop
 {
+    /// <summary>Extension methods for the IVsSolution interface.</summary>
     public static class IVsSolutionExtensions
     {
+        /// <summary>Retrieves an array of all projects in the solution.</summary>
         public static IEnumerable<Project> GetAllProjects(this IVsSolution solution)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
@@ -21,12 +23,14 @@ namespace Microsoft.VisualStudio.Shell.Interop
             }
         }
 
+        /// <summary>Gets all projects in the solution as IVsHierarchy items.</summary>
         public static IEnumerable<IVsHierarchy> GetProjectsInSolution(this IVsSolution solution)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
             return GetProjectsInSolution(solution, __VSENUMPROJFLAGS.EPF_LOADEDINSOLUTION);
         }
 
+        /// <summary>Gets all projects in the solution as IVsHierarchy items.</summary>
         public static IEnumerable<IVsHierarchy> GetProjectsInSolution(this IVsSolution solution, __VSENUMPROJFLAGS flags)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
@@ -53,6 +57,7 @@ namespace Microsoft.VisualStudio.Shell.Interop
             }
         }
 
+        /// <summary>Converts an IVsHierarchy to a Project.</summary>
         public static Project? ToProject(this IVsHierarchy hierarchy)
         {
             ThreadHelper.ThrowIfNotOnUIThread();

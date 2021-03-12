@@ -9,6 +9,7 @@ namespace Microsoft.VisualStudio.Helpers
     {
         private readonly BaseOptionModel<T> _model;
 
+        /// <summary>Creates a new instance of the options page.</summary>
         public BaseOptionPage()
         {
 #pragma warning disable VSTHRD104 // Offer async methods
@@ -16,13 +17,16 @@ namespace Microsoft.VisualStudio.Helpers
 #pragma warning restore VSTHRD104 // Offer async methods
         }
 
+        /// <summary>The model object to load and store.</summary>
         public override object AutomationObject => _model;
 
+        /// <summary>Loads the settings from the internal storage.</summary>
         public override void LoadSettingsFromStorage()
         {
             _model.Load();
         }
 
+        /// <summary>Saves settings to the internal storage.</summary>
         public override void SaveSettingsToStorage()
         {
             _model.Save();

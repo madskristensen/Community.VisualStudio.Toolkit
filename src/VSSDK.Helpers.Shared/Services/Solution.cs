@@ -9,6 +9,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 
 namespace Microsoft.VisualStudio.Helpers
 {
+    /// <summary>A collection of services and helpers related to solutions.</summary>
     public class Solution
     {
         internal Solution()
@@ -72,6 +73,7 @@ namespace Microsoft.VisualStudio.Helpers
             return list;
         }
 
+        /// <summary>Gets the active project.</summary>
         public async Task<Project?> GetActiveProjectAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();

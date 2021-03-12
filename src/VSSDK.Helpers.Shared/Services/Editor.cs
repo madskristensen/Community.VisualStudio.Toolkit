@@ -7,11 +7,13 @@ using Microsoft.VisualStudio.TextManager.Interop;
 
 namespace Microsoft.VisualStudio.Helpers
 {
+    /// <summary>A collection of services related to the editor.</summary>
     public class Editor
     {
         internal Editor()
         { }
 
+        /// <summary>Gets the WPF text view from the currently active document.</summary>
         public async Task<IWpfTextView?> GetCurrentWpfTextViewAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
@@ -23,6 +25,7 @@ namespace Microsoft.VisualStudio.Helpers
             return editorAdapter.GetWpfTextView(viewAdapter);
         }
 
+        /// <summary>Gets the native text view from the currently active document.</summary>
         public async Task<IVsTextView> GetCurrentNativeTextViewAsync()
         {
             IVsTextManager textManager = await VS.GetServiceAsync<SVsTextManager, IVsTextManager>();
@@ -31,13 +34,18 @@ namespace Microsoft.VisualStudio.Helpers
             return activeView;
         }
 
+        /// <summary>A list of content types for known languages.</summary>
         public class ContentTypes
         {
+            /// <summary>Applies to all languages.</summary>
             public const string Any = "any";
+            /// <summary>The base content type of all text documents including 'code'.</summary>
             public const string Text = "text";
+            /// <summary>The base content type of all coding text documents and languages.</summary>
             public const string Code = "code";
 
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
             public const string CSharp = "CSharp";
             public const string VisualBasic = "Basic";
             public const string FSharp = "F#";
@@ -50,6 +58,7 @@ namespace Microsoft.VisualStudio.Helpers
             public const string Json = "JSON";
             public const string Xaml = "XAML";
             public const string Xml = "XML";
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         }
     }
 }

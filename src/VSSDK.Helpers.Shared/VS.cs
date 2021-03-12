@@ -10,16 +10,31 @@ namespace Microsoft.VisualStudio.Helpers
     /// </summary>
     public static class VS
     {
+        /// <summary>A collection of services related to the command system.</summary>
         public static Commanding Commanding => new();
+
+        /// <summary>A collection of services related to the debugger.</summary>
         public static Debugger Debugger => new();
+
+        /// <summary>A collection of services related to the editor.</summary>
         public static Editor Editor => new();
+
+        /// <summary>A collection of events.</summary>
         public static Events Events => new();
+
+        /// <summary>A collection of services related to notifying the users.</summary>
         public static Notifications Notifications => new();
+
+        /// <summary>A collection of services related to the shell.</summary>
         public static Shell Shell => new();
+
+        /// <summary>A collection of services related to solutions.</summary>
         public static Solution Solution => new();
+
+        /// <summary>A collection of services related to windows.</summary>
         public static Windows Windows => new();
 
-
+        /// <summary>Get the EnvDTE which provide a broad API for a large part of Visual Studio.</summary>
         public static Task<DTE2> GetDTEAsync() => GetServiceAsync<DTE, DTE2>();
 
         /// <summary>

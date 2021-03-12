@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 
 namespace EnvDTE
 {
+    /// <summary>Extension methods for the ProjectItem class.</summary>
     public static class ProjectItemExtensions
     {
         /// <summary>
@@ -29,6 +30,7 @@ namespace EnvDTE
             }
         }
 
+        /// <summary>Sets the item type in the project file for the item.</summary>
         public static void SetItemType(this ProjectItem item, string itemType)
         {
             ThreadHelper.ThrowIfNotOnUIThread();

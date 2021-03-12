@@ -9,8 +9,10 @@ using Microsoft.VisualStudio.Shell.Interop;
 
 namespace Microsoft.VisualStudio.Imaging.Interop
 {
+    /// <summary>Extension methods for the ImageMoniker class.</summary>
     public static class ImageMonikerExtensions
     {
+        /// <summary>Converts an ImageMoniker to a bitmap in the specified size.</summary>
         public static async Task<BitmapSource?> ToBitmapSourceAsync(this ImageMoniker moniker, int size)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
@@ -21,6 +23,7 @@ namespace Microsoft.VisualStudio.Imaging.Interop
             return data as BitmapSource;
         }
 
+        /// <summary>Converts an ImageMoniker to an IVsUIObject in the specified size.</summary>
         public static async Task<IVsUIObject> ToUiObjectAsync(this ImageMoniker moniker, int size)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
