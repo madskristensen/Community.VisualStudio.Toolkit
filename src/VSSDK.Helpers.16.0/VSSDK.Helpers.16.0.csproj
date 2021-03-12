@@ -12,7 +12,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     
     <PackageId>Madskristensen.VisualStudio.SDK.Helpers</PackageId>
-    <PackageDescription>Helpers for Visual Studio extension development</PackageDescription>
+    <PackageDescription>A community driven effort for a better Visual Studio experience developing extensions.</PackageDescription>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageTags>VisualStudio, VSSDK, SDK</PackageTags>
