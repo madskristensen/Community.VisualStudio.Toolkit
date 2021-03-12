@@ -34,6 +34,15 @@
         <member name="M:Microsoft.VisualStudio.Shell.Interop.IVsSolutionExtensions.ToProject(Microsoft.VisualStudio.Shell.Interop.IVsHierarchy)">
             <summary>Converts an IVsHierarchy to a Project.</summary>
         </member>
+        <member name="T:Microsoft.VisualStudio.Helpers.Commanding">
+            <summary>A collection of services related to the command system.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Commanding.GetCommandServiceAsync">
+            <summary>Provides methods to manage the global designer verbs and menu commands available in design mode, and to show some types of shortcut menus.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Commanding.GetPriorityCommandTargetAsync">
+            <summary>Used to register and unregister a command target as a high priority command handler.</summary>
+        </member>
         <member name="T:Microsoft.VisualStudio.Helpers.Events">
             <summary>A collection of events.</summary>
         </member>
@@ -81,6 +90,9 @@
             <summary>
             A base class for specifying options
             </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.BaseOptionModel`1.#ctor">
+            <summary>Creates a new instance of the option model.</summary>
         </member>
         <member name="P:Microsoft.VisualStudio.Helpers.BaseOptionModel`1.Instance">
             <summary>
@@ -141,6 +153,18 @@
             A base class for a DialogPage to show in Tools -> Options.
             </summary>
         </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.BaseOptionPage`1.#ctor">
+            <summary>Creates a new instance of the options page.</summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.Helpers.BaseOptionPage`1.AutomationObject">
+            <summary>The model object to load and store.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.BaseOptionPage`1.LoadSettingsFromStorage">
+            <summary>Loads the settings from the internal storage.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.BaseOptionPage`1.SaveSettingsToStorage">
+            <summary>Saves settings to the internal storage.</summary>
+        </member>
         <member name="T:Microsoft.VisualStudio.Helpers.Debugger">
             <summary>A collection of services related to debugging.</summary>
         </member>
@@ -186,6 +210,41 @@
         <member name="P:Microsoft.VisualStudio.Helpers.Notifications.Statusbar">
             <summary>Used to write messages to or animate the status bar.</summary>
         </member>
+        <member name="T:Microsoft.VisualStudio.Helpers.Shell">
+            <summary>A collection of services related to the command system.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Shell.GetShellAsync">
+            <summary>Provides access to the fundamental environment services, specifically those dealing with VSPackages and the registry.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Shell.GetUIShellAsync">
+            <summary>This interface provides access to basic windowing functionality, including access to and creation of tool windows and document windows.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Shell.GetAppCommandLineAsync">
+            <summary>This interface is used by a package to read command-line switches entered by the user.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Shell.GetImageServiceAsync">
+            <summary>Registers well-known images (such as icons) for Visual Studio.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Shell.GetFontAndColorCacheManagerAsync">
+            <summary>Controls the caching of font and color settings.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Shell.GetFontAndColorStorageAsync">
+            <summary>Allows a VSPackage to retrieve or save font and color data to the registry.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Shell.GetToolsOptionsAsync">
+            <summary>Manages a Tools Options dialog box. The environment implements this interface.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Shell.GetMRUItemsStoreAsync">
+            <summary>Controls the most recently used (MRU) items collection.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Shell.OpenDocumentViaProjectAsync(System.String)">
+            <summary>
+            Opens the file via the project instead of as a misc file.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.Helpers.Solution">
+            <summary>A collection of services and helpers related to solutions.</summary>
+        </member>
         <member name="M:Microsoft.VisualStudio.Helpers.Solution.GetSelectedItemAsync">
             <summary>
             Returns either a Project or ProjectItem. Returns null if Solution is Selected.
@@ -193,6 +252,88 @@
         </member>
         <member name="M:Microsoft.VisualStudio.Helpers.Solution.GetSelectedItemFilePathsAsync">
             <summary>Gets the full paths to the currently selected item(s) in the Solution Explorer.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Solution.GetActiveProjectAsync">
+            <summary>Gets the active project.</summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.Helpers.Windows">
+            <summary>A collection of services related to windows.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Windows.GetCallBrowserAsync">
+            <summary>Manipulates the Call Browser for debugging.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Windows.GetClassViewAsync">
+            <summary>Allows navigation to an object in Class View.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Windows.GetCodeWindowAsync">
+            <summary>Represents a multiple-document interface (MDI) child that contains one or more code views.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Windows.GetCommandWindowAsync">
+            <summary>Enables the package to use the Command Window.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Windows.GetObjectBrowserAsync">
+            <summary>Implemented by the environment. Used by VsPackages that want to manipulate Object Browser.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Windows.GetOutputWindowAsync">
+            <summary>Manages and controls functions specific to the Output tool window that has multiple panes.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Windows.GetTaskListAsync">
+            <summary>Manages lists of task items supplied by task providers.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Windows.GetToolboxAsync">
+            <summary>Used to manage the Toolbox.</summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.Helpers.BaseCommand`1">
+            <summary>
+            A base class that makes it easier to handle commands.
+            </summary>
+            <typeparam name="T">The implementation type itself.</typeparam>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.BaseCommand`1.#ctor(System.Guid,System.Int32)">
+            <summary>
+            Creates a new instance of the implementation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.Helpers.BaseCommand`1.Command">
+            <summary>The command object associated with the command ID (guid/id).</summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.Helpers.BaseCommand`1.Package">
+            <summary>The package class that initialized this class.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.BaseCommand`1.InitializeAsync(Microsoft.VisualStudio.Shell.AsyncPackage)">
+            <summary>Initializes the command.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.BaseCommand`1.InitializeCompletedAsync">
+            <summary>Allows the implementor to manipulate the command before its execution.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.BaseCommand`1.ExecuteAsync(Microsoft.VisualStudio.Shell.OleMenuCmdEventArgs)">
+            <summary>Executes when the command is invoked.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.BaseCommand`1.BeforeQueryStatus(System.EventArgs)">
+            <summary>Override this method to control the commands visibility and other properties.</summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.Helpers.Statusbar">
+            <summary>
+            An API wrapper that makes it easy to work with the status bar.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Statusbar.GetTextAsync">
+            <summary>Gets the current text from the status bar.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Statusbar.SetTextAsync(System.String)">
+            <summary>Sets the text in the status bar.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Statusbar.ClearAsync">
+            <summary>Clears all text from the status bar.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Statusbar.StartAnimationAsync(Microsoft.VisualStudio.Helpers.StatusAnimation)">
+            <summary>Starts the animation on the status bar.</summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Statusbar.EndAnimationAsync(Microsoft.VisualStudio.Helpers.StatusAnimation)">
+            <summary>Ends the animation on the status bar.</summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.Helpers.StatusAnimation">
+            <summary>A list of built-in animation visuals for the status bar.</summary>
         </member>
         <member name="T:EnvDTE.ProjectExtensions">
             <summary>Extension methods for the Project class.</summary>

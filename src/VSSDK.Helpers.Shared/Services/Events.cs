@@ -18,6 +18,7 @@ namespace Microsoft.VisualStudio.Helpers
         }
 
         private BuildEvents? _buildEvents;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public BuildEvents? BuildEvents => _buildEvents ??= _events?.BuildEvents;
 
 
@@ -103,5 +104,6 @@ namespace Microsoft.VisualStudio.Helpers
 
         private WindowVisibilityEvents? _windowVisibilityEvents;
         public WindowVisibilityEvents? WindowVisibilityEvents => _windowVisibilityEvents ??= _events?.WindowVisibilityEvents;
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }
 }

@@ -6,6 +6,9 @@ using Task = System.Threading.Tasks.Task;
 
 namespace Microsoft.VisualStudio.Helpers
 {
+    /// <summary>
+    /// An API wrapper that makes it easy to work with the status bar.
+    /// </summary>
     public class Statusbar
     {
         internal Statusbar()
@@ -16,6 +19,7 @@ namespace Microsoft.VisualStudio.Helpers
             return VS.GetServiceAsync<SVsStatusbar, IVsStatusbar>();
         }
 
+        /// <summary>Gets the current text from the status bar.</summary>
         public async Task<string?> GetTextAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
@@ -34,6 +38,7 @@ namespace Microsoft.VisualStudio.Helpers
             }
         }
 
+        /// <summary>Sets the text in the status bar.</summary>
         public async Task SetTextAsync(string text)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
@@ -52,6 +57,7 @@ namespace Microsoft.VisualStudio.Helpers
             }
         }
 
+        /// <summary>Clears all text from the status bar.</summary>
         public async Task ClearAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
@@ -70,6 +76,7 @@ namespace Microsoft.VisualStudio.Helpers
             }
         }
 
+        /// <summary>Starts the animation on the status bar.</summary>
         public async Task StartAnimationAsync(StatusAnimation animation)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
@@ -88,6 +95,7 @@ namespace Microsoft.VisualStudio.Helpers
             }
         }
 
+        /// <summary>Ends the animation on the status bar.</summary>
         public async Task EndAnimationAsync(StatusAnimation animation)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
