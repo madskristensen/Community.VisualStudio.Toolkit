@@ -13,6 +13,7 @@ namespace Microsoft.VisualStudio.Helpers
         public static Commanding Commanding => new();
         public static Debugger Debugger => new();
         public static Editor Editor => new();
+        public static Events Events => new();
         public static Notifications Notifications => new();
         public static Shell Shell => new();
         public static Solution Solution => new();
