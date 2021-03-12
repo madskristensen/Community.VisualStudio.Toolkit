@@ -6,15 +6,14 @@ namespace Microsoft.VisualStudio.Helpers
 {
     public class Events
     {
-        private Events2? _events;
+        private readonly Events2? _events;
 
         internal Events()
         {
-            ThreadHelper.JoinableTaskFactory.Run(async delegate
-            {
-                DTE2? dte = await VS.GetServiceAsync<DTE, DTE2>(); ;
-                _events = (Events2)dte.Events;
-            });
+            ThreadHelper.ThrowIfNotOnUIThread();
+            var dte = (DTE2)ServiceProvider.GlobalProvider.GetService(typeof(DTE));
+            Assumes.Present(dte);
+            _events = (Events2)dte.Events;
         }
 
         private BuildEvents? _buildEvents;
