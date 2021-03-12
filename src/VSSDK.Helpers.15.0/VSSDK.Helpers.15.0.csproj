@@ -6,6 +6,8 @@
     <Authors>Mads Kristensen</Authors>
     <Owners>Mads Kristensen</Owners>
     <Copyright>© Mads Kristensen. All rights reserved.</Copyright>
+    <RepositoryUrl>https://github.com/madskristensen/VSSDK.Helpers</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
     <IncludeSymbols>true</IncludeSymbols>
