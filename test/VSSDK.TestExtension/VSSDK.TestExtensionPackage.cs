@@ -29,6 +29,9 @@ namespace VSSDK.TestExtension
 
             var ex = new Exception(nameof(TestExtension));
             await ex.LogAsync();
+
+            VSConstants.MessageBoxResult button = VS.Notifications.ShowMessage("message", "title");
+            Debug.WriteLine(button);
         }
     }
 }

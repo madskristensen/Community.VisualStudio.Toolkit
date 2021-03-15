@@ -210,6 +210,30 @@
         <member name="P:Microsoft.VisualStudio.Helpers.Notifications.Statusbar">
             <summary>Used to write messages to or animate the status bar.</summary>
         </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Notifications.ShowMessage(System.String,System.String,Microsoft.VisualStudio.Shell.Interop.OLEMSGICON,Microsoft.VisualStudio.Shell.Interop.OLEMSGBUTTON,Microsoft.VisualStudio.Shell.Interop.OLEMSGDEFBUTTON)">
+            <summary>
+            Shows a message box that is parented to the main Visual Studio window
+            </summary>
+            <returns>The result of which button on the message box was clicked.</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Notifications.ShowError(System.String,System.String)">
+            <summary>
+            Shows an error message box.
+            </summary>
+            <returns>The result of which button on the message box was clicked.</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Notifications.ShowWarning(System.String,System.String)">
+            <summary>
+            Shows a warning message box.
+            </summary>
+            <returns>The result of which button on the message box was clicked.</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.Helpers.Notifications.ShowConfirm(System.String,System.String)">
+            <summary>
+            Shows a yes/no/cancel message box .
+            </summary>
+            <returns>true if the user clicks the 'Yes' button.</returns>
+        </member>
         <member name="T:Microsoft.VisualStudio.Helpers.Shell">
             <summary>A collection of services related to the command system.</summary>
         </member>

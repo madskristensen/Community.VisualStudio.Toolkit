@@ -38,8 +38,10 @@ namespace Microsoft.VisualStudio.Helpers
             instance.Command.BeforeQueryStatus += (s, e) => { instance.BeforeQueryStatus(e); };
             instance.Command.Supported = false;
 
-            IMenuCommandService commandService = await VS.Commanding.GetCommandServiceAsync();
-            commandService.AddCommand(instance.Command);
+            var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as  IMenuCommandService;
+            Assumes.Present(commandService);
+
+            commandService?.AddCommand(instance.Command);
 
             await instance.InitializeCompletedAsync();
         }
