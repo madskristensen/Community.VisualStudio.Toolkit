@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
-namespace Microsoft.VisualStudio.Helpers
+namespace VisualStudio.SDK.Toolkit
 {
     /// <summary>A collection of services related to the command system.</summary>
     public class Shell

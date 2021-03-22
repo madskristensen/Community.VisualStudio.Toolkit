@@ -15,12 +15,12 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
-    <PackageId>Madskristensen.VisualStudio.SDK.Helpers</PackageId>
+    <PackageId>VisualStudio.SDK.Toolkit</PackageId>
     <PackageDescription>A community driven effort for a better Visual Studio experience developing extensions.</PackageDescription>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageTags>VisualStudio, VSSDK, SDK</PackageTags>
-    <RootNamespace>Microsoft.VisualStudio.Helpers</RootNamespace>
+    <RootNamespace>VisualStudio.SDK.Toolkit</RootNamespace>
 
     <LangVersion>9</LangVersion>
     <Nullable>enable</Nullable>
@@ -28,10 +28,7 @@
 
   <PropertyGroup>
     <DefineConstants>VS15</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>VSSDK.Helpers.15.0.xml</DocumentationFile>
+    <AssemblyName>VisualStudio.SDK.Toolkit.15.0</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -49,6 +46,6 @@
     <Reference Include="System.Windows" />
   </ItemGroup>
 
-  <Import Project="..\VSSDK.Helpers.Shared\VSSDK.Helpers.Shared.projitems" Label="Shared" />
+  <Import Project="..\VisualStudio.SDK.Toolkit.Shared\VSSDK.Helpers.Shared.projitems" Label="Shared" />
 
 </Project>

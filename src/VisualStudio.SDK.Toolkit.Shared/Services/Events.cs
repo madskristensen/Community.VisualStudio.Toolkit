@@ -1,8 +1,9 @@
 ﻿using EnvDTE;
 using EnvDTE80;
+using Microsoft;
 using Microsoft.VisualStudio.Shell;
 
-namespace Microsoft.VisualStudio.Helpers
+namespace VisualStudio.SDK.Toolkit
 {
     /// <summary>A collection of events.</summary>
     public class Events

@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.Shell.Interop;
 
-namespace Microsoft.VisualStudio.Helpers
+namespace VisualStudio.SDK.Toolkit
 {
     /// <summary>A collection of services related to the command system.</summary>
     public class Commanding

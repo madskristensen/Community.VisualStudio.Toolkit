@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TextManager.Interop;
 
-namespace Microsoft.VisualStudio.Helpers
+namespace VisualStudio.SDK.Toolkit
 {
     /// <summary>A collection of services related to windows.</summary>
     public class Windows

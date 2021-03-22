@@ -3,9 +3,9 @@ using System.IO;
 using System.Linq;
 using EnvDTE80;
 using Microsoft.VisualStudio;
-using Microsoft.VisualStudio.Helpers;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
+using VisualStudio.SDK.Toolkit;
 using Task = System.Threading.Tasks.Task;
 
 namespace EnvDTE

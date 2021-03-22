@@ -4,16 +4,20 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using EnvDTE;
 using EnvDTE80;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 
-namespace Microsoft.VisualStudio.Helpers
+namespace VisualStudio.SDK.Toolkit
 {
     /// <summary>A collection of services and helpers related to solutions.</summary>
     public class Solution
     {
         internal Solution()
         { }
+
+        /// <summary>Provides top-level manipulation or maintenance of the solution.</summary>
+        public Task<IVsSolution> GetSolutionAsync() => VS.GetServiceAsync<SVsSolution, IVsSolution>();
 
         /// <summary>
         /// Returns either a Project or ProjectItem. Returns null if Solution is Selected.

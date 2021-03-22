@@ -1,9 +1,10 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using Microsoft;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 
-namespace Microsoft.VisualStudio.Helpers
+namespace VisualStudio.SDK.Toolkit
 {
     /// <summary>
     /// A base class that makes it easier to handle commands.

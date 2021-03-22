@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
 using EnvDTE;
 using EnvDTE80;
+using Microsoft;
 using Microsoft.VisualStudio.Shell;
 
-namespace Microsoft.VisualStudio.Helpers
+namespace VisualStudio.SDK.Toolkit
 {
     /// <summary>
     /// The entry point for a wide variety of extensibility helper classes and methods.

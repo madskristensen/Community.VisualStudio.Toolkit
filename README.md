@@ -5,7 +5,7 @@ A community driven effort for a better Visual Studio experience developing exten
 [![Build status](https://ci.appveyor.com/api/projects/status/24hgrawsx76afr73?svg=true)](https://ci.appveyor.com/project/madskristensen/vssdk-helpers)
 [![NuGet](https://img.shields.io/nuget/v/Madskristensen.VisualStudio.SDK.Helpers)](https://nuget.org/packages/Madskristensen.VisualStudio.SDK.Helpers/)
 
-The NuGet package [Madskristensen.VisualStudio.SDK.Helpers](https://www.nuget.org/packages/Madskristensen.VisualStudio.SDK.Helpers/) acts as a companion to the regular Visual Studio SDK packages with helper methods, classes and extension methods that makes writing extensions a lot easier. 
+The NuGet package [VisualStudio.SDK.Toolkit](https://www.nuget.org/packages/VisualStudio.SDK.Toolkit/) acts as a companion to the regular Visual Studio SDK packages with helper methods, classes and extension methods that makes writing extensions a lot easier. 
 
 ## Purpose
 This package attempts to solve multiple issues with the current extensibility model.
