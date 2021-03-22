@@ -55,7 +55,8 @@ namespace VisualStudio.SDK.Toolkit
 
         private void ExecuteInternal(object sender, EventArgs e)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async delegate
+            Assumes.Present(Package);
+            Package?.JoinableTaskFactory.RunAsync(async delegate
             {
                 try
                 {
