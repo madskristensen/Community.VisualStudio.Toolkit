@@ -1,4 +1,4 @@
-# API helpers for Visual Studio extensions
+# Community toolkit for Visual Studio extensions
 
 A community driven effort for a better Visual Studio experience developing extensions.
 
