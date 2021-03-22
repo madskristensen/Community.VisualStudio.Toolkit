@@ -11,9 +11,11 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <DebugType>portable</DebugType>
     
     <PackageId>VisualStudio.SDK.Toolkit</PackageId>
     <PackageDescription>A community driven effort for a better Visual Studio experience developing extensions.</PackageDescription>
