@@ -2,7 +2,7 @@
 
 A community driven effort for a better Visual Studio experience developing extensions.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/hibrxtul4wgfrum3?svg=true)](https://ci.appveyor.com/project/madskristensen/visualstudio-sdk-toolkit)
+[![Build status](https://ci.appveyor.com/api/projects/status/6llqd0pt1st970f4?svg=true)](https://ci.appveyor.com/project/madskristensen/vssdk-community-toolkit)
 [![NuGet](https://img.shields.io/nuget/v/VSSDK.Community.Toolkit)](https://nuget.org/packages/VSSDK.Community.Toolkit/)
 
 The NuGet package [VSSDK.Community.Toolkit](https://www.nuget.org/packages/VSSDK.Community.Toolkit/) acts as a companion to the regular Visual Studio SDK packages with helper methods, classes and extension methods that makes writing extensions a lot easier. 
