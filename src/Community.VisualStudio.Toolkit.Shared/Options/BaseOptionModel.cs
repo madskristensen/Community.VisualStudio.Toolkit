@@ -12,7 +12,7 @@ using Microsoft.VisualStudio.Shell.Settings;
 using Microsoft.VisualStudio.Threading;
 using Task = System.Threading.Tasks.Task;
 
-namespace VSSDK.Community.Toolkit
+namespace Community.VisualStudio.Toolkit
 {
     /// <summary>
     /// A base class for specifying options

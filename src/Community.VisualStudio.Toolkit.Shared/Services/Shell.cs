@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
-namespace VSSDK.Community.Toolkit
+namespace Community.VisualStudio.Toolkit
 {
     /// <summary>A collection of services related to the command system.</summary>
     public class Shell

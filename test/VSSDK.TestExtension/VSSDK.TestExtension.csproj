@@ -90,9 +90,9 @@
     </VSCTCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\VSSDK.Community.Toolkit.16.0\VSSDK.Community.Toolkit.16.0.csproj">
+    <ProjectReference Include="..\..\src\Community.VisualStudio.Toolkit.16.0\Community.VisualStudio.Toolkit.16.0.csproj">
       <Project>{38dc82ea-91d6-4360-b76c-995708ee43a3}</Project>
-      <Name>VSSDK.Community.Toolkit.16.0</Name>
+      <Name>Community.VisualStudio.Toolkit.16.0</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

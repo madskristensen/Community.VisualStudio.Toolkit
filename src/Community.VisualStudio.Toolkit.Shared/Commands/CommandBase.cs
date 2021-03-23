@@ -4,7 +4,7 @@ using Microsoft;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 
-namespace VSSDK.Community.Toolkit
+namespace Community.VisualStudio.Toolkit
 {
     /// <summary>
     /// A base class that makes it easier to handle commands.

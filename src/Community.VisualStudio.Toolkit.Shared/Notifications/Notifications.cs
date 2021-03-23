@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TaskStatusCenter;
 #endif
 
-namespace VSSDK.Community.Toolkit
+namespace Community.VisualStudio.Toolkit
 {
     /// <summary>A collection of services used to notify the user.</summary>
     public partial class Notifications

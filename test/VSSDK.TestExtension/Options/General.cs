@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-using VSSDK.Community.Toolkit;
+using Community.VisualStudio.Toolkit;
 
 namespace TestExtension
 {

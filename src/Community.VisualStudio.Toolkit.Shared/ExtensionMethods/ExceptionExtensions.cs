@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using VSSDK.Community.Toolkit;
+using Community.VisualStudio.Toolkit;
 using Task = System.Threading.Tasks.Task;
 
 namespace System

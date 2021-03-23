@@ -3,7 +3,7 @@ using EnvDTE80;
 using Microsoft;
 using Microsoft.VisualStudio.Shell;
 
-namespace VSSDK.Community.Toolkit
+namespace Community.VisualStudio.Toolkit
 {
     /// <summary>A collection of events.</summary>
     public class Events
