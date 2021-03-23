@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
-using VisualStudio.SDK.Toolkit;
+using VSSDK.Community.Toolkit;
 
 namespace TestExtension
 {

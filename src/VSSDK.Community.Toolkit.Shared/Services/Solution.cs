@@ -8,7 +8,7 @@ using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 
-namespace VisualStudio.SDK.Toolkit
+namespace VSSDK.Community.Toolkit
 {
     /// <summary>A collection of services and helpers related to solutions.</summary>
     public class Solution

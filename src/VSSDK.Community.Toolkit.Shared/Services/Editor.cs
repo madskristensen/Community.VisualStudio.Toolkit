@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.TextManager.Interop;
 
-namespace VisualStudio.SDK.Toolkit
+namespace VSSDK.Community.Toolkit
 {
     /// <summary>A collection of services related to the editor.</summary>
     public class Editor

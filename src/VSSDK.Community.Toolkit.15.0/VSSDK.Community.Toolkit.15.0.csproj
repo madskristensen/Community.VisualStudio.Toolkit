@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <Version>16.0</Version>
+    <TargetFramework>net46</TargetFramework>
+    <Version>15.0</Version>
     <Authors>Mads Kristensen</Authors>
     <Owners>Mads Kristensen</Owners>
     <Copyright>© Mads Kristensen. All rights reserved.</Copyright>
@@ -12,17 +12,17 @@
     <DebugType>embedded</DebugType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    
+
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <DebugType>portable</DebugType>
-    
-    <PackageId>VisualStudio.SDK.Toolkit</PackageId>
+
+    <PackageId>VSSDK.Community.Toolkit</PackageId>
     <PackageDescription>A community driven effort for a better Visual Studio experience developing extensions.</PackageDescription>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageTags>VisualStudio, VSSDK, SDK</PackageTags>
-    <RootNamespace>VisualStudio.SDK.Toolkit</RootNamespace>
+    <RootNamespace>VSSDK.Community.Toolkit</RootNamespace>
 
     <LangVersion>9</LangVersion>
     <Nullable>enable</Nullable>
@@ -30,8 +30,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <DefineConstants>VS16</DefineConstants>
-    <AssemblyName>VisualStudio.SDK.Toolkit.16.0</AssemblyName>
+    <DefineConstants>VS15</DefineConstants>
+    <AssemblyName>VSSDK.Community.Toolkit.15.0</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="15.0.1" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
@@ -49,6 +49,6 @@
     <Reference Include="System.Windows" />
   </ItemGroup>
 
-  <Import Project="..\VisualStudio.SDK.Toolkit.Shared\VSSDK.Helpers.Shared.projitems" Label="Shared" />
+  <Import Project="..\VSSDK.Community.Toolkit.Shared\VSSDK.Helpers.Shared.projitems" Label="Shared" />
 
 </Project>

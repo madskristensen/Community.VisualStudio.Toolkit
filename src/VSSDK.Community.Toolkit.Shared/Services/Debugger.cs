@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.VisualStudio.Shell.Interop;
 
-namespace VisualStudio.SDK.Toolkit
+namespace VSSDK.Community.Toolkit
 {
     /// <summary>A collection of services related to debugging.</summary>
     public class Debugger

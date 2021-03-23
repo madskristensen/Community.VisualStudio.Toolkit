@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.Shell.Interop;
 using static Microsoft.VisualStudio.VSConstants;
 
-namespace VisualStudio.SDK.Toolkit
+namespace VSSDK.Community.Toolkit
 {
     public partial class Notifications
     {

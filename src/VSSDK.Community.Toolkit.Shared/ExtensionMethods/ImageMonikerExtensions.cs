@@ -5,7 +5,7 @@ using System.Windows.Media.Imaging;
 using Microsoft.VisualStudio.PlatformUI;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using VisualStudio.SDK.Toolkit;
+using VSSDK.Community.Toolkit;
 
 namespace Microsoft.VisualStudio.Imaging.Interop
 {

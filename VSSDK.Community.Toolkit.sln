@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31101.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisualStudio.SDK.Toolkit.16.0", "src\VisualStudio.SDK.Toolkit.16.0\VisualStudio.SDK.Toolkit.16.0.csproj", "{38DC82EA-91D6-4360-B76C-995708EE43A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VSSDK.Community.Toolkit.16.0", "src\VSSDK.Community.Toolkit.16.0\VSSDK.Community.Toolkit.16.0.csproj", "{38DC82EA-91D6-4360-B76C-995708EE43A3}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "VisualStudio.SDK.Toolkit.Shared", "src\VisualStudio.SDK.Toolkit.Shared\VisualStudio.SDK.Toolkit.Shared.shproj", "{5EC463AC-24CB-443E-9FF9-91B7ECB1F822}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "VSSDK.Community.Toolkit.Shared", "src\VSSDK.Community.Toolkit.Shared\VSSDK.Community.Toolkit.Shared.shproj", "{5EC463AC-24CB-443E-9FF9-91B7ECB1F822}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisualStudio.SDK.Toolkit.15.0", "src\VisualStudio.SDK.Toolkit.15.0\VisualStudio.SDK.Toolkit.15.0.csproj", "{A9E80C7B-8ED1-4D7B-B1F3-575FD70001BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VSSDK.Community.Toolkit.15.0", "src\VSSDK.Community.Toolkit.15.0\VSSDK.Community.Toolkit.15.0.csproj", "{A9E80C7B-8ED1-4D7B-B1F3-575FD70001BA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{04B6A6A3-DDE9-44E3-9F95-329655236728}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,9 +20,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSSDK.TestExtension", "test
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		src\VisualStudio.SDK.Toolkit.Shared\VSSDK.Helpers.Shared.projitems*{38dc82ea-91d6-4360-b76c-995708ee43a3}*SharedItemsImports = 5
-		src\VisualStudio.SDK.Toolkit.Shared\VSSDK.Helpers.Shared.projitems*{5ec463ac-24cb-443e-9ff9-91b7ecb1f822}*SharedItemsImports = 13
-		src\VisualStudio.SDK.Toolkit.Shared\VSSDK.Helpers.Shared.projitems*{a9e80c7b-8ed1-4d7b-b1f3-575fd70001ba}*SharedItemsImports = 5
+		src\VSSDK.Community.Toolkit.Shared\VSSDK.Helpers.Shared.projitems*{38dc82ea-91d6-4360-b76c-995708ee43a3}*SharedItemsImports = 5
+		src\VSSDK.Community.Toolkit.Shared\VSSDK.Helpers.Shared.projitems*{5ec463ac-24cb-443e-9ff9-91b7ecb1f822}*SharedItemsImports = 13
+		src\VSSDK.Community.Toolkit.Shared\VSSDK.Helpers.Shared.projitems*{a9e80c7b-8ed1-4d7b-b1f3-575fd70001ba}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

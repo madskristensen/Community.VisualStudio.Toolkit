@@ -4,7 +4,7 @@ using EnvDTE80;
 using Microsoft;
 using Microsoft.VisualStudio.Shell;
 
-namespace VisualStudio.SDK.Toolkit
+namespace VSSDK.Community.Toolkit
 {
     /// <summary>
     /// The entry point for a wide variety of extensibility helper classes and methods.
