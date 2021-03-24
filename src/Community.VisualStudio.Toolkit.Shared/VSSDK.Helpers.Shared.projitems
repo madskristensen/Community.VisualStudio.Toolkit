@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ExtensionMethods\ProjectExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExtensionMethods\ProjectItemExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExtensionMethods\TextBufferExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\VsTheme.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Notifications\MessageBox.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\Commanding.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Events.cs" />
