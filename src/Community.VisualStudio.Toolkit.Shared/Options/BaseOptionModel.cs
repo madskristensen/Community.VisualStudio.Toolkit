@@ -137,6 +137,8 @@ namespace Community.VisualStudio.Toolkit
             {
                 await liveModel.LoadAsync();
             }
+
+            Saved?.Invoke(this, liveModel);
         }
 
         /// <summary>
@@ -180,5 +182,10 @@ namespace Community.VisualStudio.Toolkit
                 .GetProperties()
                 .Where(p => p.PropertyType.IsSerializable && p.PropertyType.IsPublic);
         }
+
+        /// <summary>
+        /// The Saved event is fired after the options have been persisted.
+        /// </summary>
+        public static event EventHandler<T> Saved;
     }
 }
