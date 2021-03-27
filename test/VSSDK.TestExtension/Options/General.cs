@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using Community.VisualStudio.Toolkit;
+using Microsoft.VisualStudio.Shell;
 
 namespace TestExtension
 {
@@ -18,5 +19,10 @@ namespace TestExtension
         [Description("An informative description.")]
         [DefaultValue(true)]
         public bool MyOption { get; set; } = true;
+
+        public General() : base()
+        {
+            Saved += delegate { VS.Notifications.SetStatusbarTextAsync("Options Saved").FileAndForget(nameof(General)); };
+        }
     }
 }

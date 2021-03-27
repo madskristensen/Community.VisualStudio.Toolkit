@@ -186,6 +186,6 @@ namespace Community.VisualStudio.Toolkit
         /// <summary>
         /// The Saved event is fired after the options have been persisted.
         /// </summary>
-        public static event EventHandler<T> Saved;
+        public static event EventHandler<T>? Saved;
     }
 }
