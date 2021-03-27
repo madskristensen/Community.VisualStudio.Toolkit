@@ -1,4 +1,3 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31101.43
@@ -13,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		appveyor.yml = appveyor.yml
+		src\Community.VisualStudio.Toolkit.props = src\Community.VisualStudio.Toolkit.props
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -20,9 +20,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSSDK.TestExtension", "test
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		src\Community.VisualStudio.Toolkit.Shared\VSSDK.Helpers.Shared.projitems*{38dc82ea-91d6-4360-b76c-995708ee43a3}*SharedItemsImports = 5
 		src\Community.VisualStudio.Toolkit.Shared\VSSDK.Helpers.Shared.projitems*{5ec463ac-24cb-443e-9ff9-91b7ecb1f822}*SharedItemsImports = 13
-		src\Community.VisualStudio.Toolkit.Shared\VSSDK.Helpers.Shared.projitems*{a9e80c7b-8ed1-4d7b-b1f3-575fd70001ba}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

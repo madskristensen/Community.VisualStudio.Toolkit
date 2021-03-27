@@ -1,32 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="..\Community.VisualStudio.Toolkit.props"/>
+
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <Version>16.0</Version>
-    <Authors>Mads Kristensen</Authors>
-    <Owners>Mads Kristensen</Owners>
-    <Copyright>© Mads Kristensen. All rights reserved.</Copyright>
-    <RepositoryUrl>https://github.com/madskristensen/VSSDK.Helpers</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <DebugType>embedded</DebugType>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <DebugType>portable</DebugType>
-    
-    <PackageId>Community.VisualStudio.Toolkit</PackageId>
-    <PackageDescription>A community driven effort for a better Visual Studio experience developing extensions.</PackageDescription>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageIcon>Icon.png</PackageIcon>
-    <PackageTags>VisualStudio, VSSDK, SDK</PackageTags>
-    <RootNamespace>Community.VisualStudio.Toolkit</RootNamespace>
-
-    <LangVersion>9</LangVersion>
-    <Nullable>enable</Nullable>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -35,22 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\Icon.png" Link="Icon.png" Pack="true" PackagePath="" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Windows" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-
-  <Import Project="..\Community.VisualStudio.Toolkit.Shared\VSSDK.Helpers.Shared.projitems" Label="Shared" />
 
 </Project>
