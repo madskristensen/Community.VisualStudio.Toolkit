@@ -1,11 +1,9 @@
 ﻿using System;
-using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.TextManager.Interop;
 
-namespace VSSDK.Helpers.Shared.Extensions
+namespace Microsoft.VisualStudio.Text
 {
     /// <summary>Extension methods for the ITextBuffer interface.</summary>
     public static class TextBufferExtensions
