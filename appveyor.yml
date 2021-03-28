@@ -13,8 +13,6 @@ install:
 build_script:
   - ps: dotnet build src/Community.VisualStudio.Toolkit.15.0/Community.VisualStudio.Toolkit.15.0.csproj /p:configuration=Release /p:ContinuousIntegrationBuild=true /p:Version=15.0.$($env:appveyor_build_number)
   - ps: dotnet build src/Community.VisualStudio.Toolkit.16.0/Community.VisualStudio.Toolkit.16.0.csproj /p:configuration=Release /p:ContinuousIntegrationBuild=true /p:Version=16.0.$($env:appveyor_build_number)
-  - nuget restore test/VSSDK.TestExtension/VSSDK.TestExtension.csproj -Verbosity quiet
-  - ps: msbuild test/VSSDK.TestExtension/VSSDK.TestExtension.csproj /p:DeployExtension=false /v:m
 
 artifacts:
   - path: src\**\*.nupkg
