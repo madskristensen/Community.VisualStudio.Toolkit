@@ -22,7 +22,8 @@ namespace Community.VisualStudio.Toolkit
         public Task<IVsAppCommandLine> GetAppCommandLineAsync() => VS.GetServiceAsync<SVsAppCommandLine, IVsAppCommandLine>();
 
         /// <summary>Registers well-known images (such as icons) for Visual Studio.</summary>
-        public Task<IVsImageService2> GetImageServiceAsync() => VS.GetServiceAsync<SVsImageService, IVsImageService2>();
+        /// <returns>Cast return object to <see cref="IVsImageService2"/></returns>
+        public Task<object> GetImageServiceAsync() => VS.GetServiceAsync<SVsImageService, object>();
 
         /// <summary>Controls the caching of font and color settings.</summary>
         public Task<IVsFontAndColorCacheManager> GetFontAndColorCacheManagerAsync() => VS.GetServiceAsync<SVsFontAndColorCacheManager, IVsFontAndColorCacheManager>();
@@ -34,7 +35,8 @@ namespace Community.VisualStudio.Toolkit
         public Task<IVsToolsOptions> GetToolsOptionsAsync() => VS.GetServiceAsync<SVsToolsOptions, IVsToolsOptions>();
 
         /// <summary>Controls the most recently used (MRU) items collection.</summary>
-        public Task<IVsMRUItemsStore> GetMRUItemsStoreAsync() => VS.GetServiceAsync<SVsMRUItemsStore, IVsMRUItemsStore>();
+        /// <returns>Cast return object to <see cref="IVsMRUItemsStore"/></returns>
+        public Task<object> GetMRUItemsStoreAsync() => VS.GetServiceAsync<SVsMRUItemsStore, object>();
 
         /// <summary>
         /// Opens the file via the project instead of as a misc file.

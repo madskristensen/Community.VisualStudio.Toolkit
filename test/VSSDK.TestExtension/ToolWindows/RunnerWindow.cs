@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.Shell;
 
 namespace TestExtension
 {
-    [Guid("37b4bf68-1163-413d-819b-74a5b2267b05")]
+    [Guid("d3b3ebd9-87d1-41cd-bf84-268d88953417")]
     public class RunnerWindow : ToolWindowPane
     {
         public RunnerWindow() : base(null)

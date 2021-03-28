@@ -2,10 +2,10 @@
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using Community.VisualStudio.Toolkit;
 using Microsoft.VisualStudio.PlatformUI;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using Community.VisualStudio.Toolkit;
 
 namespace Microsoft.VisualStudio.Imaging.Interop
 {
@@ -28,7 +28,7 @@ namespace Microsoft.VisualStudio.Imaging.Interop
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
-            IVsImageService2? imageService = await VS.Shell.GetImageServiceAsync();
+            IVsImageService2 imageService = await VS.GetServiceAsync<SVsImageService, IVsImageService2>();
             Color backColor = VSColorTheme.GetThemedColor(EnvironmentColors.ToolWindowBackgroundColorKey);
 
             var imageAttributes = new ImageAttributes
@@ -36,6 +36,7 @@ namespace Microsoft.VisualStudio.Imaging.Interop
                 Flags = (uint)_ImageAttributesFlags.IAF_RequiredFlags | unchecked((uint)_ImageAttributesFlags.IAF_Background),
                 ImageType = (uint)_UIImageType.IT_Bitmap,
                 Format = (uint)_UIDataFormat.DF_WPF,
+                Dpi = 96,
                 LogicalHeight = size,
                 LogicalWidth = size,
                 Background = (uint)backColor.ToArgb(),

@@ -4,7 +4,8 @@
     <Authors>Mads Kristensen</Authors>
     <Owners>Mads Kristensen</Owners>
     <Copyright>© Mads Kristensen. All rights reserved.</Copyright>
-    <RepositoryUrl>https://github.com/madskristensen/VSSDK.Helpers</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/madskristensen/Community.VisualStudio.Toolkit</PackageProjectUrl>
+    <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
@@ -16,6 +17,7 @@
     <DebugType>portable</DebugType>
     
     <PackageId>Community.VisualStudio.Toolkit</PackageId>
+    <AssemblyName>Community.VisualStudio.Toolkit</AssemblyName>
     <PackageDescription>A community driven effort for a better Visual Studio experience developing extensions.</PackageDescription>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageIcon>Icon.png</PackageIcon>
