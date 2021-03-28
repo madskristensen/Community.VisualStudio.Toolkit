@@ -1,5 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.VisualStudio;
+using Microsoft.VisualStudio.ComponentModelHost;
+using Microsoft.VisualStudio.Editor;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
@@ -37,6 +39,9 @@ namespace Community.VisualStudio.Toolkit
         /// <summary>Controls the most recently used (MRU) items collection.</summary>
         /// <returns>Cast return object to <see cref="IVsMRUItemsStore"/></returns>
         public Task<object> GetMRUItemsStoreAsync() => VS.GetServiceAsync<SVsMRUItemsStore, object>();
+
+        /// <summary>Used to retrieved services defined in the MEF catalog, such as the editor specific services like <see cref="IVsEditorAdaptersFactoryService"/>.</summary>
+        public Task<IComponentModel2> GetComponentModelAsync() => VS.GetServiceAsync<SComponentModel, IComponentModel2>();
 
         /// <summary>
         /// Opens the file via the project instead of as a misc file.

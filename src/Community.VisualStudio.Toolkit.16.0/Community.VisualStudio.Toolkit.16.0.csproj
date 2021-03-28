@@ -5,9 +5,6 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <Version>16.0</Version>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <DefineConstants>VS16</DefineConstants>
   </PropertyGroup>
 

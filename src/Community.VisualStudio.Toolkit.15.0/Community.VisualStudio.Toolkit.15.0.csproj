@@ -5,9 +5,6 @@
   <PropertyGroup>
     <TargetFramework>net46</TargetFramework>
     <Version>15.0</Version>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <DefineConstants>VS15</DefineConstants>
   </PropertyGroup>
 

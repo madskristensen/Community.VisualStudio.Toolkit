@@ -28,7 +28,7 @@ namespace Community.VisualStudio.Toolkit
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
-            IComponentModel compService = await VS.GetServiceAsync<SComponentModel, IComponentModel>();
+            IComponentModel2 compService = await VS.GetServiceAsync<SComponentModel, IComponentModel2>();
             IVsEditorAdaptersFactoryService? editorAdapter = compService.GetService<IVsEditorAdaptersFactoryService>();
             IVsTextView viewAdapter = await GetCurrentNativeTextViewAsync();
 
