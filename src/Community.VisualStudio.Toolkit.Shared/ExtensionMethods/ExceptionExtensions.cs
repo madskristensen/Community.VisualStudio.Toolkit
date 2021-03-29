@@ -14,6 +14,21 @@ namespace System
 
         private static IVsOutputWindowPane? _pane;
 
+        /// <summary>
+        /// Log the error to the Output Window
+        /// </summary>
+        public static void Log(this Exception exception)
+        {
+            try
+            {
+                LogAsync(exception).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Diagnostics.Debug.WriteLine(ex);
+            }
+        }
+
         /// <summary>Log the error to the Output Window.</summary>
         public static async Task LogAsync(this Exception exception)
         {
@@ -26,9 +41,9 @@ namespace System
                     _pane?.OutputString(exception + Environment.NewLine);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                // Swallow the exception
+                Diagnostics.Debug.WriteLine(ex);
             }
         }
 
@@ -49,9 +64,9 @@ namespace System
                         ErrorHandler.ThrowOnFailure(output.GetPane(ref guid, out _pane));
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    // Swallow the exception
+                    Diagnostics.Debug.WriteLine(ex);
                 }
             }
 
