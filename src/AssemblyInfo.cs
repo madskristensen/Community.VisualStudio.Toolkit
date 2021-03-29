@@ -1,3 +1,3 @@
-﻿using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell;
 
 [assembly: ProvideCodeBase(AssemblyName = "Community.VisualStudio.Toolkit")]

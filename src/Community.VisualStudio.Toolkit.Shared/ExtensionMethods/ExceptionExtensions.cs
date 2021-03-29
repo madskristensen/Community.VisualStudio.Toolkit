@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Community.VisualStudio.Toolkit;
 using Task = System.Threading.Tasks.Task;
+using Microsoft.VisualStudio.Threading;
 
 namespace System
 {
@@ -21,7 +22,11 @@ namespace System
         {
             try
             {
+#if VS15
                 LogAsync(exception).ConfigureAwait(false);
+#elif VS16
+                LogAsync(exception).FileAndForget(nameof(ExceptionExtensions.Log));
+#endif
             }
             catch (Exception ex)
             {
