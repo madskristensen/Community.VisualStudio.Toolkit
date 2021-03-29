@@ -39,7 +39,7 @@ namespace VSSDK.TestExtension
 
         public override IVsAsyncToolWindowFactory GetAsyncToolWindowFactory(Guid toolWindowType)
         {
-            return toolWindowType.Equals(typeof(RunnerWindow).GUID) ? this : null;
+            return toolWindowType == typeof(RunnerWindow).GUID ? this : null;
         }
 
         protected override string GetToolWindowTitle(Type toolWindowType, int id)
