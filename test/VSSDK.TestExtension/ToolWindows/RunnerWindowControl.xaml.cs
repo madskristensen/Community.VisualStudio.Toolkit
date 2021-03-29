@@ -2,33 +2,38 @@
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using Community.VisualStudio.Toolkit;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
-using Community.VisualStudio.Toolkit;
+using Task = System.Threading.Tasks.Task;
 
 namespace TestExtension
 {
     public partial class RunnerWindowControl : UserControl
     {
-        public RunnerWindowControl()
+        public RunnerWindowControl(EnvDTE80.DTE2 dte)
         {
             InitializeComponent();
+
+            lblHeadline.Content = $"Visual Studio v{dte.Version}";
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            ThreadHelper.JoinableTaskFactory.Run(async delegate
-            {
-                await VS.Notifications.SetStatusbarTextAsync("Test");
-                var text = await VS.Notifications.GetStatusbarTextAsync();
-                await VS.Notifications.SetStatusbarTextAsync(text + " OK");
+            ShowMessageAsync().FileAndForget(nameof(RunnerWindowControl));
+        }
 
-                var ex = new Exception(nameof(TestExtension));
-                await ex.LogAsync();
+        private async Task ShowMessageAsync()
+        {
+            await VS.Notifications.SetStatusbarTextAsync("Test");
+            var text = await VS.Notifications.GetStatusbarTextAsync();
+            await VS.Notifications.SetStatusbarTextAsync(text + " OK");
 
-                VSConstants.MessageBoxResult button = VS.Notifications.ShowMessage("message", "title");
-                Debug.WriteLine(button);
-            });
+            var ex = new Exception(nameof(TestExtension));
+            await ex.LogAsync();
+
+            VSConstants.MessageBoxResult button = VS.Notifications.ShowMessage("message", "title");
+            Debug.WriteLine(button);
         }
     }
 }

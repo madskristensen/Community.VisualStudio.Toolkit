@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 using Community.VisualStudio.Toolkit;
 using Microsoft;
 using Microsoft.VisualStudio;
@@ -34,6 +35,22 @@ namespace VSSDK.TestExtension
             Assumes.Present(bitmap);
             Assumes.Present(svc);
             Assumes.Present(test);
+        }
+
+        public override IVsAsyncToolWindowFactory GetAsyncToolWindowFactory(Guid toolWindowType)
+        {
+            return toolWindowType.Equals(typeof(RunnerWindow).GUID) ? this : null;
+        }
+
+        protected override string GetToolWindowTitle(Type toolWindowType, int id)
+        {
+            return toolWindowType == typeof(RunnerWindow) ? RunnerWindow.Title : GetToolWindowTitle(toolWindowType, id);
+        }
+
+        protected override async Task<object> InitializeToolWindowAsync(Type toolWindowType, int id, CancellationToken cancellationToken)
+        {
+            await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+            return await VS.GetDTEAsync();
         }
     }
 }

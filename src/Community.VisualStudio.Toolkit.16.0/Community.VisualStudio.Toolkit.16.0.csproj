@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\Community.VisualStudio.Toolkit.props"/>
+  <Import Project="..\Common.props" />
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.*" IncludeAssets="All" PrivateAssets="None" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
