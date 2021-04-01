@@ -12,9 +12,7 @@ namespace Microsoft.VisualStudio.Shell
             {
                 try
                 {
-#pragma warning disable VSTHRD003 // As a fire-and-forget continuation, deadlocks can't happen.
                     await task.ConfigureAwait(false);
-#pragma warning restore VSTHRD003
                 }
                 catch (Exception ex)
                 {
