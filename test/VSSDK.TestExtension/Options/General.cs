@@ -22,7 +22,7 @@ namespace TestExtension
 
         public General() : base()
         {
-            Saved += delegate { VS.Notifications.SetStatusbarTextAsync("Options Saved").FileAndForget(nameof(General)); };
+            Saved += delegate { VS.Notifications.SetStatusbarTextAsync("Options Saved").FireAndForget(); };
         }
     }
 }
