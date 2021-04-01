@@ -33,11 +33,10 @@ namespace Community.VisualStudio.Toolkit
         {
             var instance = new T();
 
-            instance.Command = new OleMenuCommand(instance.ExecuteInternal, instance._commandId);
+            instance.Command = new OleMenuCommand(instance.Execute, instance._commandId);
             instance.Package = package;
 
             instance.Command.BeforeQueryStatus += (s, e) => { instance.BeforeQueryStatus(e); };
-            instance.Command.Supported = false;
 
             var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as  IMenuCommandService;
             Assumes.Present(commandService);
@@ -53,9 +52,9 @@ namespace Community.VisualStudio.Toolkit
             return Task.CompletedTask;
         }
 
-        private void ExecuteInternal(object sender, EventArgs e)
+        /// <summary>Executes synchronously when the command is invoked.</summary>
+        protected virtual void Execute(object sender, EventArgs e)
         {
-            Assumes.Present(Package);
             Package?.JoinableTaskFactory.RunAsync(async delegate
             {
                 try
@@ -69,7 +68,7 @@ namespace Community.VisualStudio.Toolkit
             });
         }
 
-        /// <summary>Executes when the command is invoked.</summary>
+        /// <summary>Executes asynchronously when the command is invoked and <see cref="Execute(object, EventArgs)"/> isn't overridden.</summary>
         protected virtual Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             return Task.CompletedTask;

@@ -31,7 +31,7 @@ namespace VSSDK.TestExtension
             await RunnerWindowCommand.InitializeAsync(this);
 
             System.Windows.Media.Imaging.BitmapSource bitmap = await KnownMonikers.Reference.ToBitmapSourceAsync(16);
-            var svc = await VS.Shell.GetImageServiceAsync() as IVsImageService2;
+            var svc = (IVsImageService2)await VS.Shell.GetImageServiceAsync();
             Microsoft.VisualStudio.ComponentModelHost.IComponentModel2 test = await VS.Shell.GetComponentModelAsync();
             Assumes.Present(bitmap);
             Assumes.Present(svc);
