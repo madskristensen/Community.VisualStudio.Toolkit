@@ -22,7 +22,7 @@ namespace System
         {
             try
             {
-#if VS15
+#if VS15 || VS14
                 LogAsync(exception).ConfigureAwait(false);
 #elif VS16
                 LogAsync(exception).FileAndForget(nameof(ExceptionExtensions.Log));

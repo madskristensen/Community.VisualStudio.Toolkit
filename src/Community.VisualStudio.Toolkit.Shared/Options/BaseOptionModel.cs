@@ -171,9 +171,14 @@ namespace Community.VisualStudio.Toolkit
 
         private static async Task<ShellSettingsManager> GetSettingsManagerAsync()
         {
+#if VS14
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
+            return new ShellSettingsManager(ServiceProvider.GlobalProvider);
+#else
             IVsSettingsManager? svc = await VS.GetServiceAsync<SVsSettingsManager, IVsSettingsManager>();
 
             return new ShellSettingsManager(svc);
+#endif
         }
 
         private IEnumerable<PropertyInfo> GetOptionProperties()

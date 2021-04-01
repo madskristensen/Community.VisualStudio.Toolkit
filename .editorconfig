@@ -104,3 +104,4 @@ csharp_new_line_before_members_in_anonymous_types     = true
 
 # VSTHRD111: Use ConfigureAwait(bool)
 dotnet_diagnostic.VSTHRD111.severity = none
+dotnet_diagnostic.VSTHRD104.severity=silent

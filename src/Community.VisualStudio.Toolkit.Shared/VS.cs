@@ -46,7 +46,9 @@ namespace Community.VisualStudio.Toolkit
         /// <returns>A task whose result is the service, if found; otherwise null.</returns>
         public static async Task<TInterface> GetServiceAsync<TService, TInterface>() where TService : class where TInterface : class
         {
-#if VS15
+#if VS14
+            var service = (TInterface)await AsyncServiceProvider.GlobalProvider.GetServiceAsync(typeof(TService));
+#elif VS15
             TInterface? service = await ServiceProvider.GetGlobalServiceAsync<TService, TInterface>();
 #else
             TInterface? service = await ServiceProvider.GetGlobalServiceAsync<TService, TInterface>(swallowExceptions: false);
