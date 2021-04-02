@@ -7,7 +7,7 @@ namespace TestExtension
 {
     public class TestCommand : BaseCommand<TestCommand>
     {
-        public TestCommand() : base(Guid.Empty, 123)
+        public TestCommand() : base(new Guid("489ba882-f600-4c8b-89db-eb366a4ee3b3"), 0x000)
         { }
 
         protected override Task ExecuteAsync(OleMenuCmdEventArgs e)
