@@ -17,7 +17,7 @@ Base classes, helper methods, and extension methods encapsulate the complexity s
 Now the most commmon services are all easy to get to from the main `VS` object. For instance, to write to the Statusbar, you can now write the following:
 
 ``` C#
-await VS.Notifiations.Statusbar.SetTextAsync("My statusbar text");
+await VS.Notifiations.SetStatusbarTextAsync("My statusbar text");
 ```
 
 ### Best practices change with each version of VS. I can't keep up

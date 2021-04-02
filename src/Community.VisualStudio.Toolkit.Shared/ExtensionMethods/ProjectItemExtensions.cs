@@ -30,6 +30,21 @@ namespace EnvDTE
             }
         }
 
+        /// <summary>
+        /// Gets the file name of the project item
+        /// </summary>
+        public static string? GetFileName(this ProjectItem item)
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+
+            if (item?.Properties != null)
+            {
+                return item.Properties.Item("FullPath").Value.ToString();
+            }
+
+            return item?.FileNames[1];
+        }
+
         /// <summary>Sets the item type in the project file for the item.</summary>
         public static void SetItemType(this ProjectItem item, string itemType)
         {

@@ -20,13 +20,13 @@ namespace Community.VisualStudio.Toolkit
         public Task<IVsSolution> GetSolutionAsync() => VS.GetServiceAsync<SVsSolution, IVsSolution>();
 
         /// <summary>
-        /// Returns either a Project or ProjectItem. Returns null if Solution is Selected.
+        /// Returns either a <see cref="Project"/> or <see cref="ProjectItem" />. Returns null sf Solution is selected.
         /// </summary>
         public async Task<object?> GetSelectedItemAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
             object? selectedObject = null;
-
+            
             IVsMonitorSelection? monitorSelection = await VS.GetServiceAsync<SVsShellMonitorSelection, IVsMonitorSelection>();
             IntPtr hierarchyPointer = IntPtr.Zero;
             IntPtr selectionContainerPointer = IntPtr.Zero;
@@ -56,21 +56,54 @@ namespace Community.VisualStudio.Toolkit
             return selectedObject;
         }
 
-        ///<summary>Gets the full paths to the currently selected item(s) in the Solution Explorer.</summary>
-        public async Task<IEnumerable<string>?> GetSelectedItemFilePathsAsync()
+
+        /// <summary>
+        /// Returns an array of either <see cref="Project"/> or <see cref="ProjectItem" />.
+        /// </summary>
+        public async Task<IEnumerable<object>?> GetSelectedItemsAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
             DTE2? dte = await VS.GetServiceAsync<SDTE, DTE2>();
 
             var items = (Array)dte.ToolWindows.SolutionExplorer.SelectedItems;
-            List<string> list = new();
+            List<object> list = new();
 
             foreach (UIHierarchyItem selItem in items)
             {
-                if (selItem.Object is ProjectItem item && item.Properties != null)
+                list.Add(selItem.Object);
+            }
+
+            return list;
+        }
+
+        /// <summary>
+        /// Returns the selected <see cref="ProjectItem" /> or null.
+        /// </summary>
+        public async Task<ProjectItem?> GetSelectedProjectItemAsync()
+        {
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
+
+            return await GetSelectedItemAsync() as ProjectItem;
+        }
+
+        /// <summary>
+        /// Returns an array of the selected <see cref="ProjectItem" />s.
+        /// </summary>
+        public async Task<IEnumerable<ProjectItem>?> GetSelectedProjectItemsAsync()
+        {
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
+
+            DTE2? dte = await VS.GetServiceAsync<SDTE, DTE2>();
+
+            var items = (Array)dte.ToolWindows.SolutionExplorer.SelectedItems;
+            List<ProjectItem> list = new();
+            
+            foreach (UIHierarchyItem selItem in items)
+            {
+                if (selItem is ProjectItem pi)
                 {
-                    list.Add(item.Properties.Item("FullPath").Value.ToString());
+                    list.Add(pi);
                 }
             }
 
