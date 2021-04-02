@@ -12,7 +12,7 @@
     Height="600"
     d:DesignHeight="450" d:DesignWidth="800"
     d:DataContext="{d:DesignInstance Type={x:Type local:ThemeWindowDialogViewModel}, IsDesignTimeCreatable=False}"
-    toolkit:VsTheme.UseVsTheme="{Binding UseVsTheme}"
+    toolkit:Themes.UseVsTheme="{Binding UseVsTheme}"
     >
 
     <Grid>

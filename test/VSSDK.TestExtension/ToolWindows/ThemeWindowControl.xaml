@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     d:DesignHeight="300" d:DesignWidth="300"
     d:DataContext="{d:DesignInstance Type={x:Type local:ThemeWindowControlViewModel}, IsDesignTimeCreatable=False}"
-    toolkit:VsTheme.UseVsTheme="{Binding UseVsTheme}"
+    toolkit:Themes.UseVsTheme="{Binding UseVsTheme}"
     >
 
     <Grid>

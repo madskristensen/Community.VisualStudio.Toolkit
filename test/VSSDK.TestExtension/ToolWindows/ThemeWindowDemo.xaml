@@ -6,10 +6,16 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:platform="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
     xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"
     mc:Ignorable="d" 
     d:DesignHeight="450" 
     d:DesignWidth="800"
     >
+
+    <UserControl.Resources>
+        <!-- Uncomment the line below to override the padding used in TextBox and ComboBox controls. -->
+        <!--<Thickness x:Key="{x:Static toolkit:ToolkitResourceKeys.InputPaddingKey}">1,1,1,1</Thickness>-->
+    </UserControl.Resources>
     
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="10" Orientation="Vertical">
@@ -53,6 +59,20 @@
                 <system:String>Fifth</system:String>
                 <system:String>Sixth</system:String>
             </ListBox>
+
+            <Border 
+                Margin="{StaticResource Margin}" 
+                Padding="{DynamicResource {x:Static toolkit:ToolkitResourceKeys.InputPaddingKey}}"
+                BorderThickness="1"
+                BorderBrush="{DynamicResource {x:Static platform:CommonControlsColors.ButtonBorderDisabledBrushKey}}"
+                Background="{DynamicResource {x:Static platform:CommonControlsColors.ButtonDisabledBrushKey}}"
+                >
+                <TextBlock 
+                    Text="InputPaddingKey Example"
+                    TextAlignment="Center"
+                    Foreground="{DynamicResource {x:Static platform:CommonControlsColors.ButtonDisabledTextBrushKey}}"
+                    />
+            </Border>
         </StackPanel>
     </ScrollViewer>
 </UserControl>
