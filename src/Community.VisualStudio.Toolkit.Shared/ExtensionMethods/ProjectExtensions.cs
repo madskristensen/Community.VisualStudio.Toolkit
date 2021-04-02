@@ -94,7 +94,7 @@ namespace EnvDTE
                        result);
         }
 
-        /// <summary>Check what kind the project is. Use the <see cref="ProjectKinds"/> list of strings.</summary>
+        /// <summary>Check what kind the project is. Use the <see cref="ProjectTypes"/> list of strings.</summary>
         public static bool IsKind(this Project project, params string[] kindGuids)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
@@ -117,7 +117,7 @@ namespace EnvDTE
         {
             ThreadHelper.ThrowIfNotOnUIThread();
             var ns = project.Properties.Item("DefaultNamespace").Value.ToString();
-            
+
             if (string.IsNullOrEmpty(ns))
             {
                 ns = project.Properties.Item("RootNamespace").Value.ToString();
@@ -126,8 +126,23 @@ namespace EnvDTE
             {
                 ns = project.Properties.Item("AssemblyName").Value.ToString();
             }
-            
+
             return ns;
+        }
+
+        /// <summary>
+        /// Kicks off a build of the project.
+        /// </summary>
+        public static vsBuildState Build(this Project project, bool waitForBuildToFinish = false)
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+
+            DTE? dte = project.DTE;
+            var configuration = dte.Solution.SolutionBuild.ActiveConfiguration.Name;
+
+            dte.Solution.SolutionBuild.BuildProject(configuration, project.UniqueName, waitForBuildToFinish);
+
+            return dte.Solution.SolutionBuild.BuildState;
         }
     }
 

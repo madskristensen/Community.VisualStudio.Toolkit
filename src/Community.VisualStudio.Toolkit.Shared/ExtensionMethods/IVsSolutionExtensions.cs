@@ -1,19 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using EnvDTE;
 
 namespace Microsoft.VisualStudio.Shell.Interop
 {
-    /// <summary>Extension methods for the IVsSolution interface.</summary>
+    /// <summary>
+    /// Extension methods for the IVsSolution interface.
+    /// </summary>
     public static class IVsSolutionExtensions
     {
-        /// <summary>Retrieves an array of all projects in the solution.</summary>
+        /// <summary>
+        /// Retrieves an array of all projects in the solution.
+        /// </summary>
         public static IEnumerable<Project> GetAllProjects(this IVsSolution solution)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            foreach (IVsHierarchy hier in GetProjectsInSolution(solution))
+            return GetAllProjects(solution, __VSENUMPROJFLAGS.EPF_LOADEDINSOLUTION);
+        }
+
+        /// <summary>
+        /// Retrieves an array of all projects in the solution.
+        /// </summary>
+        public static IEnumerable<Project> GetAllProjects(this IVsSolution solution, __VSENUMPROJFLAGS flags)
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+
+            foreach (IVsHierarchy hier in GetAllProjectHierarchys(solution, flags))
             {
                 Project? project = ToProject(hier);
 
@@ -24,15 +37,19 @@ namespace Microsoft.VisualStudio.Shell.Interop
             }
         }
 
-        /// <summary>Gets all projects in the solution as IVsHierarchy items.</summary>
-        public static IEnumerable<IVsHierarchy> GetProjectsInSolution(this IVsSolution solution)
+        /// <summary>
+        /// Gets all projects in the solution as IVsHierarchy items.
+        /// </summary>
+        public static IEnumerable<IVsHierarchy> GetAllProjectHierarchys(this IVsSolution solution)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            return GetProjectsInSolution(solution, __VSENUMPROJFLAGS.EPF_LOADEDINSOLUTION);
+            return GetAllProjectHierarchys(solution, __VSENUMPROJFLAGS.EPF_LOADEDINSOLUTION);
         }
 
-        /// <summary>Gets all projects in the solution as IVsHierarchy items.</summary>
-        public static IEnumerable<IVsHierarchy> GetProjectsInSolution(this IVsSolution solution, __VSENUMPROJFLAGS flags)
+        /// <summary>
+        /// Gets all projects in the solution as IVsHierarchy items.
+        /// </summary>
+        public static IEnumerable<IVsHierarchy> GetAllProjectHierarchys(this IVsSolution solution, __VSENUMPROJFLAGS flags)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
@@ -58,7 +75,9 @@ namespace Microsoft.VisualStudio.Shell.Interop
             }
         }
 
-        /// <summary>Converts an IVsHierarchy to a Project.</summary>
+        /// <summary>
+        /// Converts an IVsHierarchy to a Project.
+        /// </summary>
         public static Project? ToProject(this IVsHierarchy hierarchy)
         {
             ThreadHelper.ThrowIfNotOnUIThread();

@@ -11,19 +11,17 @@ namespace Community.VisualStudio.Toolkit
     /// </summary>
     public partial class Notifications
     {
-        private static Task<IVsStatusbar> GetServiceAsync()
-        {
-            return VS.GetServiceAsync<SVsStatusbar, IVsStatusbar>();
-        }
+        /// <summary>Provides access to the environment's status bar.</summary>
+        public Task<IVsStatusbar> GetStatusbarAsync() => VS.GetServiceAsync<SVsStatusbar, IVsStatusbar>();
 
         /// <summary>Gets the current text from the status bar.</summary>
         public async Task<string?> GetStatusbarTextAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-
+            
             try
             {
-                IVsStatusbar statusBar = await GetServiceAsync();
+                IVsStatusbar statusBar = await GetStatusbarAsync();
 
                 statusBar.GetText(out var pszText);
                 return pszText;
@@ -42,7 +40,7 @@ namespace Community.VisualStudio.Toolkit
 
             try
             {
-                IVsStatusbar statusBar = await GetServiceAsync();
+                IVsStatusbar statusBar = await GetStatusbarAsync();
 
                 statusBar.FreezeOutput(0);
                 statusBar.SetText(text);
@@ -61,7 +59,7 @@ namespace Community.VisualStudio.Toolkit
 
             try
             {
-                IVsStatusbar statusBar = await GetServiceAsync();
+                IVsStatusbar statusBar = await GetStatusbarAsync();
 
                 statusBar.FreezeOutput(0);
                 statusBar.Clear();
@@ -80,7 +78,7 @@ namespace Community.VisualStudio.Toolkit
 
             try
             {
-                IVsStatusbar statusBar = await GetServiceAsync();
+                IVsStatusbar statusBar = await GetStatusbarAsync();
 
                 statusBar.FreezeOutput(0);
                 statusBar.Animation(1, animation);
@@ -99,7 +97,7 @@ namespace Community.VisualStudio.Toolkit
 
             try
             {
-                IVsStatusbar statusBar = await GetServiceAsync();
+                IVsStatusbar statusBar = await GetStatusbarAsync();
 
                 statusBar.FreezeOutput(0);
                 statusBar.Animation(0, animation);
