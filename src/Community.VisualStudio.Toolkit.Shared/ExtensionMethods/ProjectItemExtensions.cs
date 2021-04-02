@@ -31,9 +31,9 @@ namespace EnvDTE
         }
 
         /// <summary>
-        /// Gets the file name of the project item
+        /// Gets the full file/directory path of the project item
         /// </summary>
-        public static string? GetFileName(this ProjectItem item)
+        public static string? GetFullPath(this ProjectItem item)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 

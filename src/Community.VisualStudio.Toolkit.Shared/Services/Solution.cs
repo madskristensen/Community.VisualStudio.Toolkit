@@ -10,26 +10,53 @@ using Microsoft.VisualStudio.Shell.Interop;
 
 namespace Community.VisualStudio.Toolkit
 {
-    /// <summary>A collection of services and helpers related to solutions.</summary>
+    /// <summary>
+    /// A collection of services and helpers related to solutions.
+    /// </summary>
     public class Solution
     {
         internal Solution()
         { }
 
-        /// <summary>Provides top-level manipulation or maintenance of the solution.</summary>
+        /// <summary>
+        /// Provides top-level manipulation or maintenance of the solution.
+        /// </summary>
         public Task<IVsSolution> GetSolutionAsync() => VS.GetServiceAsync<SVsSolution, IVsSolution>();
 
         /// <summary>
-        /// Returns either a <see cref="Project"/> or <see cref="ProjectItem" />. Returns null sf Solution is selected.
+        /// Opens a Solution or Project using the standard open dialog boxes.
         /// </summary>
-        public async Task<object?> GetSelectedItemAsync()
+        public Task<IVsOpenProjectOrSolutionDlg> GetOpenProjectOrSolutionDlgAsync() => VS.GetServiceAsync<SVsOpenProjectOrSolutionDlg, IVsOpenProjectOrSolutionDlg>();
+
+        /// <summary>
+        /// Gets a list of the selected items.
+        /// </summary>
+        public async Task<IEnumerable<SelectedItem>> GetSelectedItemsAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-            object? selectedObject = null;
-            
+
+            DTE2 dte = await VS.GetServiceAsync<SDTE, DTE2>();
+            List<SelectedItem> list = new();
+
+            foreach (SelectedItem item in dte.SelectedItems)
+            {
+                list.Add(item);
+            }
+
+            return list;
+        }
+
+        /// <summary>
+        /// Returns the active <see cref="ProjectItem"/>.
+        /// </summary>
+        public async Task<ProjectItem?> GetActiveProjectItemAsync()
+        {
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
+
             IVsMonitorSelection? monitorSelection = await VS.GetServiceAsync<SVsShellMonitorSelection, IVsMonitorSelection>();
             IntPtr hierarchyPointer = IntPtr.Zero;
             IntPtr selectionContainerPointer = IntPtr.Zero;
+            object? selectedObject = null;
 
             try
             {
@@ -53,64 +80,12 @@ namespace Community.VisualStudio.Toolkit
                 Marshal.Release(selectionContainerPointer);
             }
 
-            return selectedObject;
+            return selectedObject as ProjectItem;
         }
 
-
-        /// <summary>
-        /// Returns an array of either <see cref="Project"/> or <see cref="ProjectItem" />.
+        /// <summary> 
+        /// Gets the active project.
         /// </summary>
-        public async Task<IEnumerable<object>?> GetSelectedItemsAsync()
-        {
-            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-
-            DTE2? dte = await VS.GetServiceAsync<SDTE, DTE2>();
-
-            var items = (Array)dte.ToolWindows.SolutionExplorer.SelectedItems;
-            List<object> list = new();
-
-            foreach (UIHierarchyItem selItem in items)
-            {
-                list.Add(selItem.Object);
-            }
-
-            return list;
-        }
-
-        /// <summary>
-        /// Returns the selected <see cref="ProjectItem" /> or null.
-        /// </summary>
-        public async Task<ProjectItem?> GetSelectedProjectItemAsync()
-        {
-            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-
-            return await GetSelectedItemAsync() as ProjectItem;
-        }
-
-        /// <summary>
-        /// Returns an array of the selected <see cref="ProjectItem" />s.
-        /// </summary>
-        public async Task<IEnumerable<ProjectItem>?> GetSelectedProjectItemsAsync()
-        {
-            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-
-            DTE2? dte = await VS.GetServiceAsync<SDTE, DTE2>();
-
-            var items = (Array)dte.ToolWindows.SolutionExplorer.SelectedItems;
-            List<ProjectItem> list = new();
-            
-            foreach (UIHierarchyItem selItem in items)
-            {
-                if (selItem is ProjectItem pi)
-                {
-                    list.Add(pi);
-                }
-            }
-
-            return list;
-        }
-
-        /// <summary>Gets the active project.</summary>
         public async Task<Project?> GetActiveProjectAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
@@ -130,6 +105,38 @@ namespace Community.VisualStudio.Toolkit
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets all projects int he solution
+        /// </summary>
+        public async Task<IEnumerable<Project>> GetAllProjectsInSolutionAsync()
+        {
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
+            IVsSolution solution = await GetSolutionAsync();
+            return solution.GetAllProjects();
+        }
+
+        /// <summary>
+        /// Gets the directory of the currently loaded solution.
+        /// </summary>
+        public async Task<string?> GetSolutionDirectoryAsync()
+        {
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
+
+            IVsSolution solution = await GetSolutionAsync();
+            return solution.GetDirectory();
+        }
+
+        /// <summary>
+        /// Gets the file path of the currently loaded solution file (.sln).
+        /// </summary>
+        public async Task<string?> GetSolutionFilePathAsync()
+        {
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
+
+            IVsSolution solution = await GetSolutionAsync();
+            return solution.GetFilePath();
         }
     }
 }

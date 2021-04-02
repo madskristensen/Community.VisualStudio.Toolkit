@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using EnvDTE;
 
 namespace Microsoft.VisualStudio.Shell.Interop
@@ -70,6 +71,26 @@ namespace Microsoft.VisualStudio.Shell.Interop
             hierarchy.GetProperty(VSConstants.VSITEMID_ROOT, (int)__VSHPROPID.VSHPROPID_ExtObject, out var obj);
 
             return obj as Project;
+        }
+
+        /// <summary>
+        /// Gets the directory of the currently loaded solution.
+        /// </summary>
+        public static string? GetDirectory(this IVsSolution solution)
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+            ErrorHandler.ThrowOnFailure(solution.GetSolutionInfo(out var dir, out _, out _));
+            return dir;
+        }
+
+        /// <summary>
+        /// Gets the file path of the .sln file.
+        /// </summary>
+        public static string? GetFilePath(this IVsSolution solution)
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+            ErrorHandler.ThrowOnFailure(solution.GetSolutionInfo(out _, out var file, out _));
+            return file;
         }
     }
 }

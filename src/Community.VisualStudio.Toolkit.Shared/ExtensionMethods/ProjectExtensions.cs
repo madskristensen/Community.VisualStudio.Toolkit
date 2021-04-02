@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using Community.VisualStudio.Toolkit;
 using EnvDTE80;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using Community.VisualStudio.Toolkit;
 using Task = System.Threading.Tasks.Task;
 
 namespace EnvDTE
@@ -98,7 +98,7 @@ namespace EnvDTE
         public static bool IsKind(this Project project, params string[] kindGuids)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            
+
             foreach (var guid in kindGuids)
             {
                 if (project.Kind.Equals(guid, StringComparison.OrdinalIgnoreCase))
@@ -108,6 +108,26 @@ namespace EnvDTE
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Gets the default namespace or asembly name of the project
+        /// </summary>
+        public static string GetProjectNamespace(this Project project)
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+            var ns = project.Properties.Item("DefaultNamespace").Value.ToString();
+            
+            if (string.IsNullOrEmpty(ns))
+            {
+                ns = project.Properties.Item("RootNamespace").Value.ToString();
+            }
+            if (string.IsNullOrEmpty(ns))
+            {
+                ns = project.Properties.Item("AssemblyName").Value.ToString();
+            }
+            
+            return ns;
         }
     }
 
