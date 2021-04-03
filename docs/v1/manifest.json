@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Community.VisualStudio.Toolkit.BaseCommand-1.html",
-          "hash": "CWe5xcf7dg90np7r6SMsfA=="
+          "hash": "/glrw+BTPdZTJUEgb/E3QA=="
         }
       },
       "is_incremental": false,
@@ -21,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Community.VisualStudio.Toolkit.BaseOptionModel-1.html",
-          "hash": "aHHAU/jksrHAsmKU4Qup1A=="
+          "hash": "ncFH5f8NmbPBc+VmUfrgeQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Community.VisualStudio.Toolkit.BaseOptionPage-1.html",
-          "hash": "kcll9mfR+DJ9t1FiD7lh4w=="
+          "hash": "meK8aYctti1IJ5GVJNQRQQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "JSv/mRypUDg2dA7ZaUH4Vw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -60,7 +60,7 @@
           "hash": "qWr/MCzzBc4lueIaJF8njw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -72,7 +72,7 @@
           "hash": "az1ORNevPXRqcsSzMt/E5g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -84,7 +84,7 @@
           "hash": "vCac2clA/iqFiEMuNE06Hg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -96,7 +96,7 @@
           "hash": "DgWPp6AM9rVT6YaK2hb1nQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Community.VisualStudio.Toolkit.Notifications.html",
-          "hash": "Pe3b01Sh/irp7we1nt0pfg=="
+          "hash": "fArpAs1ujBPmIKVGXrq8cA=="
         }
       },
       "is_incremental": false,
@@ -120,7 +120,7 @@
           "hash": "SEZjS5nZVSO240+lyFl5EA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -132,7 +132,7 @@
           "hash": "rk+SCg0iugShMNLPhgcgyw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -144,7 +144,31 @@
           "hash": "JigOmtd6KPH/OG0wKqjVYw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Community.VisualStudio.Toolkit.Themes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Community.VisualStudio.Toolkit.Themes.html",
+          "hash": "DWsdrCkkUL/Z1XBD5OvgyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Community.VisualStudio.Toolkit.ToolkitResourceKeys.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Community.VisualStudio.Toolkit.ToolkitResourceKeys.html",
+          "hash": "Ps3RgrzSrwfKl3VQDpnDJQ=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -153,22 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Community.VisualStudio.Toolkit.VS.html",
-          "hash": "4hE29UQRo10sZma58ixqTQ=="
+          "hash": "HDArcGAfsg9ms2QOppIMvQ=="
         }
       },
       "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Community.VisualStudio.Toolkit.VsTheme.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Community.VisualStudio.Toolkit.VsTheme.html",
-          "hash": "n+1dJK/m7hgobcqpACpYnQ=="
-        }
-      },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -180,7 +192,7 @@
           "hash": "TgvspQ9B57ak4tKkIDY17w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -189,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Community.VisualStudio.Toolkit.html",
-          "hash": "zZY44pfE4AkOOU/PRz4Mlw=="
+          "hash": "nwxo25czqPInIzvVEAlIxA=="
         }
       },
       "is_incremental": false,
@@ -201,10 +213,10 @@
       "output": {
         ".html": {
           "relative_path": "api/EnvDTE.ProjectExtensions.html",
-          "hash": "Me0rkRK2lp1rggpCwUGkdw=="
+          "hash": "3N6eIHuleOAwqcgat6n+mA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -213,10 +225,10 @@
       "output": {
         ".html": {
           "relative_path": "api/EnvDTE.ProjectItemExtensions.html",
-          "hash": "+17QW4FAGi9OUSyaSmkESw=="
+          "hash": "HU9MptWbY9ZuoJnfu4CJlA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -225,10 +237,10 @@
       "output": {
         ".html": {
           "relative_path": "api/EnvDTE.ProjectTypes.html",
-          "hash": "Colj5EGhDTd/7Iw0P77cQg=="
+          "hash": "gLwPMB8Y9ZRVrAW087uHAg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -237,10 +249,10 @@
       "output": {
         ".html": {
           "relative_path": "api/EnvDTE.html",
-          "hash": "N5oX5m/mrJWVPcF8wAPbvg=="
+          "hash": "WDlhmdkqsILwT79lQz8L3Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -249,10 +261,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.VisualStudio.Imaging.Interop.ImageMonikerExtensions.html",
-          "hash": "AmJBKSmPG77ctJdTMbaOUA=="
+          "hash": "/UN4eeA+wQE3ae1Y2HHCKg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -264,7 +276,7 @@
           "hash": "EftzDbmbXMEo8JuKLnrSdg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -276,7 +288,7 @@
           "hash": "MESNJHhSCZqTMd8toU3ugA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -288,7 +300,7 @@
           "hash": "RT0RbWn8mIPPENVDIeg0hA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -297,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.VisualStudio.Shell.TaskExtensions.html",
-          "hash": "kfzJfP6qGlmxnu5q9Wfg1Q=="
+          "hash": "yDAlVtoGR2nFs1m1OlSTDg=="
         }
       },
       "is_incremental": false,
@@ -321,10 +333,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.VisualStudio.Text.TextBufferExtensions.html",
-          "hash": "ZCptsOdXN30dWE3ewzNvQQ=="
+          "hash": "rcsofgF0qtmBD/0hbqXHZw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -333,10 +345,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.VisualStudio.Text.html",
-          "hash": "Yeb+0lnSaCQ3pQfrtPbvWg=="
+          "hash": "TmPm1j7tlvWE+yv/Pj1ukg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -345,10 +357,10 @@
       "output": {
         ".html": {
           "relative_path": "api/System.ExceptionExtensions.html",
-          "hash": "AJlDQXA8GRXqAGVgkfm99A=="
+          "hash": "vTbI1CsGQg3dGwDXpJfwEQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -360,7 +372,7 @@
           "hash": "R5icyyCf2NDPSY56sDBd7A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -372,7 +384,7 @@
           "hash": "DugpM+bCOWGAXIObZKIgDA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -381,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "kwd87nu0AjWsiaAlAEo9mw=="
+          "hash": "aW8PncnfXyby5On66QBuKg=="
         }
       },
       "is_incremental": false,
@@ -501,8 +513,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 30,
-          "skipped_file_count": 27
+          "total_file_count": 31,
+          "skipped_file_count": 16
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

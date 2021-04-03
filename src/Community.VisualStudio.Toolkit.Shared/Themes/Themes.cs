@@ -12,6 +12,14 @@ namespace Community.VisualStudio.Toolkit
     /// A helper class that can automatically theme any XAML control or window using the VS theme properties.
     /// </summary>
     /// <remarks>Should only be referenced from within .xaml files.</remarks>
+    /// <example>
+    /// <code>
+    /// &lt;UserControl x:Class="MyClass"
+    /// xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"
+    /// toolkit:Themes.UseVsTheme="True"&gt;
+    /// &lt;/UserControl&gt;
+    /// </code>
+    /// </example>
     public static class Themes
     {
         private static readonly DependencyProperty _originalBackgroundProperty = DependencyProperty.RegisterAttached("OriginalBackground", typeof(object), typeof(Themes));

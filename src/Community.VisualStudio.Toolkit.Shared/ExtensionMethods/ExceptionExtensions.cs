@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
+using Community.VisualStudio.Toolkit;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using Community.VisualStudio.Toolkit;
-using Task = System.Threading.Tasks.Task;
 using Microsoft.VisualStudio.Threading;
+using Task = System.Threading.Tasks.Task;
 
 namespace System
 {
@@ -18,15 +18,27 @@ namespace System
         /// <summary>
         /// Log the error to the Output Window
         /// </summary>
+        /// <remarks>
+        /// It creates a new Output Window pane called "Extensions" where it logs to. This is to no polute
+        /// the existing "Build" pane with errors coming from extensions.
+        /// </remarks>
+        /// <example>
+        /// <code>
+        /// try
+        /// {
+        ///     // Do work;
+        /// }
+        /// catch (Exception ex)
+        /// {
+        ///     ex.Log();
+        /// }
+        /// </code>
+        /// </example>
         public static void Log(this Exception exception)
         {
             try
             {
-#if VS15 || VS14
-                LogAsync(exception).ConfigureAwait(false);
-#elif VS16
-                LogAsync(exception).FileAndForget(nameof(ExceptionExtensions.Log));
-#endif
+                LogAsync(exception).FireAndForget();
             }
             catch (Exception ex)
             {
@@ -34,7 +46,25 @@ namespace System
             }
         }
 
-        /// <summary>Log the error to the Output Window.</summary>
+        /// <summary>
+        /// Log the error to the Output Window asyncronously.
+        /// </summary>
+        /// <remarks>
+        /// It creates a new Output Window pane called "Extensions" where it logs to. This is to no polute
+        /// the existing "Build" pane with errors coming from extensions.
+        /// </remarks>
+        /// <example>
+        /// <code>
+        /// try
+        /// {
+        ///     // Do work;
+        /// }
+        /// catch (Exception ex)
+        /// {
+        ///     await ex.LogAsync();
+        /// }
+        /// </code>
+        /// </example>
         public static async Task LogAsync(this Exception exception)
         {
             try
@@ -43,7 +73,7 @@ namespace System
 
                 if (await EnsurePaneAsync())
                 {
-                    _pane?.OutputString(exception + Environment.NewLine);
+                    _pane?.OutputStringThreadSafe(exception + Environment.NewLine);
                 }
             }
             catch (Exception ex)

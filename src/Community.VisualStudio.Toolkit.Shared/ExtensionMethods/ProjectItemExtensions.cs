@@ -14,13 +14,13 @@ namespace EnvDTE
         public static void OpenInPreviewTab(this ProjectItem item)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            PreviewDocument(item.FileNames[1]);
+            OpenInPreviewTab(item.FileNames[1]);
         }
 
         /// <summary>
         /// Opens a file in the Preview Tab (provisional tab) if supported by the editor factory.
         /// </summary>
-        public static void PreviewDocument(string file)
+        public static void OpenInPreviewTab(string file)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
@@ -45,7 +45,9 @@ namespace EnvDTE
             return item?.FileNames[1];
         }
 
-        /// <summary>Sets the item type in the project file for the item.</summary>
+        /// <summary>
+        /// Sets the item type in the project file for the item.
+        /// </summary>
         public static void SetItemType(this ProjectItem item, string itemType)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
@@ -66,7 +68,7 @@ namespace EnvDTE
             }
             catch (Exception ex)
             {
-                ex.LogAsync().ConfigureAwait(false);
+                ex.Log();
             }
         }
     }

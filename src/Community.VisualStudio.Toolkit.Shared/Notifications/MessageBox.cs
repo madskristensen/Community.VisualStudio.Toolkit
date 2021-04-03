@@ -9,7 +9,14 @@ namespace Community.VisualStudio.Toolkit
         /// <summary>
         /// Shows a message box that is parented to the main Visual Studio window
         /// </summary>
-        /// <returns>The result of which button on the message box was clicked.</returns>
+        /// <returns>
+        /// The result of which button on the message box was clicked.
+        /// </returns>
+        /// <example>
+        /// <code>
+        /// VS.Notifications.ShowMessage("Title", "The message");
+        /// </code>
+        /// </example>
         public MessageBoxResult ShowMessage(string title,
                                             string message,
                                             OLEMSGICON icon = OLEMSGICON.OLEMSGICON_INFO,

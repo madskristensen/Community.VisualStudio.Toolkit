@@ -9,12 +9,12 @@ namespace Community.VisualStudio.Toolkit
     {
         private readonly BaseOptionModel<T> _model;
 
-        /// <summary>Creates a new instance of the options page.</summary>
+        /// <summary>
+        /// Creates a new instance of the options page.
+        /// </summary>
         public BaseOptionPage()
         {
-#pragma warning disable VSTHRD104 // Offer async methods
             _model = ThreadHelper.JoinableTaskFactory.Run(BaseOptionModel<T>.CreateAsync);
-#pragma warning restore VSTHRD104 // Offer async methods
         }
 
         /// <summary>The model object to load and store.</summary>

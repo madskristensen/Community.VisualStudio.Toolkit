@@ -1,6 +1,8 @@
 ﻿namespace EnvDTE
 {
-    /// <summary>A list of known project types.</summary>
+    /// <summary>
+    /// A list of known project types guids.
+    /// </summary>
     public static class ProjectTypes
     {
         /// <summary>The project type of ASP.NET Core projects.</summary>

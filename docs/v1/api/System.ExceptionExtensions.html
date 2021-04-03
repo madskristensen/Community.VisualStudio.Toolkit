@@ -118,7 +118,7 @@
     <a href="https://github.com/madskristensen/Community.VisualStudio.Toolkit/new/master/apiSpec/new?filename=System_ExceptionExtensions_Log_System_Exception_.md&amp;value=---%0Auid%3A%20System.ExceptionExtensions.Log(System.Exception)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/madskristensen/Community.VisualStudio.Toolkit/blob/master/src/Community.VisualStudio.Toolkit.Shared/ExtensionMethods/ExceptionExtensions.cs/#L21">View Source</a>
+    <a href="https://github.com/madskristensen/Community.VisualStudio.Toolkit/blob/master/src/Community.VisualStudio.Toolkit.Shared/ExtensionMethods/ExceptionExtensions.cs/#L37">View Source</a>
   </span>
   <a id="System_ExceptionExtensions_Log_" data-uid="System.ExceptionExtensions.Log*"></a>
   <h4 id="System_ExceptionExtensions_Log_System_Exception_" data-uid="System.ExceptionExtensions.Log(System.Exception)">Log(Exception)</h4>
@@ -146,16 +146,30 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="System_ExceptionExtensions_Log_System_Exception__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>It creates a new Output Window pane called &quot;Extensions&quot; where it logs to. This is to no polute
+the existing &quot;Build&quot; pane with errors coming from extensions.</p>
+</div>
+  <h5 id="System_ExceptionExtensions_Log_System_Exception__examples">Examples</h5>
+  <pre><code>try
+{
+    // Do work;
+}
+catch (Exception ex)
+{
+    ex.Log();
+}</code></pre>
+
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/madskristensen/Community.VisualStudio.Toolkit/new/master/apiSpec/new?filename=System_ExceptionExtensions_LogAsync_System_Exception_.md&amp;value=---%0Auid%3A%20System.ExceptionExtensions.LogAsync(System.Exception)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/madskristensen/Community.VisualStudio.Toolkit/blob/master/src/Community.VisualStudio.Toolkit.Shared/ExtensionMethods/ExceptionExtensions.cs/#L38">View Source</a>
+    <a href="https://github.com/madskristensen/Community.VisualStudio.Toolkit/blob/master/src/Community.VisualStudio.Toolkit.Shared/ExtensionMethods/ExceptionExtensions.cs/#L68">View Source</a>
   </span>
   <a id="System_ExceptionExtensions_LogAsync_" data-uid="System.ExceptionExtensions.LogAsync*"></a>
   <h4 id="System_ExceptionExtensions_LogAsync_System_Exception_" data-uid="System.ExceptionExtensions.LogAsync(System.Exception)">LogAsync(Exception)</h4>
-  <div class="markdown level1 summary"><p>Log the error to the Output Window.</p>
+  <div class="markdown level1 summary"><p>Log the error to the Output Window asyncronously.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -194,6 +208,20 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="System_ExceptionExtensions_LogAsync_System_Exception__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>It creates a new Output Window pane called &quot;Extensions&quot; where it logs to. This is to no polute
+the existing &quot;Build&quot; pane with errors coming from extensions.</p>
+</div>
+  <h5 id="System_ExceptionExtensions_LogAsync_System_Exception__examples">Examples</h5>
+  <pre><code>try
+{
+    // Do work;
+}
+catch (Exception ex)
+{
+    await ex.LogAsync();
+}</code></pre>
+
 </article>
           </div>
           

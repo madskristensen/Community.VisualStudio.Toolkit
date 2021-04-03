@@ -106,3 +106,6 @@ csharp_new_line_before_members_in_anonymous_types     = true
 dotnet_diagnostic.VSTHRD003.severity=silent
 dotnet_diagnostic.VSTHRD104.severity=silent
 dotnet_diagnostic.VSTHRD111.severity = none
+
+# IDE 
+dotnet_diagnostic.IDE0058.severity = none

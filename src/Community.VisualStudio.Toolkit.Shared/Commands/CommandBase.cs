@@ -43,7 +43,9 @@ namespace Community.VisualStudio.Toolkit
         /// <summary>The package class that initialized this class.</summary>
         public AsyncPackage? Package { get; private set; }
 
-        /// <summary>Initializes the command. This method must be called from the <see cref="AsyncPackage.InitializeAsync"/> method for the command to work.</summary>
+        /// <summary>
+        /// Initializes the command. This method must be called from the <see cref="AsyncPackage.InitializeAsync"/> method for the command to work.
+        /// </summary>
         public static async Task<T> InitializeAsync(AsyncPackage package)
         {
             var instance = new T();
@@ -53,7 +55,7 @@ namespace Community.VisualStudio.Toolkit
 
             instance.Command.BeforeQueryStatus += (s, e) => { instance.BeforeQueryStatus(e); };
 
-            var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as  IMenuCommandService;
+            var commandService = (IMenuCommandService)await package.GetServiceAsync(typeof(IMenuCommandService));
             Assumes.Present(commandService);
 
             commandService?.AddCommand(instance.Command);
@@ -73,7 +75,9 @@ namespace Community.VisualStudio.Toolkit
         }
 
         /// <summary>Executes synchronously when the command is invoked.</summary>
-        /// <remarks>Use this method instead of <see cref="ExecuteAsync"/> if you're not performing any async tasks using async/await patterns.</remarks>
+        /// <remarks>
+        /// Use this method instead of <see cref="ExecuteAsync"/> if you're not performing any async tasks using async/await patterns.
+        /// </remarks>
         protected virtual void Execute(object sender, EventArgs e)
         {
             Package?.JoinableTaskFactory.RunAsync(async delegate

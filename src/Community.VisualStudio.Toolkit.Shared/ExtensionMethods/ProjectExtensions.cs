@@ -94,7 +94,9 @@ namespace EnvDTE
                        result);
         }
 
-        /// <summary>Check what kind the project is. Use the <see cref="ProjectTypes"/> list of strings.</summary>
+        /// <summary>Check what kind the project is.</summary>
+        /// <param name="project">The project to check.</param>
+        /// <param name="kindGuids">Use the <see cref="ProjectTypes"/> list of strings</param>
         public static bool IsKind(this Project project, params string[] kindGuids)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
@@ -111,8 +113,13 @@ namespace EnvDTE
         }
 
         /// <summary>
-        /// Gets the default namespace or asembly name of the project
+        /// Gets the default namespace or asembly name of the project.
         /// </summary>
+        /// <remarks>
+        /// It tries to get the DefaultNamespace first, and will then fallback to RootNamespace
+        /// and then AssemblyName. The different project types in Visual Studio differ in how
+        /// they support similar concepts, so the code tries different properties to compensate.
+        /// </remarks>
         public static string GetProjectNamespace(this Project project)
         {
             ThreadHelper.ThrowIfNotOnUIThread();

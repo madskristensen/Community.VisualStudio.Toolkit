@@ -5,10 +5,14 @@ using Microsoft.VisualStudio.TextManager.Interop;
 
 namespace Microsoft.VisualStudio.Text
 {
-    /// <summary>Extension methods for the ITextBuffer interface.</summary>
+    /// <summary>
+    /// Extension methods for the ITextBuffer interface.
+    /// </summary>
     public static class TextBufferExtensions
     {
-        /// <summary>Gets the file name on disk associated with the buffer.</summary>
+        /// <summary>
+        /// Gets the file name on disk associated with the buffer.
+        /// </summary>
         public static string? GetFileName(this ITextBuffer buffer)
         {
             ThreadHelper.ThrowIfNotOnUIThread();

@@ -1425,6 +1425,63 @@ references:
   commentId: F:Community.VisualStudio.Toolkit.StatusAnimation.Sync
   fullName: Community.VisualStudio.Toolkit.StatusAnimation.Sync
   nameWithType: StatusAnimation.Sync
+- uid: Community.VisualStudio.Toolkit.Themes
+  name: Themes
+  href: api/Community.VisualStudio.Toolkit.Themes.html
+  commentId: T:Community.VisualStudio.Toolkit.Themes
+  fullName: Community.VisualStudio.Toolkit.Themes
+  nameWithType: Themes
+- uid: Community.VisualStudio.Toolkit.Themes.GetUseVsTheme(System.Windows.UIElement)
+  name: GetUseVsTheme(UIElement)
+  href: api/Community.VisualStudio.Toolkit.Themes.html#Community_VisualStudio_Toolkit_Themes_GetUseVsTheme_System_Windows_UIElement_
+  commentId: M:Community.VisualStudio.Toolkit.Themes.GetUseVsTheme(System.Windows.UIElement)
+  fullName: Community.VisualStudio.Toolkit.Themes.GetUseVsTheme(System.Windows.UIElement)
+  nameWithType: Themes.GetUseVsTheme(UIElement)
+- uid: Community.VisualStudio.Toolkit.Themes.GetUseVsTheme*
+  name: GetUseVsTheme
+  href: api/Community.VisualStudio.Toolkit.Themes.html#Community_VisualStudio_Toolkit_Themes_GetUseVsTheme_
+  commentId: Overload:Community.VisualStudio.Toolkit.Themes.GetUseVsTheme
+  isSpec: "True"
+  fullName: Community.VisualStudio.Toolkit.Themes.GetUseVsTheme
+  nameWithType: Themes.GetUseVsTheme
+- uid: Community.VisualStudio.Toolkit.Themes.SetUseVsTheme(System.Windows.UIElement,System.Boolean)
+  name: SetUseVsTheme(UIElement, Boolean)
+  href: api/Community.VisualStudio.Toolkit.Themes.html#Community_VisualStudio_Toolkit_Themes_SetUseVsTheme_System_Windows_UIElement_System_Boolean_
+  commentId: M:Community.VisualStudio.Toolkit.Themes.SetUseVsTheme(System.Windows.UIElement,System.Boolean)
+  fullName: Community.VisualStudio.Toolkit.Themes.SetUseVsTheme(System.Windows.UIElement, System.Boolean)
+  nameWithType: Themes.SetUseVsTheme(UIElement, Boolean)
+- uid: Community.VisualStudio.Toolkit.Themes.SetUseVsTheme*
+  name: SetUseVsTheme
+  href: api/Community.VisualStudio.Toolkit.Themes.html#Community_VisualStudio_Toolkit_Themes_SetUseVsTheme_
+  commentId: Overload:Community.VisualStudio.Toolkit.Themes.SetUseVsTheme
+  isSpec: "True"
+  fullName: Community.VisualStudio.Toolkit.Themes.SetUseVsTheme
+  nameWithType: Themes.SetUseVsTheme
+- uid: Community.VisualStudio.Toolkit.Themes.UseVsThemeProperty
+  name: UseVsThemeProperty
+  href: api/Community.VisualStudio.Toolkit.Themes.html#Community_VisualStudio_Toolkit_Themes_UseVsThemeProperty
+  commentId: F:Community.VisualStudio.Toolkit.Themes.UseVsThemeProperty
+  fullName: Community.VisualStudio.Toolkit.Themes.UseVsThemeProperty
+  nameWithType: Themes.UseVsThemeProperty
+- uid: Community.VisualStudio.Toolkit.ToolkitResourceKeys
+  name: ToolkitResourceKeys
+  href: api/Community.VisualStudio.Toolkit.ToolkitResourceKeys.html
+  commentId: T:Community.VisualStudio.Toolkit.ToolkitResourceKeys
+  fullName: Community.VisualStudio.Toolkit.ToolkitResourceKeys
+  nameWithType: ToolkitResourceKeys
+- uid: Community.VisualStudio.Toolkit.ToolkitResourceKeys.InputPaddingKey
+  name: InputPaddingKey
+  href: api/Community.VisualStudio.Toolkit.ToolkitResourceKeys.html#Community_VisualStudio_Toolkit_ToolkitResourceKeys_InputPaddingKey
+  commentId: P:Community.VisualStudio.Toolkit.ToolkitResourceKeys.InputPaddingKey
+  fullName: Community.VisualStudio.Toolkit.ToolkitResourceKeys.InputPaddingKey
+  nameWithType: ToolkitResourceKeys.InputPaddingKey
+- uid: Community.VisualStudio.Toolkit.ToolkitResourceKeys.InputPaddingKey*
+  name: InputPaddingKey
+  href: api/Community.VisualStudio.Toolkit.ToolkitResourceKeys.html#Community_VisualStudio_Toolkit_ToolkitResourceKeys_InputPaddingKey_
+  commentId: Overload:Community.VisualStudio.Toolkit.ToolkitResourceKeys.InputPaddingKey
+  isSpec: "True"
+  fullName: Community.VisualStudio.Toolkit.ToolkitResourceKeys.InputPaddingKey
+  nameWithType: ToolkitResourceKeys.InputPaddingKey
 - uid: Community.VisualStudio.Toolkit.VS
   name: VS
   href: api/Community.VisualStudio.Toolkit.VS.html
@@ -1564,44 +1621,6 @@ references:
   isSpec: "True"
   fullName: Community.VisualStudio.Toolkit.VS.Windows
   nameWithType: VS.Windows
-- uid: Community.VisualStudio.Toolkit.VsTheme
-  name: VsTheme
-  href: api/Community.VisualStudio.Toolkit.VsTheme.html
-  commentId: T:Community.VisualStudio.Toolkit.VsTheme
-  fullName: Community.VisualStudio.Toolkit.VsTheme
-  nameWithType: VsTheme
-- uid: Community.VisualStudio.Toolkit.VsTheme.GetUseVsTheme(System.Windows.UIElement)
-  name: GetUseVsTheme(UIElement)
-  href: api/Community.VisualStudio.Toolkit.VsTheme.html#Community_VisualStudio_Toolkit_VsTheme_GetUseVsTheme_System_Windows_UIElement_
-  commentId: M:Community.VisualStudio.Toolkit.VsTheme.GetUseVsTheme(System.Windows.UIElement)
-  fullName: Community.VisualStudio.Toolkit.VsTheme.GetUseVsTheme(System.Windows.UIElement)
-  nameWithType: VsTheme.GetUseVsTheme(UIElement)
-- uid: Community.VisualStudio.Toolkit.VsTheme.GetUseVsTheme*
-  name: GetUseVsTheme
-  href: api/Community.VisualStudio.Toolkit.VsTheme.html#Community_VisualStudio_Toolkit_VsTheme_GetUseVsTheme_
-  commentId: Overload:Community.VisualStudio.Toolkit.VsTheme.GetUseVsTheme
-  isSpec: "True"
-  fullName: Community.VisualStudio.Toolkit.VsTheme.GetUseVsTheme
-  nameWithType: VsTheme.GetUseVsTheme
-- uid: Community.VisualStudio.Toolkit.VsTheme.SetUseVsTheme(System.Windows.UIElement,System.Boolean)
-  name: SetUseVsTheme(UIElement, Boolean)
-  href: api/Community.VisualStudio.Toolkit.VsTheme.html#Community_VisualStudio_Toolkit_VsTheme_SetUseVsTheme_System_Windows_UIElement_System_Boolean_
-  commentId: M:Community.VisualStudio.Toolkit.VsTheme.SetUseVsTheme(System.Windows.UIElement,System.Boolean)
-  fullName: Community.VisualStudio.Toolkit.VsTheme.SetUseVsTheme(System.Windows.UIElement, System.Boolean)
-  nameWithType: VsTheme.SetUseVsTheme(UIElement, Boolean)
-- uid: Community.VisualStudio.Toolkit.VsTheme.SetUseVsTheme*
-  name: SetUseVsTheme
-  href: api/Community.VisualStudio.Toolkit.VsTheme.html#Community_VisualStudio_Toolkit_VsTheme_SetUseVsTheme_
-  commentId: Overload:Community.VisualStudio.Toolkit.VsTheme.SetUseVsTheme
-  isSpec: "True"
-  fullName: Community.VisualStudio.Toolkit.VsTheme.SetUseVsTheme
-  nameWithType: VsTheme.SetUseVsTheme
-- uid: Community.VisualStudio.Toolkit.VsTheme.UseVsThemeProperty
-  name: UseVsThemeProperty
-  href: api/Community.VisualStudio.Toolkit.VsTheme.html#Community_VisualStudio_Toolkit_VsTheme_UseVsThemeProperty
-  commentId: F:Community.VisualStudio.Toolkit.VsTheme.UseVsThemeProperty
-  fullName: Community.VisualStudio.Toolkit.VsTheme.UseVsThemeProperty
-  nameWithType: VsTheme.UseVsThemeProperty
 - uid: Community.VisualStudio.Toolkit.Windows
   name: Windows
   href: api/Community.VisualStudio.Toolkit.Windows.html
@@ -1833,6 +1852,12 @@ references:
   commentId: M:EnvDTE.ProjectItemExtensions.OpenInPreviewTab(EnvDTE.ProjectItem)
   fullName: EnvDTE.ProjectItemExtensions.OpenInPreviewTab(EnvDTE.ProjectItem)
   nameWithType: ProjectItemExtensions.OpenInPreviewTab(ProjectItem)
+- uid: EnvDTE.ProjectItemExtensions.OpenInPreviewTab(System.String)
+  name: OpenInPreviewTab(String)
+  href: api/EnvDTE.ProjectItemExtensions.html#EnvDTE_ProjectItemExtensions_OpenInPreviewTab_System_String_
+  commentId: M:EnvDTE.ProjectItemExtensions.OpenInPreviewTab(System.String)
+  fullName: EnvDTE.ProjectItemExtensions.OpenInPreviewTab(System.String)
+  nameWithType: ProjectItemExtensions.OpenInPreviewTab(String)
 - uid: EnvDTE.ProjectItemExtensions.OpenInPreviewTab*
   name: OpenInPreviewTab
   href: api/EnvDTE.ProjectItemExtensions.html#EnvDTE_ProjectItemExtensions_OpenInPreviewTab_
@@ -1840,19 +1865,6 @@ references:
   isSpec: "True"
   fullName: EnvDTE.ProjectItemExtensions.OpenInPreviewTab
   nameWithType: ProjectItemExtensions.OpenInPreviewTab
-- uid: EnvDTE.ProjectItemExtensions.PreviewDocument(System.String)
-  name: PreviewDocument(String)
-  href: api/EnvDTE.ProjectItemExtensions.html#EnvDTE_ProjectItemExtensions_PreviewDocument_System_String_
-  commentId: M:EnvDTE.ProjectItemExtensions.PreviewDocument(System.String)
-  fullName: EnvDTE.ProjectItemExtensions.PreviewDocument(System.String)
-  nameWithType: ProjectItemExtensions.PreviewDocument(String)
-- uid: EnvDTE.ProjectItemExtensions.PreviewDocument*
-  name: PreviewDocument
-  href: api/EnvDTE.ProjectItemExtensions.html#EnvDTE_ProjectItemExtensions_PreviewDocument_
-  commentId: Overload:EnvDTE.ProjectItemExtensions.PreviewDocument
-  isSpec: "True"
-  fullName: EnvDTE.ProjectItemExtensions.PreviewDocument
-  nameWithType: ProjectItemExtensions.PreviewDocument
 - uid: EnvDTE.ProjectItemExtensions.SetItemType(EnvDTE.ProjectItem,System.String)
   name: SetItemType(ProjectItem, String)
   href: api/EnvDTE.ProjectItemExtensions.html#EnvDTE_ProjectItemExtensions_SetItemType_EnvDTE_ProjectItem_System_String_
