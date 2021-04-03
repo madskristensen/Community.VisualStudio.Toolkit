@@ -10,6 +10,7 @@ namespace Community.VisualStudio.Toolkit
     /// <summary>
     /// A helper class that can automatically theme any XAML control or window using the VS theme properties
     /// </summary>
+    /// <remarks>Should only be referenced from within .xaml files.</remarks>
     public static class VsTheme
     {
         private static readonly Dictionary<UIElement, bool> _isUsingVsTheme = new();
