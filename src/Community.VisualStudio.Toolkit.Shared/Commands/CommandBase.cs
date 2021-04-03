@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using System.Threading.Tasks;
 using Microsoft;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
@@ -43,7 +44,7 @@ namespace Community.VisualStudio.Toolkit
         public AsyncPackage? Package { get; private set; }
 
         /// <summary>Initializes the command. This method must be called from the <see cref="AsyncPackage.InitializeAsync"/> method for the command to work.</summary>
-        public static async Task InitializeAsync(AsyncPackage package)
+        public static async Task<T> InitializeAsync(AsyncPackage package)
         {
             var instance = new T();
 
@@ -58,6 +59,7 @@ namespace Community.VisualStudio.Toolkit
             commandService?.AddCommand(instance.Command);
 
             await instance.InitializeCompletedAsync();
+            return instance;
         }
 
         /// <summary>Allows the implementor to manipulate the command before its execution.</summary>
