@@ -46,12 +46,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Commands\RunnerWindowCommand.cs" />
+    <Compile Include="Commands\ThemeWindowCommand.cs" />
     <Compile Include="Options\General.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\TestCommand.cs" />
     <Compile Include="ToolWindows\RunnerWindow.cs" />
     <Compile Include="ToolWindows\RunnerWindowControl.xaml.cs">
       <DependentUpon>RunnerWindowControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\ThemeWindow.cs" />
+    <Compile Include="ToolWindows\ThemeWindowControl.xaml.cs">
+      <DependentUpon>ThemeWindowControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\ThemeWindowDemo.xaml.cs">
+      <DependentUpon>ThemeWindowDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\ThemeWindowDialogViewModel.cs" />
+    <Compile Include="ToolWindows\ThemeWindowControlViewModel.cs" />
+    <Compile Include="ToolWindows\ThemeWindowDialog.xaml.cs">
+      <DependentUpon>ThemeWindowDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="VSCommandTable.cs">
       <AutoGen>True</AutoGen>
@@ -74,6 +87,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Shell.15.0">
+      <Version>16.4.29519.181</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.10.23">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -81,6 +97,18 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="ToolWindows\RunnerWindowControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindows\ThemeWindowControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindows\ThemeWindowDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindows\ThemeWindowDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -17,7 +17,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ExtensionMethods\TaskExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExtensionMethods\TextBufferExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ProjectTypes.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\VsTheme.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Themes\ToolkitResourceKeys.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Themes\Themes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Notifications\MessageBox.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\Commanding.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Events.cs" />
@@ -32,8 +33,5 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\Windows.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\CommandBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Notifications\Statusbar.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Commands\" />
   </ItemGroup>
 </Project>

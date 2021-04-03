@@ -24,5 +24,6 @@ namespace TestExtension
     internal sealed partial class PackageIds
     {
         public const int RunnerWindowCommandId = 0x0100;
+        public const int ThemeWindowCommandId = 0x0101;
     }
 }

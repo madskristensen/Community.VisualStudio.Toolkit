@@ -21,6 +21,7 @@ namespace VSSDK.TestExtension
     [ProvideProfile(typeof(OptionsProvider.GeneralOptions), nameof(TestExtension), "General", 0, 0, true)]
     [ProvideToolWindow(typeof(RunnerWindow), Style = VsDockStyle.Float, Window = ToolWindowGuids.SolutionExplorer)]
     [ProvideToolWindowVisibility(typeof(RunnerWindow), VSConstants.UICONTEXT.NoSolution_string)]
+    [ProvideToolWindow(typeof(ThemeWindow))]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     public sealed class TestExtensionPackage : AsyncPackage
     {
@@ -29,6 +30,7 @@ namespace VSSDK.TestExtension
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await TestCommand.InitializeAsync(this);
             await RunnerWindowCommand.InitializeAsync(this);
+            await ThemeWindowCommand.InitializeAsync(this);
 
             System.Windows.Media.Imaging.BitmapSource bitmap = await KnownMonikers.Reference.ToBitmapSourceAsync(16);
             var svc = (IVsImageService2)await VS.Shell.GetImageServiceAsync();
@@ -40,18 +42,44 @@ namespace VSSDK.TestExtension
 
         public override IVsAsyncToolWindowFactory GetAsyncToolWindowFactory(Guid toolWindowType)
         {
-            return toolWindowType == typeof(RunnerWindow).GUID ? this : null;
+            if (
+                (toolWindowType == typeof(RunnerWindow).GUID) ||
+                (toolWindowType == typeof(ThemeWindow).GUID)
+            )
+            {
+                return this;
+            }
+
+            return null;
         }
 
         protected override string GetToolWindowTitle(Type toolWindowType, int id)
         {
-            return toolWindowType == typeof(RunnerWindow) ? RunnerWindow.Title : GetToolWindowTitle(toolWindowType, id);
+            if (toolWindowType == typeof(RunnerWindow))
+            {
+                return RunnerWindow.Title;
+            }
+            else if (toolWindowType == typeof(ThemeWindow))
+            {
+                return ThemeWindow.Title;
+            }
+
+            return GetToolWindowTitle(toolWindowType, id);
         }
 
         protected override async Task<object> InitializeToolWindowAsync(Type toolWindowType, int id, CancellationToken cancellationToken)
         {
-            await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
-            return await VS.GetDTEAsync();
+            if (toolWindowType == typeof(RunnerWindow))
+            {
+                await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+                return await VS.GetDTEAsync();
+            }
+            else if (toolWindowType == typeof(ThemeWindow))
+            {
+                return new ThemeWindowControlViewModel();
+            }
+
+            return base.InitializeToolWindowAsync(toolWindowType, id, cancellationToken);
         }
     }
 }
