@@ -10,9 +10,6 @@ namespace TestExtension
     {
         public const string Title = "Runner Window";
 
-        public RunnerWindow() : base(null)
-        { }
-
         public RunnerWindow(DTE2 dte) : base()
         {
             Caption = Title;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Community.VisualStudio.Toolkit;
@@ -10,11 +11,11 @@ namespace TestExtension
     {
         public RunnerWindowCommand() : base(new Guid("cb765f49-fc35-4c14-93af-bb48ca4f2ce3"), 0x0100)
         { }
-        
+
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-            ToolWindowPane window = Package.FindToolWindow(typeof(RunnerWindow), 0, true);
+            ToolWindowPane window = await Package.FindToolWindowAsync(typeof(RunnerWindow), 0, true, CancellationToken.None);
 
             if ((null == window) || (null == window.Frame))
             {
