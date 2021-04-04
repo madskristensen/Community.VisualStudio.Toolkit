@@ -37,10 +37,14 @@ namespace Community.VisualStudio.Toolkit
             _commandId = new CommandID(commandGuid, commandId);
         }
 
-        /// <summary>The command object associated with the command ID (guid/id).</summary>
+        /// <summary>
+        /// The command object associated with the command ID (guid/id).
+        /// </summary>
         public OleMenuCommand? Command { get; private set; }
 
-        /// <summary>The package class that initialized this class.</summary>
+        /// <summary>
+        /// The package class that initialized this class.
+        /// </summary>
         public AsyncPackage? Package { get; private set; }
 
         /// <summary>

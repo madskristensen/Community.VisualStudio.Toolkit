@@ -66,6 +66,8 @@ namespace VSSDK.TestExtension
         {
             if (toolWindowType == typeof(RunnerWindow))
             {
+                await Task.Yield();
+                await Task.Delay(2000);
                 await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
                 return await VS.GetDTEAsync();
             }
