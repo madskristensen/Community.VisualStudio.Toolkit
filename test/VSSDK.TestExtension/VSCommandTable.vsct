@@ -4,13 +4,14 @@
   <Extern href="stdidcmd.h"/>
   <Extern href="vsshlids.h"/>
   <Include href="KnownImageIds.vsct"/>
+  <Include href="VSGlobals.vsct"/>
 
   <Commands package="guidPackage">
     <!--This section defines the elements the user can interact with, like a menu command or a button
         or combo box in a toolbar. -->
     <Buttons>
       <Button guid="guidTestExtensionPackageCmdSet" id="RunnerWindowCommandId" priority="0x0100" type="Button">
-        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1"/>
+        <Parent guid="VSGlobals" id="View.OtherWindows1"/>
         <Icon guid="ImageCatalogGuid" id="StatusInformation" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
@@ -19,7 +20,7 @@
       </Button>
 
       <Button guid="guidTestExtensionPackageCmdSet" id="ThemeWindowCommandId" priority="0x0100" type="Button">
-        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1"/>
+        <Parent guid="VSGlobals" id="View.OtherWindows0"/>
         <Icon guid="ImageCatalogGuid" id="ColorPalette" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>

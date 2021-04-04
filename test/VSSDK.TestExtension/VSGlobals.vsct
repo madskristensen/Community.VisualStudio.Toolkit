@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
+  <Symbols>
+    <GuidSymbol name="VSGlobals" value="{d309f791-903f-11d0-9efc-00a0c911004f}">
+
+      <!-- Toolbars -->
+      <IDSymbol name="Toolbar.MainMenu" value="0x0000" />
+      <IDSymbol name="Toolbar.Standard" value="0x00001" />
+      <IDSymbol name="Toolbar.WindowUI" value="0x00002" />
+      <IDSymbol name="Toolbar.Project" value="0x00003" />
+      <IDSymbol name="Toolbar.Debugger" value="0x00006" />
+      <IDSymbol name="Toolbar.FindAllReferences" value="0x000a" />
+      <IDSymbol name="Toolbar.OpenWindows" value="0x000b" />
+      <IDSymbol name="Toolbar.Build" value="0x000d" />
+      <IDSymbol name="Toolbar.TextEditor" value="0x000e" />
+      <IDSymbol name="Toolbar.ObjectBrowser" value="0x000f" />
+      <IDSymbol name="Toolbar.ClassView" value="0x0010" />
+      <IDSymbol name="Toolbar.Properties" value="0x0011" />
+      <IDSymbol name="Toolbar.Data" value="0x0012" />
+      <IDSymbol name="Toolbar.Schema" value="0x0013" />
+      <IDSymbol name="Toolbar.OutputWindow" value="0x0014" />
+      <IDSymbol name="Toolbar.FindResults1" value="0x0015" />
+      <IDSymbol name="Toolbar.FindResults2" value="0x0016" />
+      <IDSymbol name="Toolbar.Bookmarks" value="0x0019" />
+      <IDSymbol name="Toolbar.TaskList" value="0x002a" />
+      <IDSymbol name="Toolbar.UserTasks" value="0x002b" />
+      <IDSymbol name="Toolbar.ErrorList" value="0x002c" />
+      <IDSymbol name="Toolbar.Snippets" value="0x002D" />
+      
+      <!-- Menus -->
+      <IDSymbol name="FileMenu" value="0x0080" />
+      <IDSymbol name="EditMenu" value="0x0081" />
+      <IDSymbol name="ViewMenu" value="0x0082" />
+      <IDSymbol name="ProjectMenu" value="0x0083" />
+      <IDSymbol name="ToolsMenu" value="0x0085" />
+      <IDSymbol name="WindowMenu" value="0x0086" />
+      <IDSymbol name="HelpMenu" value="0x0088" />
+      <IDSymbol name="DebugMenu" value="0x0089" />
+      <IDSymbol name="BuildMenu" value="0x008C" />
+      <IDSymbol name="ExtensionsMenu" value="0x0091" />
+
+      <!-- Groups -->
+      <!-- TODO: How to name these so it's clear they are groups? -->
+      <IDSymbol name="View.OtherWindows0" value="0x019E" />
+      <IDSymbol name="View.OtherWindows1" value="0x019F" />
+      <IDSymbol name="View.OtherWindows2" value="0x01A0" />
+      <IDSymbol name="View.OtherWindows3" value="0x01A1" />
+      <IDSymbol name="View.OtherWindows4" value="0x01A2" />
+      <IDSymbol name="View.OtherWindows5" value="0x01A3" />
+      <IDSymbol name="View.OtherWindows6" value="0x01A4" />
+      
+      <IDSymbol name="Tools.Snippets" value="0x3E95" />
+      
+      <IDSymbol name="Editor.AdvancedCommands" value="0x3E8F" />
+      <IDSymbol name="Editor.OutliningCommands" value="0x3E90" />
+      <IDSymbol name="Editor.LanguageInfo" value="0x3E93" />
+      <IDSymbol name="Editor.IntellisenseCommands" value="0x3E94" />
+      <IDSymbol name="Editor.BookmarkMenu" value="0x3E9E" />
+      <IDSymbol name="Editor.AdvancedMenu" value="0x3EA0" />
+      <IDSymbol name="Editor.OutliningkMenu" value="0x3EA1" />
+      <IDSymbol name="Editor.IntellisenseMenu" value="0x3EA2" />
+      <IDSymbol name="Editor.FindMenu" value="0x3EA3" />
+      <IDSymbol name="Editor.PasteMenu" value="0x3EA4" />
+      <IDSymbol name="Editor.GoToMenu" value="0x3EA5" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
