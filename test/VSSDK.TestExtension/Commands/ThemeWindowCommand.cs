@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Threading;
-using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
 using Community.VisualStudio.Toolkit;
+using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 
 namespace TestExtension
@@ -14,16 +12,7 @@ namespace TestExtension
 
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            ToolWindowPane window = await Package.ShowToolWindowAsync(typeof(ThemeWindow), 0, true, CancellationToken.None);
-
-            if ((null == window) || (null == window.Frame))
-            {
-                throw new NotSupportedException("Cannot create tool window");
-            }
-
-            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-            var windowFrame = (IVsWindowFrame)window.Frame;
-            Microsoft.VisualStudio.ErrorHandler.ThrowOnFailure(windowFrame.Show());
+            await Package.ShowToolWindowAsync<ThemeWindow>();
         }
     }
 }
