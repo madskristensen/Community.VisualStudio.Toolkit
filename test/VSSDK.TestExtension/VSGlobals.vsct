@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
+  
+  <!--
+  Based on C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VSSDK\VisualStudioIntegration\Common\Inc\vsshlids.h
+  Report bugs and suggestions at https://github.com/madskristensen/Community.VisualStudio.Toolkit
+  
+  To use this file, add <Include href="VSGlobals.vsct"/> to the top of your .vsct file.Then use
+  the names from this file in your <Parent> elements like this:
+  
+    <Button guid="guidCommandSet" id="MyCommand" priority="0x0100" type="Button">
+      <Parent guid="VSGlobals" id="Tools.Options"/>
+      [...]
+    </Button>  
+  
+  In this file, you can tell menus and groups apart by the number of dots (.) in the name. 
+  Each IDSymbol[name] follows the pattern "<Menu>.<Group>.<Menu>.<Group>.<Menu>... etc."
+  
+  When deciding what <Parent> to use in your .vsct file, remember that a <Button> and <Combo>
+  must have a parent that is a <Group>. And a <Group> must have a parent that is a <Menu>. And
+  a <Menu> must have a parent that is a <Group>.
+  -->
+  
   <Symbols>
     <GuidSymbol name="VSGlobals" value="{d309f791-903f-11d0-9efc-00a0c911004f}">
 
-      <!-- Toolbars -->
       <IDSymbol name="BookmarksToolbar" value="0x0019" />
-      
+
       <IDSymbol name="BuildToolbar" value="0x000d" />
       <IDSymbol name="BuildToolbar.Build" value="0x01D2" />
-      
+
       <IDSymbol name="ClassViewToolbar" value="0x0010" />
-      
+
       <IDSymbol name="DataToolbar" value="0x0012" />
-      
+
       <IDSymbol name="DebuggerToolbar" value="0x00006" />
       <IDSymbol name="DebuggerToolbar.Debugger" value="0x0200" />
-      
+
       <IDSymbol name="ErrorListToolbar" value="0x002c" />
       <IDSymbol name="ErrorListToolbar.Error" value="0x01D4" />
       <IDSymbol name="ErrorListToolbar.Warning" value="0x01D8" />
@@ -24,25 +44,25 @@
       <IDSymbol name="ErrorListToolbar.FilterCategory" value="0x01DB" />
       <IDSymbol name="ErrorListToolbar.Build" value="0x01DC" />
       <IDSymbol name="ErrorListToolbar.ClearFilter" value="0x01DD" />
-      
+
       <IDSymbol name="FindAllReferencesToolbar" value="0x000a" />
       <IDSymbol name="FindAllReferencesToolbar.Common" value="0x026c" />
       <IDSymbol name="FindAllReferencesToolbar.Preset" value="0x026d" />
       <IDSymbol name="FindAllReferencesToolbar.LockWin" value="0x026e" />
       <IDSymbol name="FindAllReferencesToolbar.Preserved" value="0x026f" />
-      
+
       <IDSymbol name="FindResults1Toolbar" value="0x0015" />
       <IDSymbol name="FindResults1Toolbar.GoTo" value="0x0297" />
       <IDSymbol name="FindResults1Toolbar.NextPrev" value="0x0298" />
       <IDSymbol name="FindResults1Toolbar.GoTClear" value="0x0299" />
       <IDSymbol name="FindResults1Toolbar.StopFind" value="0x02B6" />
-      
+
       <IDSymbol name="FindResults2Toolbar" value="0x0016" />
       <IDSymbol name="FindResults1Toolbar.GoTo" value="0x029A" />
       <IDSymbol name="FindResults1Toolbar.NextPrev" value="0x029B" />
       <IDSymbol name="FindResults1Toolbar.GoTClear" value="0x029C" />
       <IDSymbol name="FindResults1Toolbar.StopFind" value="0x02B7" />
-      
+
       <IDSymbol name="MainMenuToolbar" value="0x0000" />
       <IDSymbol name="MainMenuToolbar.FileEditView" value="0x0101" />
       <IDSymbol name="MainMenuToolbar.Project" value="0x0102" />
@@ -50,10 +70,10 @@
       <!--<IDSymbol name="MainMenuToolbar.ToolsAddins" value="0x0104" />-->
       <IDSymbol name="MainMenuToolbar.WindowHelp" value="0x0105" />
       <IDSymbol name="MainMenuToolbar.FullScreenBar" value="0x0106" />
-      <IDSymbol name="MainMenuToolbar.Refactoring" value="0x0107" />
+      <!--<IDSymbol name="MainMenuToolbar.Refactoring" value="0x0107" />-->
       <IDSymbol name="MainMenuToolbar.Tools" value="0x0109" />
-      
-      <IDSymbol name="ObjectBrowserToolbar" value="0x000f" />
+
+      <!--<IDSymbol name="ObjectBrowserToolbar" value="0x000f" />
       <IDSymbol name="ObjectBrowserToolbar.Subsets" value="0x0270" />
       <IDSymbol name="ObjectBrowserToolbar.Display" value="0x0271" />
       <IDSymbol name="ObjectBrowserToolbar.Display2" value="0x0272" />
@@ -69,37 +89,36 @@
       <IDSymbol name="ObjectBrowserToolbar.BrowserSettingsButton" value="0x027C" />
       <IDSymbol name="ObjectBrowserToolbar.BaseDerivedGroup" value="0x027D" />
       <IDSymbol name="ObjectBrowserToolbar.BrowserSettings" value="0x027E" />
-      <IDSymbol name="ObjectBrowserToolbar.MemberSettings" value="0x027F" />
-      
-      <IDSymbol name="OpenWindowsToolbar" value="0x000b" />
+      <IDSymbol name="ObjectBrowserToolbar.MemberSettings" value="0x027F" />-->
+
       <IDSymbol name="OutputWindowToolbar" value="0x0014" />
       <IDSymbol name="OutputWindowToolbar.Select" value="0x0293" />
       <IDSymbol name="OutputWindowToolbar.GoTo" value="0x0294" />
       <IDSymbol name="OutputWindowToolbar.NextPrev" value="0x0295" />
       <IDSymbol name="OutputWindowToolbar.Clear" value="0x0296" />
       <IDSymbol name="OutputWindowToolbar.WordWrap" value="0x029F" />
-      
-      <IDSymbol name="ProjectToolbar" value="0x00003" />
+
+      <!--<IDSymbol name="ProjectToolbar" value="0x00003" />
       <IDSymbol name="ProjectToolbar.Toolbar3" value="0x01D5" />
       <IDSymbol name="ProjectToolbar.Toolbar4" value="0x01D6" />
       <IDSymbol name="ProjectToolbar.Toolbar5" value="0x01D7" />
       
       <IDSymbol name="PropertiesToolbar" value="0x0011" />
-      <IDSymbol name="PropertiesToolbar.Misc" value="0x01AA" />
-      
+      <IDSymbol name="PropertiesToolbar.Misc" value="0x01AA" />-->
+
       <!--<IDSymbol name="SchemaToolbar" value="0x0013" />-->
-      
+
       <IDSymbol name="SnippetsToolbar" value="0x002D" />
       <IDSymbol name="SnippetsToolbar.Property" value="0x02C8" />
       <IDSymbol name="SnippetsToolbar.Reference" value="0x02C9" />
       <IDSymbol name="SnippetsToolbar.Replace" value="0x02CA" />
-      
-      <IDSymbol name="OpenWindowsToolbar" value="0x000b" />
-      <IDSymbol name="OpenWindowsToolbar.Windows" value="0x017B" />
-      
-      <IDSymbol name="ViewBarToolbar" value="0x000c" />
-      <IDSymbol name="ViewBarToolbar.Views" value="0x017C" />
-      
+
+      <!--<IDSymbol name="OpenWindowsToolbar" value="0x000b" />
+      <IDSymbol name="OpenWindowsToolbar.Windows" value="0x017B" />-->
+
+      <!--<IDSymbol name="ViewBarToolbar" value="0x000c" />
+      <IDSymbol name="ViewBarToolbar.Views" value="0x017C" />-->
+
       <IDSymbol name="StandardToolbar" value="0x00001" />
       <IDSymbol name="StandardToolbar.NewAdd" value="0x0170" />
       <IDSymbol name="StandardToolbar.SaveOpen" value="0x0171" />
@@ -113,26 +132,26 @@
       <IDSymbol name="StandardToolbar.Navigate" value="0x0179" />
       <IDSymbol name="StandardToolbar.Find" value="0x017D" />
       <IDSymbol name="StandardToolbar.Replace" value="0x017E" />
-      
+
       <IDSymbol name="TaskListToolbart" value="0x002a" />
       <IDSymbol name="TaskListToolbart.ProviderList" value="0x01D1" />
-            
+
       <IDSymbol name="TextEditorToolbar" value="0x000e" />
       <IDSymbol name="TextEditorToolbar.Completion" value="0x0550" />
       <IDSymbol name="TextEditorToolbar.Indent" value="0x0551" />
       <IDSymbol name="TextEditorToolbar.Comment" value="0x0552" />
       <IDSymbol name="TextEditorToolbar.TempBookmarks" value="0x0553" />
-      
+
       <IDSymbol name="UserTasksToolbar" value="0x002b" />
       <IDSymbol name="UserTasksToolbar.Edit" value="0x01D3" />
-      
-      <IDSymbol name="WindowUIToolbar" value="0x00002" />
-      <IDSymbol name="WindowUIToolbar.LoadSave" value="0x017A" />
-      
-      <!-- Menus -->
+
+      <!--<IDSymbol name="WindowUIToolbar" value="0x00002" />
+      <IDSymbol name="WindowUIToolbar.LoadSave" value="0x017A" />-->
+
       <IDSymbol name="File" value="0x0080" />
       <IDSymbol name="File.AccountSettings" value="0x0711" />
       <IDSymbol name="File.Add" value="0x0111" />
+      <IDSymbol name="File.Add.Submenu" value="0x030A" />
       <IDSymbol name="File.Add.Submenu.Existing" value="0x011D" />
       <IDSymbol name="File.Add.Submenu.New" value="0x011C" />
       <IDSymbol name="File.Browser" value="0x0120" />
@@ -143,8 +162,10 @@
       <IDSymbol name="File.Misc" value="0x0124" />
       <IDSymbol name="File.Misc.Submenu.Root" value="0x0125" />
       <IDSymbol name="File.Move" value="0x0121" />
-      <IDSymbol name="File.Move.Submenu.Root" value="0x0122" />
+      <IDSymbol name="File.Move.Project" value="0x030F" />
+      <IDSymbol name="File.Move.Project.Root" value="0x0122" />
       <IDSymbol name="File.New" value="0x010E" />
+      <IDSymbol name="File.New.Submenu" value="0x0308" />
       <IDSymbol name="File.New.Submenu.Root" value="0x0119" />
       <IDSymbol name="File.OpenFile" value="0x011B" />
       <IDSymbol name="File.OpenProject" value="0x011A" />
@@ -157,7 +178,7 @@
       <IDSymbol name="File.Rename" value="0x0113" />
       <IDSymbol name="File.Save" value="0x0112" />
       <IDSymbol name="File.Solution" value="0x0118" />
-      
+
       <IDSymbol name="Edit" value="0x0081" />
       <IDSymbol name="Edit.CutCopy" value="0x012A" />
       <IDSymbol name="Edit.Find" value="0x012C" />
@@ -166,7 +187,7 @@
       <IDSymbol name="Edit.Paste" value="0x012F" />
       <IDSymbol name="Edit.Select" value="0x012B" />
       <IDSymbol name="Edit.UndoRedo" value="0x0129" />
-      
+
       <IDSymbol name="View" value="0x0082" />
       <IDSymbol name="View.ArcitectureWindows" value="0x0720" />
       <IDSymbol name="View.Browser" value="0x0130" />
@@ -193,7 +214,7 @@
       <IDSymbol name="View.Toolbars" value="0x0132" />
       <IDSymbol name="View.Windows" value="0x0135" />
       <IDSymbol name="View.Windows.InteractiveWindows" value="0x01A7" />
-            
+
       <IDSymbol name="Project" value="0x0083" />
       <IDSymbol name="Project.Add" value="0x014" />
       <IDSymbol name="Project.Options" value="0x0141" />
@@ -210,7 +231,7 @@
       <IDSymbol name="Project.AddMisc" value="0x014C" />
       <IDSymbol name="Project.Settings" value="0x014D" />
       <IDSymbol name="Project.Admin" value="0x014E" />
-      
+
       <IDSymbol name="Tools" value="0x0085" />
       <IDSymbol name="Tools.Extensibility" value="0x015F" />
       <IDSymbol name="Tools.ExternalCustom" value="0x0158" />
@@ -219,23 +240,23 @@
       <IDSymbol name="Tools.Options" value="0x015A" />
       <IDSymbol name="Tools.Other2" value="0x015B" />
       <IDSymbol name="Tools.Snippets" value="0x3E95" />
-      
+
       <IDSymbol name="Extensions" value="0x0091" />
       <IDSymbol name="Extensions.Root" value="0x6000" />
-      
+
       <IDSymbol name="Build" value="0x008C" />
       <IDSymbol name="Build.Solution" value="0x0280" />
       <IDSymbol name="Build.Selection" value="0x0281" />
       <IDSymbol name="Build.Misc" value="0x0282" />
       <IDSymbol name="Build.Cancel" value="0x0283" />
-      
+
       <IDSymbol name="Help" value="0x0088" />
       <IDSymbol name="Help.Support" value="0x016A" />
       <IDSymbol name="Help.About" value="0x016B" />
       <IDSymbol name="Help.Accessibility" value="0x016C" />
-      
+
       <IDSymbol name="Debug" value="0x0089" />
-      
+
       <IDSymbol name="Window" value="0x0086" />
       <IDSymbol name="Window.New" value="0x0160" />
       <IDSymbol name="Window.Arrange" value="0x0161" />
@@ -250,7 +271,7 @@
       <IDSymbol name="Editor.IntellisenseCommands" value="0x3E94" />
       <IDSymbol name="Editor.LanguageInfo" value="0x3E93" />
       <IDSymbol name="Editor.OutliningCommands" value="0x3E90" />
-      
+
       <IDSymbol name="mEditor.Advanced" value="0x3EA0" />
       <IDSymbol name="mEditor.Bookmark" value="0x3E9E" />
       <IDSymbol name="mEditor.Find" value="0x3EA3" />
@@ -258,6 +279,64 @@
       <IDSymbol name="mEditor.Intellisense" value="0x3EA2" />
       <IDSymbol name="mEditor.Outliningk" value="0x3EA1" />
       <IDSymbol name="mEditor.Paste" value="0x3EA4" />
+      
+      <IDSymbol name="SolutionNode" value="0x0413" />
+      <IDSymbol name="SolutionNode.Rename" value="0x0212" />
+      <IDSymbol name="SolutionNode.Properties" value="0x0215" />
+      <IDSymbol name="SolutionNode.SourceControl" value="0x0217" />
+      <IDSymbol name="SolutionNode.Build" value="0x0219" />
+      <IDSymbol name="SolutionNode.Start" value="0x021B" />
+      <IDSymbol name="SolutionNode.Transfer" value="0x021C" />
+      <IDSymbol name="SolutionNode.AddProject" value="0x021D" />
+      <IDSymbol name="SolutionNode.AddItem" value="0x021E" />
+      <IDSymbol name="SolutionNode.Debug" value="0x021F" />
+      <IDSymbol name="SolutionNode.Unhide" value="0x0236" />
+      <IDSymbol name="SolutionNode.Explore" value="0x0265" />
+      
+      <IDSymbol name="SolutionFolder" value="0x0414" />
+      <IDSymbol name="SolutionFolder.AddProject" value="0x0261" />
+      <IDSymbol name="SolutionFolder.AddItem" value="0x0262" />
+      <IDSymbol name="SolutionFolder.Build" value="0x0263" />
+      <IDSymbol name="SolutionFolder.Add" value="0x0264" />
+      
+      <IDSymbol name="ProjectNode" value="0x0402" />
+      <IDSymbol name="ProjectNode.Add" value="0x0202" />
+      <IDSymbol name="ProjectNode.Add.Submenu" value="0x0202" />
+      <IDSymbol name="ProjectNode.Add.Submenu.Items" value="0x0203" />
+      <IDSymbol name="ProjectNode.Add.Submenu.Forms" value="0x02A0" />
+      <IDSymbol name="ProjectNode.Add.Submenu.Misc" value="0x02A1" />
+      <IDSymbol name="ProjectNode.Debug" value="0x0204" />
+      <IDSymbol name="ProjectNode.Start" value="0x0205" />
+      <IDSymbol name="ProjectNode.Build" value="0x0206" />
+      <IDSymbol name="ProjectNode.Transfer" value="0x0207" />
+      <IDSymbol name="ProjectNode.Rename" value="0x0211" />
+      <IDSymbol name="ProjectNode.Properties" value="0x0214" />
+      <IDSymbol name="ProjectNode.SourceControl" value="0x0216" />
+      <IDSymbol name="ProjectNode.Edit" value="0x0237" />
+      <IDSymbol name="ProjectNode.UnloadReload" value="0x023A" />
+      <IDSymbol name="ProjectNode.Explore" value="0x0266" />
+      <IDSymbol name="ProjectNode.BuildDependencies" value="0x02E0" />
+      
+      <IDSymbol name="ItemNode" value="0x0430" />
+      <IDSymbol name="ItemNode.ViewObject" value="0x0208" />
+      <IDSymbol name="ItemNode.Open" value="0x0209" />
+      <IDSymbol name="ItemNode.Transfer" value="0x020A" />
+      <IDSymbol name="ItemNode.ViewBrowser" value="0x020B" />
+      <IDSymbol name="ItemNode.Rename" value="0x0210" />
+      <IDSymbol name="ItemNode.Properties" value="0x020E" />
+      <IDSymbol name="ItemNode.Explore" value="0x02E6" />
+      
+      <IDSymbol name="FolderNode" value="0x0431" />
+      <IDSymbol name="FolderNode.Add" value="0x02A3" />
+      <IDSymbol name="FolderNode.Explore" value="0x0267" />
+      
+      <IDSymbol name="Node.IncludeExclude" value="0x02A2" />
+      <IDSymbol name="Node.SourceControl" value="0x020F" />
+      
+      <IDSymbol name="ReferencesNode" value="0x0450" />
+      <IDSymbol name="ReferencesNode.Add" value="0x02A4" />
+      <IDSymbol name="ReferencesNode.Transfer" value="0x02A5" />
+      
     </GuidSymbol>
   </Symbols>
 </CommandTable>
