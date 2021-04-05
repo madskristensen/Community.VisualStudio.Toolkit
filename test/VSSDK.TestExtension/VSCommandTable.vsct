@@ -10,8 +10,8 @@
     <!--This section defines the elements the user can interact with, like a menu command or a button
         or combo box in a toolbar. -->
     <Buttons>
-      <Button guid="guidTestExtensionPackageCmdSet" id="RunnerWindowCommandId" priority="0x0100" type="Button">
-        <Parent guid="VSGlobals" id="View.OtherWindows1"/>
+      <Button guid="guidTestExtensionPackageCmdSet" id="RunnerWindowCommandId" priority="0x0105" type="Button">
+        <Parent guid="VSGlobals" id="View.DevWindows.OtherWindows.Group1"/>
         <Icon guid="ImageCatalogGuid" id="StatusInformation" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
@@ -19,8 +19,8 @@
         </Strings>
       </Button>
 
-      <Button guid="guidTestExtensionPackageCmdSet" id="ThemeWindowCommandId" priority="0x0100" type="Button">
-        <Parent guid="VSGlobals" id="View.OtherWindows0"/>
+      <Button guid="guidTestExtensionPackageCmdSet" id="ThemeWindowCommandId" priority="0x0106" type="Button">
+        <Parent guid="VSGlobals" id="View.DevWindows.OtherWindows.Group1"/>
         <Icon guid="ImageCatalogGuid" id="ColorPalette" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
