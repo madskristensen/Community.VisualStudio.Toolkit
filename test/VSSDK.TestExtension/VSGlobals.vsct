@@ -5,28 +5,129 @@
 
       <!-- Toolbars -->
       <IDSymbol name="BookmarksToolbar" value="0x0019" />
+      
       <IDSymbol name="BuildToolbar" value="0x000d" />
-      <IDSymbol name="BuildToolbar.Root" value="0x01D2" />
+      <IDSymbol name="BuildToolbar.Build" value="0x01D2" />
+      
       <IDSymbol name="ClassViewToolbar" value="0x0010" />
+      
       <IDSymbol name="DataToolbar" value="0x0012" />
+      
       <IDSymbol name="DebuggerToolbar" value="0x00006" />
+      <IDSymbol name="DebuggerToolbar.Debugger" value="0x0200" />
+      
       <IDSymbol name="ErrorListToolbar" value="0x002c" />
+      <IDSymbol name="ErrorListToolbar.Error" value="0x01D4" />
+      <IDSymbol name="ErrorListToolbar.Warning" value="0x01D8" />
+      <IDSymbol name="ErrorListToolbar.Message" value="0x01D9" />
+      <IDSymbol name="ErrorListToolbar.FilterList" value="0x01DA" />
+      <IDSymbol name="ErrorListToolbar.FilterCategory" value="0x01DB" />
+      <IDSymbol name="ErrorListToolbar.Build" value="0x01DC" />
+      <IDSymbol name="ErrorListToolbar.ClearFilter" value="0x01DD" />
+      
       <IDSymbol name="FindAllReferencesToolbar" value="0x000a" />
+      <IDSymbol name="FindAllReferencesToolbar.Common" value="0x026c" />
+      <IDSymbol name="FindAllReferencesToolbar.Preset" value="0x026d" />
+      <IDSymbol name="FindAllReferencesToolbar.LockWin" value="0x026e" />
+      <IDSymbol name="FindAllReferencesToolbar.Preserved" value="0x026f" />
+      
       <IDSymbol name="FindResults1Toolbar" value="0x0015" />
+      <IDSymbol name="FindResults1Toolbar.GoTo" value="0x0297" />
+      <IDSymbol name="FindResults1Toolbar.NextPrev" value="0x0298" />
+      <IDSymbol name="FindResults1Toolbar.GoTClear" value="0x0299" />
+      <IDSymbol name="FindResults1Toolbar.StopFind" value="0x02B6" />
+      
       <IDSymbol name="FindResults2Toolbar" value="0x0016" />
+      <IDSymbol name="FindResults1Toolbar.GoTo" value="0x029A" />
+      <IDSymbol name="FindResults1Toolbar.NextPrev" value="0x029B" />
+      <IDSymbol name="FindResults1Toolbar.GoTClear" value="0x029C" />
+      <IDSymbol name="FindResults1Toolbar.StopFind" value="0x02B7" />
+      
       <IDSymbol name="MainMenuToolbar" value="0x0000" />
+      <IDSymbol name="MainMenuToolbar.FileEditView" value="0x0101" />
+      <IDSymbol name="MainMenuToolbar.Project" value="0x0102" />
+      <IDSymbol name="MainMenuToolbar.BuildDebugRun" value="0x0103" />
+      <!--<IDSymbol name="MainMenuToolbar.ToolsAddins" value="0x0104" />-->
+      <IDSymbol name="MainMenuToolbar.WindowHelp" value="0x0105" />
+      <IDSymbol name="MainMenuToolbar.FullScreenBar" value="0x0106" />
+      <IDSymbol name="MainMenuToolbar.Refactoring" value="0x0107" />
+      <IDSymbol name="MainMenuToolbar.Tools" value="0x0109" />
+      
       <IDSymbol name="ObjectBrowserToolbar" value="0x000f" />
+      <IDSymbol name="ObjectBrowserToolbar.Subsets" value="0x0270" />
+      <IDSymbol name="ObjectBrowserToolbar.Display" value="0x0271" />
+      <IDSymbol name="ObjectBrowserToolbar.Display2" value="0x0272" />
+      <IDSymbol name="ObjectBrowserToolbar.Search" value="0x0273" />
+      <IDSymbol name="ObjectBrowserToolbar.Search2" value="0x0274" />
+      <IDSymbol name="ObjectBrowserToolbar.Navigation" value="0x0275" />
+      <IDSymbol name="ObjectBrowserToolbar.Edit" value="0x0276" />
+      <IDSymbol name="ObjectBrowserToolbar.ObjectGroup" value="0x0277" />
+      <IDSymbol name="ObjectBrowserToolbar.MemberGroup" value="0x0278" />
+      <IDSymbol name="ObjectBrowserToolbar.Groupings" value="0x0279" />
+      <IDSymbol name="ObjectBrowserToolbar.ViewGroup" value="0x027A" />
+      <IDSymbol name="ObjectBrowserToolbar.MemberAccessGroup" value="0x027B" />
+      <IDSymbol name="ObjectBrowserToolbar.BrowserSettingsButton" value="0x027C" />
+      <IDSymbol name="ObjectBrowserToolbar.BaseDerivedGroup" value="0x027D" />
+      <IDSymbol name="ObjectBrowserToolbar.BrowserSettings" value="0x027E" />
+      <IDSymbol name="ObjectBrowserToolbar.MemberSettings" value="0x027F" />
+      
       <IDSymbol name="OpenWindowsToolbar" value="0x000b" />
       <IDSymbol name="OutputWindowToolbar" value="0x0014" />
+      <IDSymbol name="OutputWindowToolbar.Select" value="0x0293" />
+      <IDSymbol name="OutputWindowToolbar.GoTo" value="0x0294" />
+      <IDSymbol name="OutputWindowToolbar.NextPrev" value="0x0295" />
+      <IDSymbol name="OutputWindowToolbar.Clear" value="0x0296" />
+      <IDSymbol name="OutputWindowToolbar.WordWrap" value="0x029F" />
+      
       <IDSymbol name="ProjectToolbar" value="0x00003" />
+      <IDSymbol name="ProjectToolbar.Toolbar3" value="0x01D5" />
+      <IDSymbol name="ProjectToolbar.Toolbar4" value="0x01D6" />
+      <IDSymbol name="ProjectToolbar.Toolbar5" value="0x01D7" />
+      
       <IDSymbol name="PropertiesToolbar" value="0x0011" />
-      <IDSymbol name="SchemaToolbar" value="0x0013" />
+      <IDSymbol name="PropertiesToolbar.Misc" value="0x01AA" />
+      
+      <!--<IDSymbol name="SchemaToolbar" value="0x0013" />-->
+      
       <IDSymbol name="SnippetsToolbar" value="0x002D" />
+      <IDSymbol name="SnippetsToolbar.Property" value="0x02C8" />
+      <IDSymbol name="SnippetsToolbar.Reference" value="0x02C9" />
+      <IDSymbol name="SnippetsToolbar.Replace" value="0x02CA" />
+      
+      <IDSymbol name="OpenWindowsToolbar" value="0x000b" />
+      <IDSymbol name="OpenWindowsToolbar.Windows" value="0x017B" />
+      
+      <IDSymbol name="ViewBarToolbar" value="0x000c" />
+      <IDSymbol name="ViewBarToolbar.Views" value="0x017C" />
+      
       <IDSymbol name="StandardToolbar" value="0x00001" />
+      <IDSymbol name="StandardToolbar.NewAdd" value="0x0170" />
+      <IDSymbol name="StandardToolbar.SaveOpen" value="0x0171" />
+      <IDSymbol name="StandardToolbar.CutCopy" value="0x0172" />
+      <IDSymbol name="StandardToolbar.UndoRedo" value="0x0173" />
+      <IDSymbol name="StandardToolbar.RunBuild" value="0x0174" />
+      <IDSymbol name="StandardToolbar.Windows" value="0x0175" />
+      <IDSymbol name="StandardToolbar.Gauge" value="0x0176" />
+      <IDSymbol name="StandardToolbar.Search" value="0x0177" />
+      <IDSymbol name="StandardToolbar.NewWindows" value="0x0178" />
+      <IDSymbol name="StandardToolbar.Navigate" value="0x0179" />
+      <IDSymbol name="StandardToolbar.Find" value="0x017D" />
+      <IDSymbol name="StandardToolbar.Replace" value="0x017E" />
+      
       <IDSymbol name="TaskListToolbart" value="0x002a" />
+      <IDSymbol name="TaskListToolbart.ProviderList" value="0x01D1" />
+            
       <IDSymbol name="TextEditorToolbar" value="0x000e" />
+      <IDSymbol name="TextEditorToolbar.Completion" value="0x0550" />
+      <IDSymbol name="TextEditorToolbar.Indent" value="0x0551" />
+      <IDSymbol name="TextEditorToolbar.Comment" value="0x0552" />
+      <IDSymbol name="TextEditorToolbar.TempBookmarks" value="0x0553" />
+      
       <IDSymbol name="UserTasksToolbar" value="0x002b" />
+      <IDSymbol name="UserTasksToolbar.Edit" value="0x01D3" />
+      
       <IDSymbol name="WindowUIToolbar" value="0x00002" />
+      <IDSymbol name="WindowUIToolbar.LoadSave" value="0x017A" />
       
       <!-- Menus -->
       <IDSymbol name="File" value="0x0080" />
@@ -49,7 +150,9 @@
       <IDSymbol name="File.OpenProject" value="0x011A" />
       <IDSymbol name="File.Print" value="0x0114" />
       <IDSymbol name="File.RecentlyUsed" value="0x0115" />
+      <IDSymbol name="File.RecentlyUsed.Files" value="0x030C" />
       <IDSymbol name="File.RecentlyUsed.Files.Root" value="0x011E" />
+      <IDSymbol name="File.RecentlyUsed.Projects" value="0x030D" />
       <IDSymbol name="File.RecentlyUsed.Projects.Root" value="0x011F" />
       <IDSymbol name="File.Rename" value="0x0113" />
       <IDSymbol name="File.Save" value="0x0112" />
