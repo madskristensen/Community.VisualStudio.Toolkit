@@ -2,7 +2,7 @@
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
   
   <!--
-  Based on C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VSSDK\VisualStudioIntegration\Common\Inc\vsshlids.h
+  Based on $(VsInstallDir)\VSSDK\VisualStudioIntegration\Common\Inc\vsshlids.h
   Report bugs and suggestions at https://github.com/madskristensen/Community.VisualStudio.Toolkit
   
   To use this file, add <Include href="VSGlobals.vsct"/> to the top of your .vsct file.Then use
@@ -12,6 +12,7 @@
       <Parent guid="VSGlobals" id="Tools.Options"/>
       [...]
     </Button>  
+  
   
   In this file, you can tell menus and groups apart by the number of dots (.) in the name. 
   Each IDSymbol[name] follows the pattern "<Menu>.<Group>.<Menu>.<Group>.<Menu>... etc."
@@ -266,19 +267,20 @@
       <IDSymbol name="Window.LayoutList" value="0x0165" />
       <IDSymbol name="Window.TabOrientation" value="0x0166" />
 
-      <IDSymbol name="Editor" value="0x3E8A" />
+      <!--<IDSymbol name="Editor" value="0x3E8A" />
       <IDSymbol name="Editor.AdvancedCommands" value="0x3E8F" />
       <IDSymbol name="Editor.IntellisenseCommands" value="0x3E94" />
       <IDSymbol name="Editor.LanguageInfo" value="0x3E93" />
-      <IDSymbol name="Editor.OutliningCommands" value="0x3E90" />
 
       <IDSymbol name="mEditor.Advanced" value="0x3EA0" />
       <IDSymbol name="mEditor.Bookmark" value="0x3E9E" />
       <IDSymbol name="mEditor.Find" value="0x3EA3" />
       <IDSymbol name="mEditor.GoTo" value="0x3EA5" />
       <IDSymbol name="mEditor.Intellisense" value="0x3EA2" />
-      <IDSymbol name="mEditor.Outliningk" value="0x3EA1" />
-      <IDSymbol name="mEditor.Paste" value="0x3EA4" />
+      <IDSymbol name="mEditor.Paste" value="0x3EA4" />-->
+      
+      <!--<IDSymbol name="Editor.Outlining" value="0x3EA1" />
+      <IDSymbol name="Editor.OutliningCommands" value="0x3E90" />-->
       
       <IDSymbol name="SolutionNode" value="0x0413" />
       <IDSymbol name="SolutionNode.Rename" value="0x0212" />
@@ -302,20 +304,21 @@
       <IDSymbol name="ProjectNode" value="0x0402" />
       <IDSymbol name="ProjectNode.Add" value="0x0202" />
       <IDSymbol name="ProjectNode.Add.Submenu" value="0x0202" />
-      <IDSymbol name="ProjectNode.Add.Submenu.Items" value="0x0203" />
       <IDSymbol name="ProjectNode.Add.Submenu.Forms" value="0x02A0" />
+      <IDSymbol name="ProjectNode.Add.Submenu.Items" value="0x0203" />
       <IDSymbol name="ProjectNode.Add.Submenu.Misc" value="0x02A1" />
-      <IDSymbol name="ProjectNode.Debug" value="0x0204" />
-      <IDSymbol name="ProjectNode.Start" value="0x0205" />
       <IDSymbol name="ProjectNode.Build" value="0x0206" />
-      <IDSymbol name="ProjectNode.Transfer" value="0x0207" />
-      <IDSymbol name="ProjectNode.Rename" value="0x0211" />
-      <IDSymbol name="ProjectNode.Properties" value="0x0214" />
-      <IDSymbol name="ProjectNode.SourceControl" value="0x0216" />
-      <IDSymbol name="ProjectNode.Edit" value="0x0237" />
-      <IDSymbol name="ProjectNode.UnloadReload" value="0x023A" />
-      <IDSymbol name="ProjectNode.Explore" value="0x0266" />
       <IDSymbol name="ProjectNode.BuildDependencies" value="0x02E0" />
+      <IDSymbol name="ProjectNode.Debug" value="0x0204" />
+      <IDSymbol name="ProjectNode.Edit" value="0x0237" />
+      <IDSymbol name="ProjectNode.Explore" value="0x0266" />
+      <IDSymbol name="ProjectNode.MultiProjectBuild" value="0x0201" />
+      <IDSymbol name="ProjectNode.Properties" value="0x0214" />
+      <IDSymbol name="ProjectNode.Rename" value="0x0211" />
+      <IDSymbol name="ProjectNode.SourceControl" value="0x0216" />
+      <IDSymbol name="ProjectNode.Start" value="0x0205" />
+      <IDSymbol name="ProjectNode.Transfer" value="0x0207" />
+      <IDSymbol name="ProjectNode.UnloadReload" value="0x023A" />
       
       <IDSymbol name="ItemNode" value="0x0430" />
       <IDSymbol name="ItemNode.ViewObject" value="0x0208" />
@@ -337,6 +340,29 @@
       <IDSymbol name="ReferencesNode.Add" value="0x02A4" />
       <IDSymbol name="ReferencesNode.Transfer" value="0x02A5" />
       
+      <IDSymbol name="CodeWindow" value="0x040D" />      
+      <IDSymbol name="CodeWindow.Advanced" value="0x02D1" />      
+      <IDSymbol name="CodeWindow.Annotation" value="0x02D7" />      
+      <IDSymbol name="CodeWindow.Annotation.Submenu" value="0x02D6" />      
+      <IDSymbol name="CodeWindow.Annotation.Submenu.Annotation" value="0x02D5" />      
+      <IDSymbol name="CodeWindow.DebugStep" value="0x01C3" />      
+      <IDSymbol name="CodeWindow.DebugWatch" value="0x01C2" />      
+      <IDSymbol name="CodeWindow.Intellisense" value="0x02B0" />      
+      <IDSymbol name="CodeWindow.IntellitraceStep" value="0x02D8" />      
+      <IDSymbol name="CodeWindow.Language" value="0x02D0" />      
+      <IDSymbol name="CodeWindow.Marker" value="0x01C4" />      
+      <IDSymbol name="CodeWindow.NavigateToFile" value="0x02B2" />      
+      <IDSymbol name="CodeWindow.NavigationLocation" value="0x02B1" />      
+      <IDSymbol name="CodeWindow.OpenUrl" value="0x01C5" />      
+      <IDSymbol name="CodeWindow.Outlining" value="0x02B3" />      
+      <IDSymbol name="CodeWindow.Outlining.Submenu" value="0x3EA1" />      
+      <IDSymbol name="CodeWindow.Outlining.Submenu.Outlining" value="0x02B4" />      
+      <IDSymbol name="CodeWindow.Refactoring" value="0x02B5" />      
+      <IDSymbol name="CodeWindow.Shortcut" value="0x01C6" />      
+      <IDSymbol name="CodeWindow.Snippets" value="0x02D4" />      
+      <IDSymbol name="CodeWindow.Snippets.Submenu" value="0x02D3" />      
+      <IDSymbol name="CodeWindow.Snippets.Submenu.Snippets" value="0x02D2" />      
+      <IDSymbol name="CodeWindow.TextEdit" value="0x01C0" />      
     </GuidSymbol>
   </Symbols>
 </CommandTable>
