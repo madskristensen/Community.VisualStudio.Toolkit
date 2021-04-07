@@ -54,7 +54,7 @@
       <IDSymbol name="Edit.GoTo.GoTo.Editor" value="0x1000" />
     </GuidSymbol>
 
-    <GuidSymbol name="VSMain" value="{d309f791-903f-11d0-9efc-00a0c911004f}">
+    <GuidSymbol name="VSMainMenu" value="{d309f791-903f-11d0-9efc-00a0c911004f}">
       <IDSymbol name="BookmarksToolbar" value="0x0019" />
       <IDSymbol name="Build" value="0x008C" />
       <IDSymbol name="Build.Cancel" value="0x0283" />
@@ -275,8 +275,10 @@
       <IDSymbol name="View" value="0x0082" />
       <IDSymbol name="View.ArcitectureWindows" value="0x0720" />
       <IDSymbol name="View.Browser" value="0x0130" />
+      <IDSymbol name="View.Code" value="0x0133" />
       <IDSymbol name="View.DefineViews" value="0x0134" />
       <IDSymbol name="View.DevWindows" value="0x0723" />
+      <IDSymbol name="View.DevWindows.FindResults.Group" value="0x0724" />
       <IDSymbol name="View.DevWindows.OtherWindows.Group0" value="0x019E" />
       <IDSymbol name="View.DevWindows.OtherWindows.Group1" value="0x019F" />
       <IDSymbol name="View.DevWindows.OtherWindows.Group2" value="0x01A0" />
@@ -284,13 +286,11 @@
       <IDSymbol name="View.DevWindows.OtherWindows.Group4" value="0x01A2" />
       <IDSymbol name="View.DevWindows.OtherWindows.Group5" value="0x01A3" />
       <IDSymbol name="View.DevWindows.OtherWindows.Group6" value="0x01A7" />
-      <IDSymbol name="View.FindResults" value="0x0724" />
-      <IDSymbol name="View.FormCode" value="0x0133" />
+      <IDSymbol name="View.ExplorerWindows" value="0x0721" />
       <IDSymbol name="View.Links" value="0x013B" />
       <IDSymbol name="View.Navigate" value="0x0137" />
       <IDSymbol name="View.NavigationWindows" value="0x0722" />
       <IDSymbol name="View.ObjectBrowser" value="0x013A" />
-      <IDSymbol name="View.OrganisationalWindows" value="0x0721" />
       <IDSymbol name="View.PropertyPages" value="0x0131" />
       <IDSymbol name="View.Refresh" value="0x0136" />
       <IDSymbol name="View.SmallNavigate" value="0x0139" />

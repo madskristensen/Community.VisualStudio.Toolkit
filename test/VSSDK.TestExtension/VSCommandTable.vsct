@@ -11,7 +11,7 @@
         or combo box in a toolbar. -->
     <Buttons>
       <Button guid="guidTestExtensionPackageCmdSet" id="RunnerWindowCommandId" priority="0x0105" type="Button">
-        <Parent guid="VSMain" id="View.DevWindows.OtherWindows.Group1"/>
+        <Parent guid="VSMainMenu" id="View.DevWindows.OtherWindows.Group1"/>
         <Icon guid="ImageCatalogGuid" id="StatusInformation" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
@@ -20,7 +20,7 @@
       </Button>
 
       <Button guid="guidTestExtensionPackageCmdSet" id="ThemeWindowCommandId" priority="0x0106" type="Button">
-        <Parent guid="VSMain" id="View.DevWindows.OtherWindows.Group1"/>
+        <Parent guid="VSMainMenu" id="View.DevWindows.OtherWindows.Group1"/>
         <Icon guid="ImageCatalogGuid" id="ColorPalette" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
