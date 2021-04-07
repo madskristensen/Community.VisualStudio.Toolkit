@@ -1,4 +1,5 @@
 ﻿using System;
+using Community.VisualStudio.Toolkit;
 
 namespace Microsoft.VisualStudio.Shell
 {
@@ -14,7 +15,7 @@ namespace Microsoft.VisualStudio.Shell
         /// </remarks>
         public static void FireAndForget(this System.Threading.Tasks.Task task)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            VS.JoinableTaskFactory.RunAsync(async () =>
             {
                 try
                 {

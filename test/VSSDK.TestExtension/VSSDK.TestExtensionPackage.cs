@@ -27,6 +27,8 @@ namespace VSSDK.TestExtension
     {
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
+            VS.Initialize(JoinableTaskFactory);
+
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await TestCommand.InitializeAsync(this);
             await RunnerWindowCommand.InitializeAsync(this);
