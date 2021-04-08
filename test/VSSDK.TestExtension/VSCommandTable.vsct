@@ -27,6 +27,15 @@
           <ButtonText>Theme Window</ButtonText>
         </Strings>
       </Button>
+
+      <Button guid="guidTestExtensionPackageCmdSet" id="MultiInstanceWindowCommandId" priority="0x0107" type="Button">
+        <Parent guid="VSMainMenu" id="View.DevWindows.OtherWindows.Group1"/>
+        <Icon guid="ImageCatalogGuid" id="MultiView" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Multi-Instance Window</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
   </Commands>
 
@@ -36,6 +45,7 @@
     <GuidSymbol name="guidTestExtensionPackageCmdSet" value="{cb765f49-fc35-4c14-93af-bb48ca4f2ce3}">
       <IDSymbol name="RunnerWindowCommandId" value="0x0100" />
       <IDSymbol name="ThemeWindowCommandId" value="0x0101" />
+      <IDSymbol name="MultiInstanceWindowCommandId" value="0x0102" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>

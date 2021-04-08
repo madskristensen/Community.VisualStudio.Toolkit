@@ -21,6 +21,7 @@ namespace VSSDK.TestExtension
     [ProvideToolWindow(typeof(RunnerWindow.Pane), Style = VsDockStyle.Float, Window = ToolWindowGuids.SolutionExplorer)]
     [ProvideToolWindowVisibility(typeof(RunnerWindow.Pane), VSConstants.UICONTEXT.NoSolution_string)]
     [ProvideToolWindow(typeof(ThemeWindow.Pane))]
+    [ProvideToolWindow(typeof(MultiInstanceWindow.Pane), MultiInstances = true)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     public sealed class TestExtensionPackage : ToolkitPackage
     {
@@ -28,11 +29,13 @@ namespace VSSDK.TestExtension
         {
             RunnerWindow.Initialize(this);
             ThemeWindow.Initialize(this);
+            MultiInstanceWindow.Initialize(this);
 
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await TestCommand.InitializeAsync(this);
             await RunnerWindowCommand.InitializeAsync(this);
             await ThemeWindowCommand.InitializeAsync(this);
+            await MultiInstanceWindowCommand.InitializeAsync(this);
 
             System.Windows.Media.Imaging.BitmapSource bitmap = await KnownMonikers.Reference.ToBitmapSourceAsync(16);
             var svc = (IVsImageService2)await VS.Shell.GetImageServiceAsync();
