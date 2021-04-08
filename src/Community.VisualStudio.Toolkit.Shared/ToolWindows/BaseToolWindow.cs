@@ -38,7 +38,7 @@ namespace Community.VisualStudio.Toolkit
     /// <typeparam name="T">The implementation type itself.</typeparam>
     public abstract class BaseToolWindow<T> : IToolWindowProvider where T : BaseToolWindow<T>, new()
     {
-        private static AsyncPackage? _package;
+        private static ToolkitPackage? _package;
         private static IToolWindowProvider? _implementation;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Community.VisualStudio.Toolkit
             }
 
             _package = package;
-            _implementation = new T();
+            _implementation = new T() { Package = package };
             package.AddToolWindow(_implementation);
         }
 
@@ -93,6 +93,11 @@ namespace Community.VisualStudio.Toolkit
             return window;
 #endif
         }
+
+        /// <summary>
+        /// The package class that initialized this class.
+        /// </summary>
+        protected ToolkitPackage? Package { get; private set; }
 
         /// <summary>
         /// Gets the title to show in the tool window.
