@@ -1,23 +1,36 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
-using EnvDTE80;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
+using Community.VisualStudio.Toolkit;
+using Microsoft.VisualStudio.Imaging;
 using Microsoft.VisualStudio.Shell;
+using Task = System.Threading.Tasks.Task;
 
 namespace TestExtension
 {
-    [Guid("d3b3ebd9-87d1-41cd-bf84-268d88953417")]
-    public class RunnerWindow : ToolWindowPane
+    public class RunnerWindow : BaseToolWindow<RunnerWindow>
     {
-        public const string Title = "Runner Window";
+        public override string GetTitle(int toolWindowId) => "Runner Window";
 
-        public RunnerWindow(DTE2 dte) : base()
+        public override Type PaneType => typeof(Pane);
+
+        public override async Task<FrameworkElement> CreateAsync(int toolWindowId, CancellationToken cancellationToken)
         {
-            Caption = Title;
+            await Task.Yield();
+            await Task.Delay(2000);
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+            return new RunnerWindowControl(await VS.GetDTEAsync());
+        }
 
-            // This is the user control hosted by the tool window; Note that, even if this class implements IDisposable,
-            // we are not calling Dispose on this object. This is because ToolWindowPane calls Dispose on
-            // the object returned by the Content property.
-            Content = new RunnerWindowControl(dte);
+        [Guid("d3b3ebd9-87d1-41cd-bf84-268d88953417")]
+        public class Pane : ToolWindowPane
+        {
+            public Pane()
+            {
+                BitmapImageMoniker = KnownMonikers.StatusInformation;
+            }
         }
     }
 }
