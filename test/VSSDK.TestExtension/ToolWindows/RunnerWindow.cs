@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using Community.VisualStudio.Toolkit;
+using EnvDTE80;
 using Microsoft.VisualStudio.Imaging;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
@@ -18,10 +19,12 @@ namespace TestExtension
 
         public override async Task<FrameworkElement> CreateAsync(int toolWindowId, CancellationToken cancellationToken)
         {
-            await Task.Yield();
+            // Simulate long running background task
             await Task.Delay(2000);
+
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
-            return new RunnerWindowControl(await VS.GetDTEAsync());
+            DTE2 dte = await VS.GetDTEAsync();
+            return new RunnerWindowControl(dte);
         }
 
         [Guid("d3b3ebd9-87d1-41cd-bf84-268d88953417")]

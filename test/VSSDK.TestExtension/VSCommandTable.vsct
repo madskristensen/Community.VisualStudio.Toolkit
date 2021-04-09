@@ -29,7 +29,7 @@
       </Button>
 
       <Button guid="guidTestExtensionPackageCmdSet" id="MultiInstanceWindowCommandId" priority="0x0107" type="Button">
-        <Parent guid="VSMainMenu" id="View.DevWindows.OtherWindows.Group1"/>
+        <Parent guid="VSMainMenu" id="View.DevWindowsGroup.OtherWindows.Group1"/>
         <Icon guid="ImageCatalogGuid" id="MultiView" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>

@@ -45,7 +45,7 @@
     <GuidSymbol name="VSEditor2" value="{160961B3-909D-4B28-9353-A1BEF587B4A6}">
       <IDSymbol name="Edit.LanguageInfoGroup.MultiCarets" value="0x0002" />
       <IDSymbol name="Edit.LanguageInfoGroup.MultiCarets.DefaultGroup" value="0x0003" />
-      <IDSymbol name="Edit.GoToGroup.GoTo.CommandsGroup" value="0x1000" />      
+      <IDSymbol name="Edit.GoToGroup.GoTo.CommandsGroup" value="0x1000" />
       <IDSymbol name="CodeWin.NavigateGroup" value="0x0009" />
       <IDSymbol name="Edit.LanguageInfoGroup.Advanced.CommandsGroup.Newline" value="0x0032" />
       <IDSymbol name="Edit.LanguageInfoGroup.Advanced.CommandsGroup.Newline.NormalizeGroup" value="0x0033" />
@@ -64,6 +64,11 @@
     <GuidSymbol name="VSTerminal" value="{2ECA946C-513F-4FDA-8D52-45F01346C2D4}">
       <IDSymbol name="Tools.OptionsGroup.CommandLine" value="0x0001" />
       <IDSymbol name="Tools.OptionsGroup.CommandLine.TerminalsGroup" value="0x0002" />
+    </GuidSymbol>
+
+    <GuidSymbol name="VSNuGet" value="{C0D88179-5D25-4982-BFE6-EC5FD59AC103}">
+      <IDSymbol name="Tools.Other2Group.NuGet" value="0x100" />
+      <IDSymbol name="Tools.Other2Group.NuGet.ToolsGroup" value="0x200" />
     </GuidSymbol>
 
     <GuidSymbol name="VSMainMenu" value="{d309f791-903f-11d0-9efc-00a0c911004f}">
