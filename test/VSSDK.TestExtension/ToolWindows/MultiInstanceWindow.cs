@@ -10,23 +10,23 @@ using Task = System.Threading.Tasks.Task;
 
 namespace TestExtension
 {
-    public class ThemeWindow : BaseToolWindow<ThemeWindow>
+    public class MultiInstanceWindow : BaseToolWindow<MultiInstanceWindow>
     {
-        public override string GetTitle(int toolWindowId) => "Theme Window";
+        public override string GetTitle(int toolWindowId) => $"Multi Instance Window #{toolWindowId}";
 
         public override Type PaneType => typeof(Pane);
 
         public override Task<FrameworkElement> CreateAsync(int toolWindowId, CancellationToken cancellationToken)
         {
-            return Task.FromResult<FrameworkElement>(new ThemeWindowControl { DataContext = new ThemeWindowControlViewModel() });
+            return Task.FromResult<FrameworkElement>(new MultiInstanceWindowControl(toolWindowId));
         }
 
-        [Guid("e3be6dd3-f017-4d6e-ae88-2b29319a77a2")]
+        [Guid("13dccc25-9d1d-417d-8525-40c4c14ff0a2")]
         public class Pane : ToolWindowPane
         {
             public Pane()
             {
-                BitmapImageMoniker = KnownMonikers.ColorPalette;
+                BitmapImageMoniker = KnownMonikers.MultiView;
             }
         }
     }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Threading;
-using System.Threading.Tasks;
 using Community.VisualStudio.Toolkit;
 using Microsoft;
 using Microsoft.VisualStudio;
@@ -19,18 +18,24 @@ namespace VSSDK.TestExtension
     [ProvideBindingPath]
     [ProvideOptionPage(typeof(OptionsProvider.GeneralOptions), nameof(TestExtension), "General", 0, 0, true)]
     [ProvideProfile(typeof(OptionsProvider.GeneralOptions), nameof(TestExtension), "General", 0, 0, true)]
-    [ProvideToolWindow(typeof(RunnerWindow), Style = VsDockStyle.Float, Window = ToolWindowGuids.SolutionExplorer)]
-    [ProvideToolWindowVisibility(typeof(RunnerWindow), VSConstants.UICONTEXT.NoSolution_string)]
-    [ProvideToolWindow(typeof(ThemeWindow))]
+    [ProvideToolWindow(typeof(RunnerWindow.Pane), Style = VsDockStyle.Float, Window = ToolWindowGuids.SolutionExplorer)]
+    [ProvideToolWindowVisibility(typeof(RunnerWindow.Pane), VSConstants.UICONTEXT.NoSolution_string)]
+    [ProvideToolWindow(typeof(ThemeWindow.Pane))]
+    [ProvideToolWindow(typeof(MultiInstanceWindow.Pane), MultiInstances = true)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    public sealed class TestExtensionPackage : AsyncPackage
+    public sealed class TestExtensionPackage : ToolkitPackage
     {
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
+            RunnerWindow.Initialize(this);
+            ThemeWindow.Initialize(this);
+            MultiInstanceWindow.Initialize(this);
+
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await TestCommand.InitializeAsync(this);
             await RunnerWindowCommand.InitializeAsync(this);
             await ThemeWindowCommand.InitializeAsync(this);
+            await MultiInstanceWindowCommand.InitializeAsync(this);
 
             System.Windows.Media.Imaging.BitmapSource bitmap = await KnownMonikers.Reference.ToBitmapSourceAsync(16);
             var svc = (IVsImageService2)await VS.Shell.GetImageServiceAsync();
@@ -38,45 +43,6 @@ namespace VSSDK.TestExtension
             Assumes.Present(bitmap);
             Assumes.Present(svc);
             Assumes.Present(test);
-        }
-
-        public override IVsAsyncToolWindowFactory GetAsyncToolWindowFactory(Guid toolWindowType)
-        {
-            return (toolWindowType == typeof(RunnerWindow).GUID) ||
-                (toolWindowType == typeof(ThemeWindow).GUID)
-                ? this
-                : null;
-        }
-
-        protected override string GetToolWindowTitle(Type toolWindowType, int id)
-        {
-            if (toolWindowType == typeof(RunnerWindow))
-            {
-                return RunnerWindow.Title;
-            }
-            else if (toolWindowType == typeof(ThemeWindow))
-            {
-                return ThemeWindow.Title;
-            }
-
-            return GetToolWindowTitle(toolWindowType, id);
-        }
-
-        protected override async Task<object> InitializeToolWindowAsync(Type toolWindowType, int id, CancellationToken cancellationToken)
-        {
-            if (toolWindowType == typeof(RunnerWindow))
-            {
-                await Task.Yield();
-                await Task.Delay(2000);
-                await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
-                return await VS.GetDTEAsync();
-            }
-            else if (toolWindowType == typeof(ThemeWindow))
-            {
-                return new ThemeWindowControlViewModel();
-            }
-
-            return base.InitializeToolWindowAsync(toolWindowType, id, cancellationToken);
         }
     }
 }

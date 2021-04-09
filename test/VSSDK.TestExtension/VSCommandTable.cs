@@ -25,5 +25,6 @@ namespace TestExtension
     {
         public const int RunnerWindowCommandId = 0x0100;
         public const int ThemeWindowCommandId = 0x0101;
+        public const int MultiInstanceWindowCommandId = 0x0102;
     }
 }

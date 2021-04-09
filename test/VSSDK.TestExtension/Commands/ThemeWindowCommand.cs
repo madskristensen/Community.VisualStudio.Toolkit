@@ -12,7 +12,7 @@ namespace TestExtension
 
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            await Package.ShowToolWindowAsync<ThemeWindow>();
+            await ThemeWindow.ShowAsync();
         }
     }
 }
