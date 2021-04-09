@@ -241,7 +241,7 @@
       <IDSymbol name="SnippetsToolbar" value="0x002D" />
       <IDSymbol name="SnippetsToolbar.PropertyGroup" value="0x02C8" />
       <IDSymbol name="SnippetsToolbar.ReferenceGroup" value="0x02C9" />
-      <IDSymbol name="SnippetsToolbar.Replacev" value="0x02CA" />
+      <IDSymbol name="SnippetsToolbar.ReplaceGroup" value="0x02CA" />
       <IDSymbol name="SolutionFolder" value="0x0414" />
       <IDSymbol name="SolutionFolder.AddGroup" value="0x0264" />
       <IDSymbol name="SolutionFolder.AddItemGroup" value="0x0262" />
