@@ -1,5 +1,6 @@
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using Microsoft.VisualStudio;
@@ -42,34 +43,37 @@ namespace Community.VisualStudio.Toolkit
 
         private static void UseVsThemePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is FrameworkElement element)
+            if (!DesignerProperties.GetIsInDesignMode(d))
             {
-                if ((bool)e.NewValue)
+                if (d is FrameworkElement element)
                 {
-                    OverrideProperty(element, Control.BackgroundProperty, _originalBackgroundProperty, EnvironmentColors.StartPageTabBackgroundBrushKey);
-                    OverrideProperty(element, Control.ForegroundProperty, _originalForegroundProperty, EnvironmentColors.StartPageTextBodyBrushKey);
-                    ThemedDialogStyleLoader.SetUseDefaultThemedDialogStyles(element, true);
-                    ImageThemingUtilities.SetThemeScrollBars(element, true);
-
-                    // Only merge the styles after the element has been initialized.
-                    // If the element hasn't been initialized yet, add an event handler
-                    // so that we can merge the styles once it has been initialized.
-                    if (!element.IsInitialized)
+                    if ((bool)e.NewValue)
                     {
-                        element.Initialized += OnElementInitialized;
+                        OverrideProperty(element, Control.BackgroundProperty, _originalBackgroundProperty, EnvironmentColors.StartPageTabBackgroundBrushKey);
+                        OverrideProperty(element, Control.ForegroundProperty, _originalForegroundProperty, EnvironmentColors.StartPageTextBodyBrushKey);
+                        ThemedDialogStyleLoader.SetUseDefaultThemedDialogStyles(element, true);
+                        ImageThemingUtilities.SetThemeScrollBars(element, true);
+
+                        // Only merge the styles after the element has been initialized.
+                        // If the element hasn't been initialized yet, add an event handler
+                        // so that we can merge the styles once it has been initialized.
+                        if (!element.IsInitialized)
+                        {
+                            element.Initialized += OnElementInitialized;
+                        }
+                        else
+                        {
+                            MergeStyles(element);
+                        }
                     }
                     else
                     {
-                        MergeStyles(element);
+                        element.Resources.MergedDictionaries.Remove(ThemeResources);
+                        ImageThemingUtilities.SetThemeScrollBars(element, null);
+                        ThemedDialogStyleLoader.SetUseDefaultThemedDialogStyles(element, false);
+                        RestoreProperty(element, Control.ForegroundProperty, _originalForegroundProperty);
+                        RestoreProperty(element, Control.BackgroundProperty, _originalBackgroundProperty);
                     }
-                }
-                else
-                {
-                    element.Resources.MergedDictionaries.Remove(ThemeResources);
-                    ImageThemingUtilities.SetThemeScrollBars(element, null);
-                    ThemedDialogStyleLoader.SetUseDefaultThemedDialogStyles(element, false);
-                    RestoreProperty(element, Control.ForegroundProperty, _originalForegroundProperty);
-                    RestoreProperty(element, Control.BackgroundProperty, _originalBackgroundProperty);
                 }
             }
         }
