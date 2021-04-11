@@ -3,6 +3,7 @@ using EnvDTE;
 using EnvDTE80;
 using Microsoft;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Threading;
 
 namespace Community.VisualStudio.Toolkit
 {
@@ -11,6 +12,23 @@ namespace Community.VisualStudio.Toolkit
     /// </summary>
     public static class VS
     {
+        private static JoinableTaskFactory _jtf = ThreadHelper.JoinableTaskFactory;
+
+        /// <summary>
+        /// Initializes the entry point.
+        /// This is an optional but recommended step in order to optimize use of the JoinableTaskFactory.
+        /// Call this method at the start of the extension's AsyncPackage's InitializeAsync method and pass
+        /// the AsyncPackage.JoinableTaskFactory as the argument.
+        /// </summary>
+        /// <param name="jtf">The JoinableTaskFactory instance from the extension's AsyncPackage.</param>
+        public static void Initialize(JoinableTaskFactory jtf)
+        {
+            _jtf = jtf;
+        }
+
+        /// <summary>The JoinableTaskFactory either from the extension's package or from ThreadHelper. See <see cref="Initialize(JoinableTaskFactory)"/>.</summary>
+        public static JoinableTaskFactory JoinableTaskFactory => _jtf;
+
         /// <summary>A collection of services related to the command system.</summary>
         public static Commanding Commanding => new();
 
